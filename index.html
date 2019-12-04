@@ -1,0 +1,519 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Mo-Rated Prototype</title>
+	<style type="text/css">
+		@font-face {
+			font-family: "BodyFont";
+			src: url("./Overpass-Light.ttf");
+		}
+
+		@font-face {
+		  font-family: BodyFont;
+		  src: url("./Overpass-Bold.ttf");
+		  font-weight: bold;
+		}	
+
+		@font-face {
+		  font-family: HandFont;
+		  src: url("./PatrickHand-Regular.ttf");
+		}
+
+		body{
+			font-family: "BodyFont";
+			padding: 0px;
+			margin: 0px;
+		}
+
+		.segment{
+			padding: 20px;
+			max-width: 800px;
+			margin: 0px auto;
+			color: #333;
+			clear: both;
+			position: relative;
+			overflow: hidden;
+			min-height: 100vh;
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+		}
+
+		.segment.convo{
+			background: #222;
+			text-align: center;
+			max-width: 100%;
+		}
+
+		.segment.intro{
+			background: rgba(20,20,20,0.9);
+		}
+
+		.segment.challenge{
+			background: #91B8C5;
+			max-width: 100%;
+		}
+
+		h1, p{
+			margin: 10px 0px;
+		}
+
+		.conversation{
+			width: 400px;
+			margin: 0px;
+			padding: 0px;
+			margin: 0px auto;
+			text-align: left;
+
+		}
+
+		.conversation li{
+			margin: 2px;
+			list-style-type: none;
+			padding: 0px;
+			margin: 0px;
+			margin-bottom: 5px;
+		}
+
+		.bubble{
+			cursor: pointer;
+		}
+
+		.bubble, .conversation li p{
+			max-width: 80%;
+			padding: 20px;
+			background: #f5f5f5;
+			border-radius: 10px;
+			display: inline-block;
+			margin: 2px;
+			position: relative;
+		}
+
+		.conversation li p:last-of-type:after{
+			content: "";
+			width: 0;
+			height: 0;
+			border-style: solid;
+			border-width: 10px 10px 0 0;
+			border-color: #f5f5f5 transparent transparent transparent;
+			position: absolute;	
+			left: 10px;
+			bottom: -10px;
+		}
+
+		.conversation li.me p:last-of-type:after{
+			right: 10px;
+			left: auto;
+			border-width: 0 10px 10px 0;
+			border-color: transparent #91B8C5 transparent transparent;
+		}
+
+		.conversation li.me{
+			text-align: right;
+		}
+
+		.bubble, .conversation li.me p{
+			background: #91B8C5;
+		}
+
+		.logo{
+			width: 300px;
+			height: 100px;
+			background-image: url('./Movember_Iconic Mo_White.png');
+			background-position: center;
+			background-size: 500px;
+			margin: 0px auto;
+		}
+
+		.challenge{
+			background: #C8B7AC;
+			border-radius: 10px;
+			display: inline-block;
+			padding: 20px;
+			width: 50%;
+		}
+
+		button{
+			padding: 20px 50px;
+			font-family: inherit;
+			border-radius: 100px;
+			font-size: large;
+			background: none;
+			border: 1px solid #333;
+			color: inherit;
+			cursor: pointer;
+			outline: none;
+			width: 300px;
+			margin: 0px auto;
+			position: relative;
+		}
+
+		button:after,button:before{
+			content: "↓";
+			position: absolute;
+			top: 0px;
+			left: 0px;
+			padding: 20px 25px;
+		}
+
+		button:after{
+			left: auto;
+			right: 0px;
+		}
+
+		button:hover{
+			background: rgba(150,150,150,0.1);
+		}
+
+		.convo button{
+			border-color: #999;
+			color: #999;
+			width: auto;
+		}
+
+		.convo button.bubble{
+			font-size: inherit;
+			color: inherit;
+			border: none;
+			background: #91B8C5;
+			cursor: pointer;
+		}
+
+		.convo h1{
+			color: #999;
+			margin: 0px;
+			font-weight: normal;
+			margin-bottom: 30px;
+		}
+
+		.convo hr{
+			border: none;
+			height: 1px;
+			background: #555;
+			margin: 30px 0px;
+		}
+
+		li p.angry{
+			background: #ffe5e5;
+			animation: jiggle 0.1s infinite;
+		}
+
+		.lo-breakdown{
+			text-align: left;
+			color: #999;
+			max-width: 500px;
+			margin: 0px auto;
+			margin-bottom: 50px;
+			font-size: 1.2em;
+		}
+
+		.lo-breakdown b{
+			color: #eee;
+			font-weight: normal;
+		}
+
+		.lo-breakdown li{
+			margin-bottom: 15px;
+			position: relative;
+			list-style-type: square;
+			padding-top: 2px;
+		}
+
+
+		.bg-video{
+			position: absolute;
+			top: 0px;
+			left: 0px;
+			right: 0px;
+			bottom: 0px;
+			width: 100%;
+			z-index: -1;
+		}
+
+		h1.header{
+			color: #eee;
+			font-weight: bold;
+		}
+
+		.feedback{
+			display: none;
+			margin-top: 20px;
+		}
+
+		.post-it{
+			width:430px;
+			height: 370px;
+			padding: 70px 40px 40px 60px;
+
+			background: url('./post-it.png');
+			background-size:100%;
+			box-sizing: border-box;
+
+			font-family: HandFont;
+			font-size: 18px;
+			margin: 0px auto;
+			text-align: left;
+			color: #555;
+
+			position: relative;
+		}
+
+		.post-it h1{
+			text-align: center;
+			font-size: 50px;
+		}
+
+		.post-it-inner{
+			transform: rotate(5deg);
+			padding: 10px;
+		}
+
+		.resolution{
+			width:500px;
+			text-align: left;
+			margin: 40px auto;
+			font-size: 18px;
+		}
+
+		button.goal{
+			width: auto;
+			margin-right: 10px;
+		}
+
+		button.module:before,button.module:after,button.goal:before,button.goal:after{
+			content: "";
+		}
+
+		button.module{
+			width: 200px;
+			height: 250px;
+			border-radius: 0px;
+			padding: 0px;
+			margin: 10px;
+			border: none;                                                                                                      
+		}
+
+		.module h1{
+			position: absolute;
+			bottom: 0px;
+			line-height: 50px;
+			font-size: 20px;
+			left: 0px;
+			right: 0px;
+			padding: 0px;
+			margin: 0px;
+		}
+
+		.module-img{
+			position: absolute;
+			top: 0px;
+			left: 0px;
+			right: 0px;
+			width: 200px;
+			height: 200px;
+			background-size: 100%;
+			background-position: center;
+			border-radius: 10px;
+			border: 1px solid #ddd;
+		}
+
+
+		.menu p{
+			color: #999;
+			font-size: 20px;
+		}
+
+		@keyframes jiggle{
+			0%{
+				transform: rotate(1deg);
+			}
+			50%{
+				transform: rotate(-1deg);
+			}
+			100%{
+				transform: rotate(1deg);
+			}
+		}
+
+	</style>
+	<script type="text/javascript" src='jquery-3.4.1.min.js'></script>
+	<script>
+		$(function(){
+			$('button:not(.bubble)').click(doNextSegment);
+			$('.bubble').click(function(e) {
+				var $c = $(e.target).closest('.segment').find('.conversation');
+
+				var $me = $('<li class="me"><p>'+$(this).text()+'</p></li>').appendTo($c);
+				var $them = $('<li><p class="'+($(this).data('correct')?'happy':'angry')+'">'+$(this).data('response')+'</p></li>').appendTo($c).css({opacity:0}).delay(1000).animate({opacity:1});
+
+				var $r = $(e.target).closest('.response').hide();
+				var $s = $r.closest('.segment');
+				var $rs = $s.find('.response');
+
+				if(!$(this).data('correct')){
+					$('.feedback').show().css({opacity:0}).delay(2000).animate({opacity:1}).delay(1500).animate({opacity:1},500,function(){
+						$r.show();
+						$me.remove();
+						$them.remove();
+						$('.feedback').hide();
+					});
+				}
+				else{
+					if($rs.length > $rs.index($r)+1) $rs.eq($rs.index($r)+1).show().css({opacity:0}).delay(2000).animate({opacity:1});
+					else $s.find('button').show().css({opacity:0}).delay(2000).animate({opacity:1});
+
+					$('html, body').animate({scrollTop:$s.offset().top + $s.outerHeight() - $(window).height()});
+				}
+
+				
+			})
+
+			function doNextSegment(e){
+
+				var $ss = $('.segment');
+				var $s = $ss.eq($ss.index($(e.target).closest('.segment'))+1);
+				$('html, body').animate({scrollTop:$s.offset().top});
+
+				var $ps = $s.find('.conversation p')
+				$ps.css({opacity:0}).each(function(i){
+					$(this).delay(1000+ i*1000).animate({opacity:1});
+				})
+
+				var $rs = $s.find('.response').hide();
+				$rs.eq(0).show().css({opacity:0}).delay($ps.length*1000+1000).animate({opacity:1});
+
+				$s.find('button').css({opacity:0});
+				if( !$rs.length ) $('button').delay($ps.length*1000+1000).animate({opacity:1});
+
+				$s.find('.post-it').css({opacity:0,left:100}).delay(500).animate({opacity:1,left:0});
+			}
+		});
+	</script>
+</head>
+<body>
+	<div class='segment convo menu'>
+		<div class='logo'></div>
+		<h1 class='header'>Movember Rated</h1>
+		<hr>
+
+		<p>Having better conversations with the men in your life.</p>
+		<div style='display:flex;justify-content: center;'>
+		<button class='module'><div class='module-img' style='background-image:url(IMG_0456.jpg);'></div><h1>Aggressive Text</h1></button>
+		<button class='module'><div class='module-img' style='background-image:url(IMG_0461.jpg);'></div><h1>Cry For Help</h1></button>
+		<button class='module'><div class='module-img' style='background-image:url(IMG_0462.jpg);'></div><h1>Gone Quiet</h1></button>
+		<button class='module'><div class='module-img' style='background-image:url(IMG_0463.jpg);'></div><h1>Crutches</h1></button>
+		<button class='module'><div class='module-img' style='background-image:url(IMG_0464.jpg);'></div><h1>Heartbreak</h1></button>
+	</div>
+	</div>
+	<div class='segment convo intro'>
+		<video class='bg-video' src='./angry-man.mp4' autoplay muted loop></video>
+		<h1>Key Lessons</h1>
+		<ul class='lo-breakdown'>
+			<li>Identify <b>aggressive and defensive behaviour</b> in conversations.</li>
+			<li><b>Respond appropriately</b> to Aggressive conversations.</li>
+			<li>identify what it means to be a <b>good listener</b>.
+		</ul>
+		<button>Let's Go!</button>
+	</div>
+	<div class='segment'>
+
+		<div style='display:flex;'>
+			<img style='width:200px;' src='./IMG_0456.jpg'>
+			<div><h1>The Aggressive Man</h1><p>You notice your friend from class has been missing quite a few classes and failed his midterm exam. He also seemed to be more withdrawn than normal when you last saw him in class.</p>
+			<p>You reach out to him and he sends a rambling text message that is aggressive and defensive.</p></div>
+
+			
+		</div>
+		<button>What's he saying?</button>
+	</div>
+	<div class='segment convo'>
+		<ul class='conversation'>
+			<li class='me'><p>Hey mate, How are you?</p></li>
+			<li><p>Oh, so now you're interested!?</p></li>
+			<li class='me'><p>What do you mean?</p></li>
+			<li><p>How about not ignoring me for weeks because things are going so well for you.</p><br>
+				<p>I see you posting about all the cool things you've been up to but haven't invited me once.</p><br>
+				<p>And NOW you ask how I am!?</p></li>
+		</ul>
+		<br><br>
+		<button>Sheesh</button>
+	</div>
+	<div class='segment'>
+		<h1>Good Listening</h1>
+		<p><b>Good listening</b> is more than just hearing what is being said. <b>Good listening</b> is understanding and identifying a need or emotion. <b>Good listening</b> is the basis of a healthy conversation.</p>
+		<h1>Good Listeners</h1>
+		<div style='display:flex;'>
+		<div><p><b>Good listeners</b> not only focus on the voice, but body language, tone and context of the conversation.</p> 
+		<p><b>Good listeners</b> avoid making assumptions or jumping to conclusions.</p>
+		<p><b>Good listeners</b> do not have to provide answers or solutions.</p>
+		<p><b>Good listeners</b> do not make judgement.</p>
+		<p><b>Good listeners</b> ask clarifying questions to ensure they understand.</p> </div>
+
+		<img src='./IMG_0457.jpg' style='width:200px;margin-right:20px'>
+	</div>
+		<button>Fair enough</button>
+	</div>
+	<div class='segment convo'>
+		<h1>Look at this conversation again</h1>
+		<ul class='conversation'>
+			<li class='me'><p>Hey mate, How are you?</p></li>
+			<li><p>Oh, so now you're interested!?</p></li>
+			<li class='me'><p>What do you mean?</p></li>
+			<li><p>How about not ignoring me for weeks because things are going so well for you.</p><br>
+				<p>I see you posting about all the cool things you've been up to but haven't invited me once.</p><br>
+				<p>And NOW you ask how I am!?</p></li>
+		</ul>
+		<ul class='response'>
+			<li class='bubble' data-correct=0 data-response="I'll settle the f#$% out of your f#$%ing face">Woah. Settle the f#$% down!</li>
+			<li class='bubble' data-correct=1 data-response="Thanks. I dunno man. I honestly feel like you don't really give a shit.">Man, I'm so sorry. What can I do to help?</li>
+			<li class='bubble' data-correct=0 data-response="Just like I thought. You don't care at all.">Dude. Don't blame me for your shit.</li>
+		</ul>
+		<ul class='response'>
+			<li class='bubble' data-correct=0 data-response="Well then bloody do something about it.">What are you talking about? Of course I care!</li>
+			<li class='bubble' data-correct=1 data-response="Alright, I've got some free time over the weekend.">Hey man, I'm here for you now. Let's catch up and talk about this.</li>
+		</ul>
+		<h1 class='feedback negative'>Ouch. That didn't go so well.</h1>
+		<br><br>
+		<button>That went well</button>
+	</div>
+	<div class='segment' style='text-align: center;'>
+		<h1>Remember</h1>
+		<div class='post-it' >
+			<div class="post-it-inner">
+				<h1>Listen</h1>
+				<div style='display:flex;'>
+				<img src='ear-scribble.png' style='width:80px;height: 120px;'>
+				<ul>
+					<li>Avoid assumptions</li>
+					<li>Avoid providing answers</li>
+					<li>Avoid judgement</li>
+					<li>Ask clarifying questions</li>
+				</ul>
+			</div>
+			</div>
+		</div>
+		<br>
+		<button>Moving on...</button>
+	</div>
+	<div class='segment'>
+		<div style='display:flex;justify-content:center;'>
+			<div>
+				<h1>Goal for today</h1>
+				Over the next week:
+				<ul>
+					<li>Watch for <b>aggressive or defensive conversation</b>.</li>
+					<li>Resolve to be a <b>good listener</b>.</li>
+				</ul>
+				<div style='display:flex;'><button class='goal'>I'm in</button><button class='goal'>This is not for me</button></div>
+			</div>
+
+			<img src='./IMG_0457.jpg' style='width:200px;margin-right:20px;'>
+		</div>
+	</div>
+	<div class='segment convo'>
+		<h1>That's it for today</h1>
+	</div>
+</div>
+</body>
+</html>
