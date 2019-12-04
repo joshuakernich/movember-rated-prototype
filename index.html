@@ -344,8 +344,8 @@
 			$('.bubble').click(function(e) {
 				var $c = $(e.target).closest('.segment').find('.conversation');
 
-				var $me = $('<li class="me"><p>'+$(this).text()+'</p></li>').appendTo($c);
-				var $them = $('<li><p class="'+($(this).data('correct')?'happy':'angry')+'">'+$(this).data('response')+'</p></li>').appendTo($c).css({opacity:0}).delay(1000).animate({opacity:1});
+				var $me = $('<li class="added me"><p>'+$(this).text()+'</p></li>').appendTo($c);
+				var $them = $('<li class="added"><p class="'+($(this).data('correct')?'happy':'angry')+'">'+$(this).data('response')+'</p></li>').appendTo($c).css({opacity:0}).delay(1000).animate({opacity:1});
 
 				var $r = $(e.target).closest('.response').hide();
 				var $s = $r.closest('.segment');
@@ -373,6 +373,8 @@
 
 				var $ss = $('.segment');
 				var $s = $ss.eq($ss.index($(e.target).closest('.segment'))+1);
+				$s.find('.added').remove();
+
 				$('html, body').animate({scrollTop:$s.offset().top});
 
 				var $ps = $s.find('.conversation p')
