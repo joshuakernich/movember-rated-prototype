@@ -10,13 +10,13 @@
 				[
 					{
 						type:'convo',
-						convo:[
+						convos:[[
 						{who:"me",d:"Hey man. How are you?"},
 						{who:"them",d:"Dude. I'm really struggling. Kinda sucks."},
 						{who:"me",d:"Oh, for real? That sucks man."},
 						{who:"them",d:"Yeah, But it's alright. I'll be ok."},
 						{who:"header",d:"What would you say?"},
-						{who:"buttons",list:["Get Started"]}]
+						{who:"buttons",list:["Get Started"]}]]
 					},
 					{
 
@@ -30,18 +30,22 @@
 				[
 					{
 						type:'convo',
-						convo:[
-						{who:"me",d:"Hey man. Come join us. It's chicken night!"},
-						{who:"them",d:"I can’t I'm busy."},
-						{who:"me",d:"Come on, we are all busy, still got to eat right?"},
-						'...',
-						{who:"them",d:"Yeah, ok. I won’t eat, but I will hang out."},
-						{who:"me",d:"Are you sure you aren’t hungry? I never use all of my credits, swipe my card."},
-						{who:"them",d:"I am not a charity case."},
-						'...',
-						{who:"me",d:"I didn’t think you were. Since we are here, just use mine."},
-						{who:"them",d:"No, I can take care of myself. My motto is do for yourself or do without. I have taken care of myself my whole life, that isn’t going to change now."},
-						{who:"buttons",list:["Sounds familiar","Other stories"]}
+						convos:[
+							[
+								{who:"me",d:"Hey man. Come join us. It's chicken night!"},
+								{who:"them",d:"I can’t I'm busy."},
+								{who:"me",d:"Come on, we are all busy, still got to eat right?"},
+								'...',
+							],[
+								{who:"them",d:"Yeah, ok. I won’t eat, but I will hang out."},
+								{who:"me",d:"Are you sure you aren’t hungry? I never use all of my credits, swipe my card."},
+								{who:"them",d:"I am not a charity case."},
+								'...',
+							],[
+								{who:"me",d:"I didn’t think you were. Since we are here, just use mine."},
+								{who:"them",d:"No, I can take care of myself. My motto is do for yourself or do without. I have taken care of myself my whole life, that isn’t going to change now."},
+								{who:"buttons",list:["Sounds familiar","Other stories"]}
+							]
 						]
 
 					},
@@ -63,17 +67,17 @@
 
 					},{
 						type:'convo',
-						convo:[
+						convos:[[
 							{who:"them",d:"I am not a charity case."},
 							{who:"me",d:"I didn’t think you were. Since we are here, just use mine."},
 							{who:"them",d:"No, I can take care of myself. My motto is do for yourself or do without. I have taken care of myself my whole life, that isn’t going to change now."},
 							{who:'options',
 								list:[
 									{who:'me',d:"We should talk about this sometime.",f:'Delaying conversation to another, unspecificed time is missing a key opportunity to nurture open conversation.'},
-									{who:'me',d:"Mate, you know I'm here for you.",f:'Offering help can be reassuring but it misses the immediate opportunity to '},
-									{who:'me',d:"Hey man, want to take a walk?",correct:true,f:'Great Response!'}
+									{who:'me',d:"Mate, you know I'm here for you.",f:'Reassurance can be encouraging but it misses the immediate opportunity to start an open conversation.'},
+									{who:'me',d:"Hey man, want to take a walk?",correct:true,f:"<b>Great Response!</b> This response is acts on the conversation immediately and creates opportunity for a private conversation." }
 									]},
-						]
+						]]
 					},
 					{
 						type:'learnings',
@@ -82,33 +86,70 @@
 						<h1>ASK</h1>\
 						<h2>Open-ended questions</h2>\
 						<p><b>Open-ended questions</b> are a great way to stimulate meaningful conversation. This means asking paying close attention, being specific, and inquiring from a place of genuine care.</p>\
-						<h2>Model Honest Conversation</h2>\
+						<h2>Model honest conversation</h2>\
 						<p>Demonstrating your own personal ability to be honest, open, and vulnerable is a great way to help a man open up. Risking exposure of your own struggles helps destigmatize the issues and makes strides toward developing a close relationship.</p>\
-						</div>",
+						</div>\
+						<button class='capsule'>Give it a try</button>",
 					},
 					{
 						type:'convo',
-						convo:[
-							{who:'me',d:"So, is something up?"},
-							{who:'them',d:"Yeah, I am fine. I am just not a charity case."},
-							{who:'me',d:"That’s cool I understand that. This summer, I worked three jobs. I knew I couldn’t ask for help from my family. It was all on me to do. So, yeah, I get it."},
-							{who:'them',d:"You do?"},
-							{who:'me',d:"Yeah, it was tough."},
-							{who:'them',d:"I am going to get this. It’s a money situation, but I do have a plan."},
-							{who:'me',d:"Cool, want to tell me about it?"}
+						convos:[
+							[
+								{who:'me',d:"So, is something up?"},
+								{who:'them',d:"Yeah, I am fine. I am just not a charity case."},
+								{who:'options',
+									list:[
+										{who:'me',d:"Yeah man. I hate asking for help as well.", correct:true, f:"<b>Great Start!</b> Exposing your own flaws and vulnerabilities can help the other man open up. Let's keep it going."},
+										{who:'me',d:"I never said you were.",f:"This is not about you. Don't get defensive yourself."},
+										{who:'me',d:"Tell me more about your feelings.",f:"Don't overdo it. You aren't a pschologist. You're a friend. Demonstrate genuine interest without getting overly earnest." }
+										]},
+							],[
+								{who:'me',d:"This summer, I worked three jobs. I knew I couldn’t ask for help from my family. It was all on me to do. So, yeah, I get it."},
+								{who:'them',d:"You do?"},
+								{who:'me',d:"Yeah, it was tough."},
+								{who:'them',d:"I am going to get this. It’s a money situation, but I do have a plan."},
+								{who:'options',
+									list:[
+										{who:'me',d:"Cool, want to tell me about it?", correct:true, f:"<b>Nice one!</b> This is an open-ended question that will keep the conversation going. We're well on our way to an open conversation."},
+										{who:'me',d:"Sounds great.",f:"<b>Not great.</b> A fair thing to say but a conversation killer. Ask an open question instead."},
+										{who:'me',d:"Do you have a budget?",f:"<b>Not great.</b> We're not here to solve the problem. We are here to ask and listen. Ask open-ended questions." }
+										]},
+							]
 						]
 
 
 					},
 					{
 						type:'summary',
-
+						content:'\
+							<h1>Remember</h1>\
+							<div class="post-it">\
+								<ul>\
+									<li>Watch for<b> irritability </b>and<b> defensiveness </b></li>\
+									<li>Find an appropriate<b> time </b>and<b> place </b></li>\
+									<li>Model<b> honest </b>conversation</li>\
+									<li>Ask<b> open-ended questions </b></li>\
+								</ul>\
+							</div><br>\
+							<button class="capsule">Got it.</button>\
+						'
 					},
 					{
 						type:'intention',
+						content:"\
+							<h1>This week</h1>\
+							<p>Watch out for men in your life who are <b>struggling</b>.</p>\
+							<p>Take the time to <b>make conversation</b> and ask meaningul <b>questions</b>.</p>\
+							<button class='capsule'>I'm in.</button><button class='capsule'>I can't do this.</button>\
+						"
 					},
 					{
-						type:'sequel'
+						type:'sequel',
+						content:"\
+						<h1>Next Up</h1>\
+							<div class='story-link'></div>\
+							<button class='capsule'>Other Stories</button><button class='capsule'>Review Learnings</button>\
+						"
 					}
 				],
 			]
@@ -134,14 +175,55 @@
 					var bottomOfSeg = topOfSeg + $seg.outerHeight() - $(window).height();
 					$('html, body').animate({scrollTop:Math.max(topOfSeg,Math.min(bottomOfSeg,$thing.offset().top - 200))},1000);
 				}
-				
-				function makeConversation($seg,chapter){
-					var convo = chapter.convo;
+
+
+				function makeConversations($seg,chapter){
+
+					var convos = [];
+
+					var iConvo = 0;
+
+					function onConvoComplete(){
+						iConvo++;
+						console.log('onConvoComplete');
+						doNextConvo();
+					}
+
+					function doNextConvo(){
+						convos[iConvo].play();
+					}
+
+					for(var c in chapter.convos){
+						var convo = new Conversation($seg,chapter.convos[c],onConvoComplete);
+						convo.reset();
+						convos[c] = convo;
+					}
+					
+					doNextConvo();
+				}
+
+				function Conversation($seg,convo,onComplete){
+	
 					var $convo = $('<ul class="conversation">').appendTo($seg);
 
+					this.reset = function(){
+						$convo.find('> li').css({opacity:0});
+					}
+
+					this.play = function(){
+						$convo.find('> li').each(function(i){
+							$(this).delay(i*1500).animate({opacity:1});
+							console.log(this);
+						})
+					}
+					
 					for( i in convo){
 						if(convo[i] == '...'){
-							var $btn = $('<li class="break"></li>').appendTo($convo);
+							var $btn = $('<li class="break breakpoint"></li>').appendTo($convo);
+							$btn.click(function(){
+								$(this).hide();
+								onComplete();
+							})
 						}
 						else if(convo[i].who =='header'){
 							var $h = $('<li class="header"><h1>'+convo[i].d+'</h1></li>').appendTo($convo);
@@ -152,24 +234,64 @@
 							}
 
 						} else if( convo[i].who =='options' ){
-							var $options = $('<li class="options">').appendTo($convo);
+
+							var $decisionPoint = $('<li class="decision-point">').appendTo($convo);
+
+							var $me = $('<li class="me from-an-option">').appendTo($decisionPoint);
+							var $options = $('<li class="options breakpoint">').appendTo($decisionPoint);
+							var $feedback = $('<li class="feedback"></li>').appendTo($decisionPoint).hide();
+							var $btns = $('<li class="buttons"><button class="capsule">Try something else</button></li>').appendTo($decisionPoint);
+							$btns.css({opacity:0});
+
 							for(var b in convo[i].list){
 				
 								var $btn = $('<button class="bubble">'+convo[i].list[b].d+'</button>').appendTo($options);
 								$btn.data('node',convo[i].list[b]);
 		
 								$btn.click(function(){
+
+									var $decisionPoint = $btn.closest('.decision-point');
+									var $options = $decisionPoint.find('.options');
+									var $feedback = $decisionPoint.find('.feedback');
+									var $btns = $decisionPoint.find('.buttons');
+
 									var node = $(this).data('node');
+									
+									$me.html('<p>'+node.d+'</p>');
+									//var $me = $('<li class="'+node.who+'"><p>'+node.d+'</p></li>').appendTo($convo);
+									$feedback.removeClass('correct')
+									$feedback.removeClass('incorrect')
+									if(node.correct) $feedback.addClass('correct')
+									else $feedback.addClass('incorrect')
+
+									$feedback.html(node.f).show();
+
+									var o = $(this).offset();
+									
 									$options.hide();
-									var $me = $('<li class="'+node.who+'"><p>'+node.d+'</p></li>').appendTo($convo);
-									var $me = $('<li class="feedback">'+node.f+'</li>').appendTo($convo);
+
+									$me.offset(o).animate({top:0,left:0});
+									$feedback.css({opacity:0}).delay(500).animate({opacity:1});
 
 									if(node.correct){
-										var $btns = $('<li class="buttons"><button class="capsule">Now what?</button></li>').appendTo($convo);
-										$btns.find('button').click(function(){
-											toSeg($('.segment').index($seg)+1);
+										$btns.delay(1000).animate({opacity:1});
+										$btns.find('button').html("What's next?").click(function(){
+											//toSeg($('.segment').index($seg)+1);
+											$btns.hide();
+											onComplete();
 										})	
+									} else {
+										$btns.delay(1000).animate({opacity:1});
+										$btns.find('button').click(function(){
+											$btns.hide();
+											$options.show();
+											$me.remove();
+											$feedback.remove();
+											onComplete();
+										})
 									}
+
+									$btns.css({opacity:0}).delay(1000).animate({opacity:1});
 								});
 
 							}
@@ -181,56 +303,72 @@
 
 				function makeLearnings($seg,chapter){
 					$('<div class="segment-content">').appendTo($seg).html(chapter.content);
-	
+				}
+
+				function makeSummary($seg,chapter){
+					$('<div class="segment-content centered">').appendTo($seg).html(chapter.content);
 				}
 
 				function toSeg(iSeg){
-					console.log(iSeg);
-					//scrollTo($('.segment').eq(iSeg));
 
+				}
 
-					function doBit(iBit){
-						var stopped = false;
-						var allTheStuff = $('.segment').eq(iSeg).find('.conversation li');
-						
-						if(iBit>0){
-							var theBreak = $('.segment').eq(iSeg).find('.conversation li.break').eq(iBit-1);
-							var iBreak = allTheStuff.index(theBreak);
-							allTheStuff = allTheStuff.slice(iBreak+1);
-						}
-						
-						//scrollTo($('.segment').eq(iSeg), allTheStuff.eq(0));
+				/*function toSeg(iSeg){
+					doBit(iSeg,0)
+				}
+					
+				function doBit(iSeg,iBit){
+					var stopped = false;
+					var allTheStuff = $('.segment').eq(iSeg).find('.conversation li');
+					
+					if(iBit>0){
+						var theBreak = $('.segment').eq(iSeg).find('.conversation li.breakpoint').eq(iBit-1);
+						var iBreak = allTheStuff.index(theBreak);
+						allTheStuff = allTheStuff.slice(iBreak+1);
+					}
+					
+					//scrollTo($('.segment').eq(iSeg), allTheStuff.eq(0));
 
-						allTheStuff.css({opacity:0}).each(function(i){		
-							if( !stopped ){
-								if($(this).hasClass('them')) $(this).css({left:-50});
-								else if ($(this).hasClass('me')) $(this).css({left:50});
-
+					allTheStuff.css({opacity:0}).each(function(i){		
+						if( !stopped ){
+							if($(this).hasClass('them')){
+								$(this).css({left:-50});
 								$(this).delay(i*1500).animate({opacity:1,left:0});
+							}else if ($(this).hasClass('me')){
+								$(this).css({left:50});
+								$(this).delay(i*1500).animate({opacity:1,left:0});
+							} else {
+								$(this).delay(i*1000).animate({opacity:1});
 							}
-							if($(this).hasClass('break') && !stopped){
-								stopped = true;
+							
+						}
+						if($(this).hasClass('breakpoint') && !stopped){
+							stopped = true;
+							if($(this).hasClass('break')){
 								$(this).click(function(){
 									$(this).hide();
-									doBit(iBit+1);
+									doBit(iSeg,iBit+1);
 								})
 							}
-						})
-					}
-
-					doBit(0);
-				}
+						}
+					})
+				}*/
 
 				function makeSegment(iSeg){
 					var seg = story[iSeg];
 					
 					if(seg.type == 'convo'){
 						$seg = $('<div class="segment black">').appendTo('.scroller');
-						makeConversation($seg,seg);
+						makeConversations($seg,seg);
 					}
-					if(seg.type == 'learnings'){
+					if(seg.type == 'learnings' || seg.type == 'intention' || seg.type == 'sequel'){
 						$seg = $('<div class="segment">').appendTo('.scroller');
 						makeLearnings($seg,seg);
+					}
+
+					if(seg.type == 'summary'){
+						$seg = $('<div class="segment">').appendTo('.scroller');
+						makeSummary($seg,seg);
 					}
 
 					$seg.find('button.capsule').click(function(){
@@ -246,7 +384,7 @@
 				}
 			}
 
-			makeStory(stories[0]);
+			makeStory(stories[1]);
 
 			$('.modal-nav button').eq(0).addClass('active');
 			$('.modal-page').eq(0).show();
@@ -314,6 +452,13 @@
 		  font-weight: bold;
 		}	
 
+		@font-face {
+		  font-family: HandFont;
+		  src: url("./AnnieUseYourTelescope-Regular.ttf");
+		  font-weight: normal;
+
+		}
+
 		body{
 			font-family: "BodyFont";
 			padding: 0px;
@@ -323,6 +468,46 @@
 		button{
 			cursor: pointer;
 			outline: none;
+		}
+
+		.post-it{
+			width: 500px;
+			height: 460px;
+			
+			padding: 100px 70px 50px 60px;
+			display: inline-block;
+			background-image: url('./post-it.png');
+			background-position: center;
+			background-size: 100%;
+			text-align: left;
+			box-sizing: border-box;
+			font-family: HandFont;
+			font-size: 25px;
+			font-weight: normal;
+			color: #0E235D;
+		}
+
+		.post-it ul{
+			transform: rotate(3deg);
+			list-style-type: none;
+		}
+
+		.post-it li{
+			position: relative;
+			padding-left: 20px;
+		}
+
+		.post-it li:before{
+			content: "-";
+			position: absolute;
+			left: 0px;
+			top: 0px;
+
+		}
+
+		.post-it b{
+			background-image: url('./highlighter.png');
+			background-size: stretch;
 		}
 
 		
@@ -356,6 +541,9 @@
 
 		.walec h1{
 			vertical-align: middle;
+			font-family: 'HeaderFont';
+			font-size: 2.5em;
+			font-weight: normal;
 		}
 
 		.walec h1 .icon{
@@ -455,6 +643,7 @@
 
 		.segment.black{
 			background: #222;
+			justify-content: flex-start;
 		}
 
 		.black h1{
@@ -554,7 +743,7 @@
 			margin: 0px;
 		}
 
-		.story-list li{
+		.story-list li, .story-link{
 			display: block;
 			margin: 0px 5px 5px 5px;
 			
@@ -607,6 +796,7 @@
 
 		.conversation li.buttons{
 			padding: 20px 0px;
+			text-align: center;
 		}
 
 		.conversation li.feedback{
@@ -622,6 +812,11 @@
 			background-size: 50px;
 			min-height: 50px;
 
+		}
+
+		.conversation li.feedback.correct{
+			color: #3BB54A;
+			background-image: url('./tick.png');
 		}
 
 		.bubble{
@@ -659,6 +854,28 @@
 			left: auto;
 			border-width: 0 10px 10px 0;
 			border-color: transparent #91B8C5 transparent transparent;
+		}
+
+		.conversation li.options{
+			width: 900px;
+			left: -200px;
+			margin-top:25px;
+		}
+
+		.conversation .options .bubble{
+			margin: 5px;
+			border: 1px solid white;
+			animation-name: throboutline;
+			animation-duration: 1s;
+			animation-iteration-count: infinite;
+			background: rgba(145,184,197,0.2);
+			color: white;
+		}
+
+		@keyframes throboutline{
+			0%{	border-color: rgba(255,255,255,1); }
+			50%{ border-color: rgba(255,255,255,0.2); }
+			100%{ border-color: rgba(255,255,255,1); }
 		}
 
 		.conversation li.me{
@@ -849,12 +1066,26 @@
 		.learning-node h1{
 			line-height: 75px;
 			margin-bottom: 0px;
-			font-size: 2em;
+			font-size: 2.5em;
+			font-weight: normal;
+			font-family: 'HeaderFont';
 		}
 
-		.learning-node h2, .learning-node p{
+		.learning-node h2{
+			margin-top: 0px;
+		}
+
+		.learning-node p{
 			font-weight: normal;
 			margin-top: 0px;
+		}
+
+		.segment-content.centered{
+			text-align: center;
+		}
+
+		.segment-content button.capsule{
+			margin-right: 5px;
 		}
 
 	</style>
