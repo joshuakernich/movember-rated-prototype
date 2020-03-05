@@ -125,10 +125,10 @@
 							<h1>Remember</h1>\
 							<div class="post-it">\
 								<ul>\
-									<li>Watch for<b> irritability </b>and<b> defensiveness </b></li>\
-									<li>Find an appropriate<b> time </b>and<b> place </b></li>\
-									<li>Model<b> honest </b>conversation</li>\
-									<li>Ask<b> open-ended questions </b></li>\
+									<li>Watch for <b>irritability</b> and <b>defensiveness</b></li>\
+									<li>Find an appropriate <b>time</b> and <b>place</b></li>\
+									<li>Model <b>honest</b> conversation</li>\
+									<li>Ask <b>open-ended questions</b></li>\
 								</ul>\
 							</div><br>\
 							<button class="capsule">Got it.</button>\
@@ -137,21 +137,82 @@
 					{
 						type:'intention',
 						content:"\
-							<h1>This week</h1>\
+							<div class='intentions'>\
+							<h1>Over the next few days</h1>\
 							<p>Watch out for men in your life who are <b>struggling</b>.</p>\
 							<p>Take the time to <b>make conversation</b> and ask meaningul <b>questions</b>.</p>\
 							<button class='capsule'>I'm in.</button><button class='capsule'>I can't do this.</button>\
+							</div>\
 						"
 					},
 					{
 						type:'sequel',
 						content:"\
 						<h1>Next Up</h1>\
-							<div class='story-link'></div>\
+							<div class='story-link'>\
+								<h1></h1>\
+							</div>\
 							<button class='capsule'>Other Stories</button><button class='capsule'>Review Learnings</button>\
 						"
 					}
 				],
+				[
+					{
+						type:'convo',
+						convos:[[
+						{who:"me",d:"So, are you coming?"},
+						{who:"them",d:"Not tonight, I am not in the mood."},
+						{who:"me",d:"What you are doing in here?"},
+						{who:"me",d:"Are you alone?"},
+						{who:"them",d:"Yes, I am. I just want to hang out here tonight."},
+						'...'
+						],[
+						{who:"me",d:"So, you’re not coming?"},
+						{who:"them",d:"No."},
+						{who:"me",d:"Ok, see ya. I guess."},
+						{who:"buttons",list:["Sounds familiar","Other stories"]}
+						]]
+					},{
+
+					
+						type:'learnings',
+						content:"\
+						<div class='learning-node watch'>\
+						<h1>WATCH</h1>\
+						<p><b>Social isolation</b> can be a clear sign that a man is struggling. Being naturally introverted or shy is no cause for alarm. But if there is a sudden or significant change in social patterns, it is important to pay attention.</p>\
+						</div>\
+						<div class='learning-node listen'>\
+						<h1>LISTEN</h1>\
+						<h2>Support honesty</h2>\
+						<p></p></div>\
+						</div>\
+						<button class='capsule'>Let's see that play out</button>",
+					},
+					{
+						type:'convo',
+						convos:[[
+							{who:"me",d:"So, you’re not coming?"},
+							{who:"them",d:"No."},
+							{who:"options",list:[{d:"Ok, see ya. I guess."},{d:"Is something going on?"},{d:""}]}
+						]]
+					}
+
+					/*"Is something going on?"
+					"I don’t want to bring you down."
+					"Troy, what’s going on? I've got a minute.",
+					"If I am not a basketball player, then who am I?",
+					"What do you mean?",
+					"I mean,that I didn’t make the team.",
+					"What? No way, they need you!",
+					"I didn’t make it.",
+					"Are you ok?",
+					"Not really.I feel lost.",
+					"What do you mean by lost?",
+					"I don’t know, if that is the right word, um, I-",
+					"I think I know what you mean-sorry, keep going, I shouldn’thave interrupted.",
+					"I think it has to do with making new friends.",
+					"Want to talk to me about it?"*/
+				]
 			]
 
 			
@@ -162,12 +223,20 @@
 
 				var iSegCurrent = 0;
 				var $seg;
+				var segs = [];
 				
 				for(var iSeg in story){
-					makeSegment(iSeg);			
+					var seg = new Segment(iSeg,onSegmentComplete);	
+					segs[iSeg] = seg;		
 				}
 
-				toSeg(0);
+				segs[0].play();
+
+				function onSegmentComplete(iSeg){
+					iSeg = parseInt(iSeg);
+					segs[iSeg+1].play();
+					scrollTo(segs[iSeg+1].$seg);
+				}
 
 				function scrollTo($seg,$thing){
 					if(!$thing) $thing = $seg;
@@ -177,7 +246,7 @@
 				}
 
 
-				function makeConversations($seg,chapter){
+				function Conversations($seg,chapter){
 
 					var convos = [];
 
@@ -199,7 +268,10 @@
 						convos[c] = convo;
 					}
 					
-					doNextConvo();
+					this.start = function(){
+						iConvo = 0;
+						doNextConvo();
+					}
 				}
 
 				function Conversation($seg,convo,onComplete){
@@ -309,82 +381,46 @@
 					$('<div class="segment-content centered">').appendTo($seg).html(chapter.content);
 				}
 
-				function toSeg(iSeg){
+				function Segment(iSeg,onComplete){
 
-				}
+					this.$seg = $('<div class="segment">').appendTo('.scroller');
+					var convos;
 
-				/*function toSeg(iSeg){
-					doBit(iSeg,0)
-				}
-					
-				function doBit(iSeg,iBit){
-					var stopped = false;
-					var allTheStuff = $('.segment').eq(iSeg).find('.conversation li');
-					
-					if(iBit>0){
-						var theBreak = $('.segment').eq(iSeg).find('.conversation li.breakpoint').eq(iBit-1);
-						var iBreak = allTheStuff.index(theBreak);
-						allTheStuff = allTheStuff.slice(iBreak+1);
+					this.play = function(){
+						this.$seg.find('.post-it b').each(function(i){
+							$(this).delay(i*500).animate({opacity:1},500,function(){ $(this).addClass('highlighted');});
+						});
+						if(convos) convos.start();
 					}
-					
-					//scrollTo($('.segment').eq(iSeg), allTheStuff.eq(0));
 
-					allTheStuff.css({opacity:0}).each(function(i){		
-						if( !stopped ){
-							if($(this).hasClass('them')){
-								$(this).css({left:-50});
-								$(this).delay(i*1500).animate({opacity:1,left:0});
-							}else if ($(this).hasClass('me')){
-								$(this).css({left:50});
-								$(this).delay(i*1500).animate({opacity:1,left:0});
-							} else {
-								$(this).delay(i*1000).animate({opacity:1});
-							}
-							
-						}
-						if($(this).hasClass('breakpoint') && !stopped){
-							stopped = true;
-							if($(this).hasClass('break')){
-								$(this).click(function(){
-									$(this).hide();
-									doBit(iSeg,iBit+1);
-								})
-							}
-						}
-					})
-				}*/
-
-				function makeSegment(iSeg){
 					var seg = story[iSeg];
 					
 					if(seg.type == 'convo'){
-						$seg = $('<div class="segment black">').appendTo('.scroller');
-						makeConversations($seg,seg);
+						this.$seg.addClass('black');
+						convos = new Conversations(this.$seg,seg);
 					}
-					if(seg.type == 'learnings' || seg.type == 'intention' || seg.type == 'sequel'){
-						$seg = $('<div class="segment">').appendTo('.scroller');
-						makeLearnings($seg,seg);
-					}
-
-					if(seg.type == 'summary'){
-						$seg = $('<div class="segment">').appendTo('.scroller');
-						makeSummary($seg,seg);
+					if(seg.type == 'learnings' || seg.type == 'sequel'){
+						makeLearnings(this.$seg,seg);
 					}
 
-					$seg.find('button.capsule').click(function(){
+					if(seg.type == 'summary' || seg.type == 'intention' ){
+						makeSummary(this.$seg,seg);
+					}
+
+					this.$seg.find('button.capsule').click(function(){
 						if( $(this).data('target')){
 							var arr = $(this).data('target').split('-');
 							if(arr[0] == 'story'){
 								makeStory(stories[arr[1]])
 							}
 						} else{
-							toSeg(parseInt(iSeg)+1);
+							onComplete(iSeg);
 						}
 					});
 				}
 			}
 
-			makeStory(stories[1]);
+			makeStory(stories[0]);
 
 			$('.modal-nav button').eq(0).addClass('active');
 			$('.modal-page').eq(0).show();
@@ -470,6 +506,11 @@
 			outline: none;
 		}
 
+		.intentions{
+			display: inline-block;
+			text-align: left;
+		}
+
 		.post-it{
 			width: 500px;
 			height: 460px;
@@ -506,12 +547,31 @@
 		}
 
 		.post-it b{
+			display: inline-block;
+			position: relative;
+		}
+
+		.post-it b:before{
+			content: "";
 			background-image: url('./highlighter.png');
 			background-size: stretch;
+			position: absolute;
+			top:-5px;
+			left:-10px;
+			right:-10px;
+			bottom: 0px;
+			z-index: -1;
+
+			clip-path: inset(0px 100% 0px 0px);
+			transition: all 0.5s;
+		}
+
+		.post-it b.highlighted:before{
+			clip-path: inset(0px 0% 0px 0px);
 		}
 
 		
-	
+
 		.segment-content{
 			width: 700px;
 			max-width: 100%;
@@ -1061,6 +1121,10 @@
 
 		.learning-node.ask:before{
 			background-position: 0% -100%;
+		}
+
+		.learning-node.listen:before{
+			background-position: 0% -200%;
 		}
 
 		.learning-node h1{
