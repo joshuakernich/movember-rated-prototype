@@ -62,7 +62,7 @@
 						<h1>ASK</h1>\
 						<p>It's important to find <b>the right time and place</b> to have sensitive conversations. Consider finding a somewhere private, calm, and sensitive to the needs of the individual man. Dont get hung up on everything being perfect. Consider sitting side-by-side, being delicate, and courageous.</p></div>\
 						</div>\
-						<button class='capsule'>Let's see that play out</button>",
+						<button class='learning-capsule capsule'>Let's see that play out</button>",
 						
 
 					},{
@@ -89,7 +89,7 @@
 						<h2>Model honest conversation</h2>\
 						<p>Demonstrating your own personal ability to be honest, open, and vulnerable is a great way to help a man open up. Risking exposure of your own struggles helps destigmatize the issues and makes strides toward developing a close relationship.</p>\
 						</div>\
-						<button class='capsule'>Give it a try</button>",
+						<button class='learning-capsule capsule'>Give it a try</button>",
 					},
 					{
 						type:'convo',
@@ -150,9 +150,12 @@
 						content:"\
 						<h1>Next Up</h1>\
 							<div class='story-link'>\
-								<h1></h1>\
+								<div class='story-info'>\
+									<h1>Rejected & Isolated</h1>\
+									<h2>Better Listening</h2>\
+								</div>\
 							</div>\
-							<button class='capsule'>Other Stories</button><button class='capsule'>Review Learnings</button>\
+							<div class='sequel-buttons'><button class='capsule'>Other Stories</button><button class='capsule'>Review Learnings</button></div>\
 						"
 					}
 				],
@@ -174,44 +177,144 @@
 						]]
 					},{
 
-					
 						type:'learnings',
 						content:"\
 						<div class='learning-node watch'>\
 						<h1>WATCH</h1>\
-						<p><b>Social isolation</b> can be a clear sign that a man is struggling. Being naturally introverted or shy is no cause for alarm. But if there is a sudden or significant change in social patterns, it is important to pay attention.</p>\
+						<p><b>Social isolation</b> can be a clear sign that a man is struggling. Being naturally introverted or shy is no cause for alarm. But if there is a <b>sudden or significant change</b> in social patterns, it is important to pay attention.</p>\
 						</div>\
 						<div class='learning-node listen'>\
 						<h1>LISTEN</h1>\
 						<h2>Support honesty</h2>\
-						<p></p></div>\
+						<p>Good listenting starts with providing a sounding board that can be trusted. This means avoiding <b>assumptions</b>, avoiding <b>judgement</b>, and avoiding the temptation to <b>provide answers</b>.</li>\
+						</p>\
+						<h2>Identify clarifying questions</h2>\
+						<p>Express genuine interest in understanding the man and the conversation.</p><p>Questions like: <li>what do you mean by...</li><li>Are you saying...</li><li>Do you feel...</li><li>Do you mean...</li></p>\
 						</div>\
-						<button class='capsule'>Let's see that play out</button>",
+						</div>\
+						<button class='learning-capsule capsule'>Let's see that play out</button>",
 					},
 					{
 						type:'convo',
-						convos:[[
+						convos:[
+						[
 							{who:"me",d:"So, you’re not coming?"},
 							{who:"them",d:"No."},
-							{who:"options",list:[{d:"Ok, see ya. I guess."},{d:"Is something going on?"},{d:""}]}
-						]]
+							{who:"options",list:[{d:"Ok, see ya. I guess."},{d:"Is something going on?", correct:true, f:"Nicely done."},{d:"Suit yourself"}]}
+						],[
+							{who:"them",d:"I don’t want to bring you down."},
+							{who:"me",d:"What’s going on? I've got a minute."},
+							{who:"them",d:"If I am not a basketball player, then who am I?"},
+							{who:"options",list:[{d:""},{d:"What do you mean?", correct:true, f:"Nicely done."},{d:""}]}
+						],[
+							{who:"them",d:"I mean,that I didn’t make the team."},
+							{who:"me",d:"What? No way, they need you!"},
+							{who:"them",d:"I didn’t make it."},
+							{who:"me",d:"Are you ok?"},
+							{who:"them",d:"Not really.I feel lost."},
+							{who:"options",list:[{d:""},{d:"What do you mean by lost?", correct:true, f:"Nicely done."},{d:""}]}
+						],[
+							{who:"them",d:"I don’t know, if that is the right word, um, I-"},
+							{who:"them",d:"I wonder how I'm going to make friends."},
+							{who:"me",d:"Want to talk to me about it?"},
+							{who:"buttons",list:["I get it."]}
+						]
+						]
+					},
+					{
+						type:'summary',
+						content:'\
+							<h1>Remember</h1>\
+							<div class="post-it">\
+								<ul>\
+									<li>Watch for <b>social isolation</b>.</li>\
+									<li>Support honesty by avoiding <b>assumptions</b>, <b>judgment</b>, or providing <b>answers</b>.</li>\
+									<li>Ask <b>clarifying questions</b>.</li>\
+								</ul>\
+							</div><br>\
+							<button class="capsule">Got it.</button>\
+						'
+					},
+					{
+						type:'intention',
+						content:"\
+							<div class='intentions'>\
+							<h1>Over the next few days</h1>\
+							<p>Watch out for men in your life who are <b>isolating themeselves</b>.</p>\
+							<p>Take the time to <b>listen</b> with genuine interest and care.</p>\
+							<button class='capsule'>I'm in.</button><button class='capsule'>I can't do this.</button>\
+							</div>\
+						"
+					},
+					{
+						type:'sequel',
+						content:"\
+						<h1>Next Up</h1>\
+							<div class='story-link'>\
+								<div class='story-info'>\
+									<h1>Rejected & Isolated</h1>\
+									<h2>Better Listening</h2>\
+								</div>\
+							</div>\
+							<button class='capsule'>Other Stories</button><button class='capsule'>Review Learnings</button>\
+						"
+					}
+				],[
+					{
+						type:'convo',
+						convos:[
+							[
+								{who:'me',d:"Where were we in the game?"},
+								{who:'them',d:"I don’t remember, it has been a while since we played Xbox."},
+								{who:'me',d:"Yeah, we used to play all of the time."},
+								{who:'them',d:"I guess, I just feel like playing alone lately."},
+								{who:'me',d:"I got a message earlier from Rob, he says come to the library lounge. We can study together."},
+								{who:'them',d:"You don’t need me. I am just going to slow you down."},
+								{who:'me',d:"What do you mean? You get this stuff way more than any of us! Rob is a big talker, but I don’t think he understands Chemistry. Without you there to correct him, this will go wrong."},
+								{who:'them',d:"I don’t feel up to it. I want to be alone."},
+								{who:'me',d:"Kevin, we talked about this. How about we try leaving the room, see what happens."},
+								{who:'them',d:"I can’t do it."},
+
+								{who:'me',d:"What about a walk, get some fresh air."},
+
+								{who:'them',d:"I can’t, I don’t want to leave my room, it’s too much."},
+								{who:'me',d:"Ok, we will stay here. Is there some way I can help?"},
+								{who:'them',d:"I don’t think you can."},
+								{who:'me',d:"If I can’t help, is there someone else you can talk to?"},
+								{who:'them',d:"I don’t know."},
+								{who:'me',d:"Have you talked to your parents? I know there is a counselling service on campus, have you tried that?"},
+								{who:'them',d:"I don’t want to bother my parents with this. And I have heard services is always booked up."},
+								{who:'me',d:"If I needed help, I would call my parents. And yes,the counselling service is busy for a reason. It helps people and it never hurts to book an appointment."}
+							]
+						]
+					},
+					{
+						type:'learnings',
+						content:'\
+						\
+						'
+					}
+				],[
+					{
+						type:'convo',
+						convos:[
+							[
+								{who:'me',d:"Chad is drunk, again. I could smell it on him when we were talking."},
+								{who:'me',d:"At an intramural, game! This is not the time or the place .We have talked to him about this."},
+								{who:'me',d:"He almost passed the ball to the other side, look,on the back court."},
+								{who:'me',d:"Whoa, did he just elbow-is that Melissa? That’s a foul, he is on his way back in. Come with me, I want totalk to him."},
+								{who:'them',d:"It’s good to see you guys too."},
+								{who:'me',d:"Is this the way you want to cope? I can smell it from here!"},
+								{who:'them',d:"I was only having a few beers. It helps me forget for a while."},
+								{who:'me',d:"Look, I’m worried about you. How have you been since we talked?"},
+								{who:'them',d:"Me? I am fine, I’m having a great time."},
+								{who:'me',d:"You don’t seem so good."},
+								{who:'them',d:"You guys are downers, I’m off."},
+								{who:'me',d:"Alright, but, I will check in on you tomorrow."}
+							]
+						]
 					}
 
-					/*"Is something going on?"
-					"I don’t want to bring you down."
-					"Troy, what’s going on? I've got a minute.",
-					"If I am not a basketball player, then who am I?",
-					"What do you mean?",
-					"I mean,that I didn’t make the team.",
-					"What? No way, they need you!",
-					"I didn’t make it.",
-					"Are you ok?",
-					"Not really.I feel lost.",
-					"What do you mean by lost?",
-					"I don’t know, if that is the right word, um, I-",
-					"I think I know what you mean-sorry, keep going, I shouldn’thave interrupted.",
-					"I think it has to do with making new friends.",
-					"Want to talk to me about it?"*/
 				]
 			]
 
@@ -221,6 +324,8 @@
 				$('.scroller').empty();
 				$('html, body').scrollTop(0);
 
+				var $dots = $('<ul class="dots">').appendTo($('.scroller'));
+
 				var iSegCurrent = 0;
 				var $seg;
 				var segs = [];
@@ -228,15 +333,17 @@
 				for(var iSeg in story){
 					var seg = new Segment(iSeg,onSegmentComplete);	
 					segs[iSeg] = seg;		
+					$('<li class="dot">').appendTo($dots);
 				}
-
-				segs[0].play();
 
 				function onSegmentComplete(iSeg){
 					iSeg = parseInt(iSeg);
 					segs[iSeg+1].play();
+					$('.dot').removeClass('active').eq(iSeg+1).addClass('active');
 					scrollTo(segs[iSeg+1].$seg);
 				}
+
+				onSegmentComplete(-1);
 
 				function scrollTo($seg,$thing){
 					if(!$thing) $thing = $seg;
@@ -245,17 +352,15 @@
 					$('html, body').animate({scrollTop:Math.max(topOfSeg,Math.min(bottomOfSeg,$thing.offset().top - 200))},1000);
 				}
 
-
-				function Conversations($seg,chapter){
+				function ConversationsSegment(iSeg,$seg,chapter,onComplete){
 
 					var convos = [];
-
 					var iConvo = 0;
 
 					function onConvoComplete(){
 						iConvo++;
-						console.log('onConvoComplete');
-						doNextConvo();
+						if(convos[iConvo]) doNextConvo();
+						else onComplete(iSeg);
 					}
 
 					function doNextConvo(){
@@ -263,18 +368,19 @@
 					}
 
 					for(var c in chapter.convos){
-						var convo = new Conversation($seg,chapter.convos[c],onConvoComplete);
-						convo.reset();
+						var convo = new Conversation(iSeg,$seg,chapter.convos[c],onConvoComplete,onComplete);
+						//convo.reset();
 						convos[c] = convo;
 					}
 					
 					this.start = function(){
+						for(var c in convos) convos[c].reset();
 						iConvo = 0;
 						doNextConvo();
 					}
 				}
 
-				function Conversation($seg,convo,onComplete){
+				function Conversation(iSeg,$seg,convo,onPieceComplete,onAllComplete){
 	
 					var $convo = $('<ul class="conversation">').appendTo($seg);
 
@@ -284,8 +390,7 @@
 
 					this.play = function(){
 						$convo.find('> li').each(function(i){
-							$(this).delay(i*1500).animate({opacity:1});
-							console.log(this);
+							$(this).delay(750 + i*1500).animate({opacity:1});
 						})
 					}
 					
@@ -294,7 +399,7 @@
 							var $btn = $('<li class="break breakpoint"></li>').appendTo($convo);
 							$btn.click(function(){
 								$(this).hide();
-								onComplete();
+								onPieceComplete();
 							})
 						}
 						else if(convo[i].who =='header'){
@@ -303,6 +408,10 @@
 							var $btns = $('<li class="buttons">').appendTo($convo);
 							for(var b in convo[i].list){
 								var $btn = $('<button class="capsule">'+convo[i].list[b]+'</button>').appendTo($btns);
+								$btn.click(function(){
+
+									onAllComplete(iSeg);
+								})
 							}
 
 						} else if( convo[i].who =='options' ){
@@ -313,6 +422,10 @@
 							var $options = $('<li class="options breakpoint">').appendTo($decisionPoint);
 							var $feedback = $('<li class="feedback"></li>').appendTo($decisionPoint).hide();
 							var $btns = $('<li class="buttons"><button class="capsule">Try something else</button></li>').appendTo($decisionPoint);
+
+							var isCorrect = false;
+
+
 							$btns.css({opacity:0});
 
 							for(var b in convo[i].list){
@@ -346,20 +459,21 @@
 									$feedback.css({opacity:0}).delay(500).animate({opacity:1});
 
 									if(node.correct){
-										$btns.delay(1000).animate({opacity:1});
 										$btns.find('button').html("What's next?").click(function(){
-											//toSeg($('.segment').index($seg)+1);
-											$btns.hide();
-											onComplete();
+
+											onPieceComplete();
+											$(this).hide();
+											$(this).off('click');
 										})	
 									} else {
-										$btns.delay(1000).animate({opacity:1});
 										$btns.find('button').click(function(){
-											$btns.hide();
+											console.log('here incorrect');
+											$btns.show().css({opacity:0});
 											$options.show();
-											$me.remove();
-											$feedback.remove();
-											onComplete();
+											$me.empty();
+											$feedback.hide();
+
+											$(this).off('click');
 										})
 									}
 
@@ -373,41 +487,70 @@
 					}
 				}
 
-				function makeLearnings($seg,chapter){
-					$('<div class="segment-content">').appendTo($seg).html(chapter.content);
+				function LearningsSegment(iSeg,$seg,chapter,onComplete){
+					var $el = $('<div class="segment-content">').appendTo($seg).html(chapter.content);
+					$el.find('.capsule').click(function(){
+						onComplete(iSeg);
+					})
+
+					this.start = function(){
+
+					}
 				}
 
-				function makeSummary($seg,chapter){
-					$('<div class="segment-content centered">').appendTo($seg).html(chapter.content);
+				function SequelSegment(iSeg,$seg,chapter,onComplete){
+					var $el = $('<div class="segment-content">').appendTo($seg).html(chapter.content);
+					$el.find('.story-link').click(function(){
+						onComplete();
+					})
+
+					this.start = function(){
+
+					}
+				}
+
+				function SummarySegment(iSeg,$seg,chapter,onComplete){
+					var $el = $('<div class="segment-content centered">').appendTo($seg).html(chapter.content);
+					$el.find('.capsule').click(function(){
+						onComplete(iSeg);
+					})
+
+					this.start = function(){
+						$el.find('.post-it b').each(function(i){
+							$(this).delay(750+i*500).animate({opacity:1},500,function(){ $(this).addClass('highlighted');});
+						});
+					}
 				}
 
 				function Segment(iSeg,onComplete){
 
 					this.$seg = $('<div class="segment">').appendTo('.scroller');
-					var convos;
+					var view;
 
 					this.play = function(){
-						this.$seg.find('.post-it b').each(function(i){
-							$(this).delay(i*500).animate({opacity:1},500,function(){ $(this).addClass('highlighted');});
-						});
-						if(convos) convos.start();
+						
+						if(view) view.start();
 					}
 
 					var seg = story[iSeg];
 					
 					if(seg.type == 'convo'){
 						this.$seg.addClass('black');
-						convos = new Conversations(this.$seg,seg);
+						view = new ConversationsSegment(iSeg,this.$seg,seg,onSegmentComplete);
 					}
-					if(seg.type == 'learnings' || seg.type == 'sequel'){
-						makeLearnings(this.$seg,seg);
+					if(seg.type == 'learnings'){
+						view = new LearningsSegment(iSeg,this.$seg,seg,onSegmentComplete);
 					}
 
 					if(seg.type == 'summary' || seg.type == 'intention' ){
-						makeSummary(this.$seg,seg);
+						view = new SummarySegment(iSeg,this.$seg,seg,onSegmentComplete);
 					}
 
-					this.$seg.find('button.capsule').click(function(){
+					if(seg.type == 'sequel'){
+						view = new SequelSegment(iSeg,this.$seg,seg,onSegmentComplete);
+					}
+
+					/*this.$seg.find('button.capsule').click(function(){
 						if( $(this).data('target')){
 							var arr = $(this).data('target').split('-');
 							if(arr[0] == 'story'){
@@ -416,7 +559,7 @@
 						} else{
 							onComplete(iSeg);
 						}
-					});
+					});*/
 				}
 			}
 
@@ -431,31 +574,23 @@
 				$('.modal-page').hide().eq(i).show();
 			})
 
-			$('button.hamburger').click(function(){
-				$('.modal-panel').addClass('alive');
-			});
+			var bToggle = false;
 
-			$('.modal .toggle-button').click(function(){
-				$('.modal').toggleClass('alive');
-				$('.scroller').toggleClass('offset');
-			});
+			$('.modal .toggle-button').click(toggleModal);
 
-			$('.more-convo').click(function(){
-				$('.modal').addClass('alive');
-				$('.scroller').addClass('offset');
-			});
+			function toggleModal(){
+				bToggle = !bToggle;
 
-			/*$('button.grid').click(function(){
-				$('.scroller').css({left:0});
-			});
+				$('.modal').removeClass('alive');
+				$('.scroller').removeClass('offset');
 
-			$('button.list').click(function(){
-				$('.scroller').css({left:'-200vw'});
-			});
+				if(bToggle){
+					$('.modal').toggleClass('alive');
+					$('.scroller').toggleClass('offset');
+				}
+			}
 
-			$('.story-list li, button.conversations').click(function(){
-				$('.scroller').css({left:'-100vw'});
-			});*/
+			
 
 			$('.walec > li').click(function(){
 
@@ -468,6 +603,13 @@
 					$(this).removeClass('inactive');
 					$(this).addClass('active');
 				}
+			})
+
+			$('.story-list li').click(function(){
+				var idx = $('.story-list li').index(this);
+				toggleModal();
+				makeStory(stories[idx+1]);
+
 			})
 		});
 	</script>
@@ -492,9 +634,8 @@
 		  font-family: HandFont;
 		  src: url("./AnnieUseYourTelescope-Regular.ttf");
 		  font-weight: normal;
-
 		}
-
+		
 		body{
 			font-family: "BodyFont";
 			padding: 0px;
@@ -504,6 +645,35 @@
 		button{
 			cursor: pointer;
 			outline: none;
+		}
+
+		.dots{
+			display: flex;
+			flex-direction: column;
+		 	align-items: center;
+		 	justify-content: center;
+		 	position: fixed;
+		 	right: 0px;
+		 	width: 50px;
+		 	height: 100vh;
+		 	z-index: 1;
+		}
+
+		.dot{
+			content: "";
+			width: 6px;
+			height: 6px;
+			background: rgba(150,150,150,0.5);
+			color: white;
+			display: block;
+			border-radius: 5px;
+			margin: 3px;
+		}
+
+		.dot.active{
+			width: 10px;
+			height: 10px;
+			box-shadow: 0px 0px 2px black, inset 0px 0px 1px rgba(255,255,255,0.5);
 		}
 
 		.intentions{
@@ -557,8 +727,8 @@
 			background-size: stretch;
 			position: absolute;
 			top:-5px;
-			left:-10px;
-			right:-10px;
+			left:-3px;
+			right:-3px;
 			bottom: 0px;
 			z-index: -1;
 
@@ -569,8 +739,6 @@
 		.post-it b.highlighted:before{
 			clip-path: inset(0px 0% 0px 0px);
 		}
-
-		
 
 		.segment-content{
 			width: 700px;
@@ -803,7 +971,7 @@
 			margin: 0px;
 		}
 
-		.story-list li, .story-link{
+		.story-link{
 			display: block;
 			margin: 0px 5px 5px 5px;
 			
@@ -816,24 +984,65 @@
 			background-position: center;
 			background-size: 150%;
 			filter: grayscale(100%);
+			text-align: center;
 		}
 
-		.story-list li.active{
+		.story-info:before{
+			content: "▶";
+			position: absolute;
+			top: 0px;
+			left: 0px;
+			right: 0px;
+			bottom: 0px;
+			background-image: url('./play-button.png');
+			background-position: center;
+			background-repeat: no-repeat;
+			background-size: 75px;
+		}
+
+		.story-link.active{
 
 			border: 5px solid orange;
 			filter: grayscale(0%);
 		}
 
-		.story-list li.active:after{
-			content: "NOW PLAYING ▶";
-			position: absolute;
-			right: 10px;
-			bottom: 10px;
-			padding: 10px;
-			background: white;
-			color: #555;
-			border: 5px solid orange;
+		.story-link.active:after{
+			
 		}
+
+		.story-info{
+			position: absolute;
+			top: 0px;
+			left: 0px;
+			right: 0px;
+			bottom: 0px;
+			background: linear-gradient(to top, black, transparent);
+		}
+
+		.story-info h1{
+			position: absolute;
+			bottom: 50px;
+			left: 20px;
+			margin: 0px;
+			padding: 0px;
+			color: white;
+			font-size: 20px;
+			font-weight: normal;
+			opacity: 0.5;
+		}
+
+		.story-info h2{
+			position: absolute;
+			bottom: 10px;
+			left: 20px;
+			margin: 0px;
+			padding: 0px;
+			color: white;
+			font-size: 30px;
+			font-weight: normal;
+		}
+
+
 
 		.conversation{
 			width: 400px;
@@ -920,6 +1129,7 @@
 			width: 900px;
 			left: -200px;
 			margin-top:25px;
+			text-align: center;
 		}
 
 		.conversation .options .bubble{
@@ -1144,12 +1354,23 @@
 			margin-top: 0px;
 		}
 
+		
+
 		.segment-content.centered{
 			text-align: center;
 		}
 
 		.segment-content button.capsule{
 			margin-right: 5px;
+		}
+
+		.learning-capsule{
+			margin-left: 85px;
+		}
+
+		.sequel-buttons{
+			padding: 20px;
+			text-align: center;
 		}
 
 	</style>
@@ -1191,10 +1412,30 @@
 			</div>
 			<div class='modal-page'>
 				<ul class='story-list'>
-					<li class='active'> 5 minutes </li>
-					<li ></li>
-					<li ></li>
-					<li ></li>
+					<li class='story-link active'>
+						<div class='story-info'>
+							<h1>Skint & Defensive</h1>
+							<h2>Asking the Right Questions</h2>
+						</div>
+					</li>
+					<li class='story-link'>
+						<div class='story-info'>
+							<h1>Rejected & Isolated</h1>
+							<h2>Better Listening</h2>
+						</div>
+					</li>
+					<li class='story-link'>
+						<div class='story-info'>
+							<h1>Failing & Isolated</h1>
+							<h2>Encouraging Action</h2>
+						</div>
+					</li>
+					<li class='story-link'>
+						<div class='story-info'>
+							<h1>Drunk & Grieving</h1>
+							<h2>The Art of Checking-In</h2>
+						</div>
+					</li>
 				</ul>
 			</div>
 			<div class='modal-page'>
