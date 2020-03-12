@@ -23,6 +23,13 @@
 						type:'learnings',
 						content:"<div style='text-align:center'><div class='logo'></div>\
 						<h1 class='product-name'>CONVERSATIONS</h1>\
+						<ul class='list-of-learnings'>\
+						<li></li>\
+						<li></li>\
+						<li></li>\
+						<li></li>\
+						<li></li>\
+						</ul>\
 						<p>Having better Conversations with the men in your life.</p>\
 						<button data-target='story-1' class='capsule'>Jump Straight In</button></div>"
 					},
@@ -149,7 +156,7 @@
 						type:'sequel',
 						content:"\
 						<h1>Next Up</h1>\
-							<div class='story-link'>\
+							<div class='story-link n1'>\
 								<div class='story-info'>\
 									<h1>Rejected & Isolated</h1>\
 									<h2>Better Listening</h2>\
@@ -250,13 +257,13 @@
 						type:'sequel',
 						content:"\
 						<h1>Next Up</h1>\
-							<div class='story-link'>\
+							<div class='story-link n2'>\
 								<div class='story-info'>\
 									<h1>Rejected & Isolated</h1>\
 									<h2>Better Listening</h2>\
 								</div>\
 							</div>\
-							<button class='capsule'>Other Stories</button><button class='capsule'>Review Learnings</button>\
+							<div class='sequel-buttons'><button class='capsule'>Other Stories</button><button class='capsule'>Review Learnings</button></div>\
 						"
 					}
 				],[
@@ -272,12 +279,49 @@
 								{who:'them',d:"You don’t need me. I am just going to slow you down."},
 								{who:'me',d:"What do you mean? You get this stuff way more than any of us! Rob is a big talker, but I don’t think he understands Chemistry. Without you there to correct him, this will go wrong."},
 								{who:'them',d:"I don’t feel up to it. I want to be alone."},
+							]
+						]
+					},
+					{
+						type:'learnings',
+						content:"\
+						<div class='learning-node encourage'>\
+						<h1>ENCOURAGE ACTION</h1>\
+						<h2>Encourage Physical Well-being</h2>\
+						<p>Our well-being can be drastically effected by how well we take care of our bodies. Encouraging or helping a man to take better care of himself can be a great step toward improved well-bring. You might encourage: <li>Going for a walk</li><li>Exercise</li><li>Improved sleep</li><li>Eating healthy</li></p>\
+						</div>\
+						<button class='learning-capsule capsule'>Give it a try</button>",
+					},
+					{
+						type:'convo',
+						convos:[
+							[
+								{who:'them',d:"I don’t feel up to it. I want to be alone."},
 								{who:'me',d:"Kevin, we talked about this. How about we try leaving the room, see what happens."},
 								{who:'them',d:"I can’t do it."},
 
 								{who:'me',d:"What about a walk, get some fresh air."},
 
 								{who:'them',d:"I can’t, I don’t want to leave my room, it’s too much."},
+								{who:'me',d:"Ok, we will stay here. Is there some way I can help?"},
+								{who:'them',d:"I don’t think you can."},
+							]
+						]
+					},
+					{
+						type:'learnings',
+						content:"\
+						<div class='learning-node encourage'>\
+						<h1>ENCOURAGE ACTION</h1>\
+						<h2>Encourage Help-seeking</h2>\
+						<p>We should not expect ourselves to be the only source of support for a friend. It is important to encourage seeking help through a wider network that may include:<li>Parents</li><li>School counsellers</li><li>Psycologists</li></p>\
+						</div>\
+						<button class='learning-capsule capsule'>Give it a try</button>",
+					},
+					{
+						type:'convo',
+						convos:[
+							[
 								{who:'me',d:"Ok, we will stay here. Is there some way I can help?"},
 								{who:'them',d:"I don’t think you can."},
 								{who:'me',d:"If I can’t help, is there someone else you can talk to?"},
@@ -289,28 +333,95 @@
 						]
 					},
 					{
-						type:'learnings',
+						type:'summary',
 						content:'\
-						\
+							<h1>Remember</h1>\
+							<div class="post-it">\
+								<ul>\
+									<li>Watch for <b>social isolation</b>.</li>\
+									<li>Promote action by encouraging <b>physical well-being</b> and <b>help-seeking</b>.</li>\
+								</ul>\
+							</div><br>\
+							<button class="capsule">Got it.</button>\
 						'
+					},
+					{
+						type:'intention',
+						content:"\
+							<div class='intentions'>\
+							<h1>Over the next few days</h1>\
+							<p>Watch out for men in your life who are <b>isolating themeselves</b>.</p>\
+							<p>Think about how you might <b>encourage action</b> toward improved outcomes in their well-being.</p>\
+							<button class='capsule'>I'm in.</button><button class='capsule'>I can't do this.</button>\
+							</div>\
+						"
+					},
+					{
+						type:'sequel',
+						content:"\
+						<h1>Next Up</h1>\
+							<div class='story-link n3'>\
+								<div class='story-info'>\
+									<h1>Drunk & Grieving</h1>\
+									<h2>The Art of Checking-In</h2>\
+								</div>\
+							</div>\
+							<div class='sequel-buttons'><button class='capsule'>Other Stories</button><button class='capsule'>Review Learnings</button></div>\
+						"
 					}
 				],[
 					{
 						type:'convo',
 						convos:[
 							[
-								{who:'me',d:"Chad is drunk, again. I could smell it on him when we were talking."},
-								{who:'me',d:"At an intramural, game! This is not the time or the place .We have talked to him about this."},
-								{who:'me',d:"He almost passed the ball to the other side, look,on the back court."},
-								{who:'me',d:"Whoa, did he just elbow-is that Melissa? That’s a foul, he is on his way back in. Come with me, I want totalk to him."},
-								{who:'them',d:"It’s good to see you guys too."},
-								{who:'me',d:"Is this the way you want to cope? I can smell it from here!"},
+								{who:'me',d:"Dude, is this the way you want to cope?"},
+								{who:'me',d:"I can smell it from here!"},
 								{who:'them',d:"I was only having a few beers. It helps me forget for a while."},
+								'...',
 								{who:'me',d:"Look, I’m worried about you. How have you been since we talked?"},
 								{who:'them',d:"Me? I am fine, I’m having a great time."},
 								{who:'me',d:"You don’t seem so good."},
-								{who:'them',d:"You guys are downers, I’m off."},
-								{who:'me',d:"Alright, but, I will check in on you tomorrow."}
+								{who:'them',d:"Don't be such a downer. I'm out of here."},
+							]
+						]
+					},{
+						type:'learnings',
+						content:"\
+						<div class='learning-node checkin'>\
+						<h1>CHECK-IN</h1>\
+						<h2>Planning a Follow-Up</h2>\
+						<p>Ongoing conversation is vital in ensuring the enduring value of our connection. Once we have asked, listened, and encouraged action, always arrange to check-in with a man at a future time.</p>\
+						</div>\
+						<button class='learning-capsule capsule'>Give it a try</button>",
+					},{
+						type:'convo',
+						convos:[
+							[
+								{who:'them',d:"Don't be such a downer. I'm out of here."},
+								{who:'me',d:"Alright, but let's talk about this tomorrow."}
+							]
+						]
+					},{
+						type:'learnings',
+						content:"\
+						<div class='learning-node checkin'>\
+						<h1>CHECK-IN</h1>\
+						<h2>Developing Trust</h2>\
+						<p>Building a relationship and nurturing trust can be a slow process. It's important to be <b>honest</b>, <b>consistent</b>, and always maintain <b>confidentiality</b>.</p>\
+						</div>\
+						<button class='learning-capsule capsule'>Give it a try</button>",
+					},{
+						type:'convo',
+						convos:[
+							[
+								{who:'me',d:"So how are you going?"},
+								{who:'me',d:"I was worried about you yesterday."},
+								{who:'them',d:"Yeah, I'm sorry. I've been so down."},
+								{who:'them',d:"It's so much easier to cope with a few drinks."},
+								{who:'me',d:"I know mate."},
+								{who:'me',d:"But we both know there's better ways."},
+								{who:'them',d:"Hey. Thanks for being there."},
+								{who:'them',d:"I'm glad you're looking out for me."},							
 							]
 						]
 					}
@@ -319,7 +430,8 @@
 			]
 
 			
-			function makeStory(story){
+			function makeStory(iStory){
+				var story = stories[iStory];
 
 				$('.scroller').empty();
 				$('html, body').scrollTop(0);
@@ -337,10 +449,16 @@
 				}
 
 				function onSegmentComplete(iSeg){
+
 					iSeg = parseInt(iSeg);
-					segs[iSeg+1].play();
-					$('.dot').removeClass('active').eq(iSeg+1).addClass('active');
-					scrollTo(segs[iSeg+1].$seg);
+					if(segs[iSeg+1]){
+						segs[iSeg+1].play();
+						$('.dot').removeClass('active').eq(iSeg+1).addClass('active');
+						scrollTo(segs[iSeg+1].$seg);
+					} else {
+						makeStory(iStory+1);
+					}
+					
 				}
 
 				onSegmentComplete(-1);
@@ -494,14 +612,16 @@
 					})
 
 					this.start = function(){
-
+						$el.find('.list-of-learnings li').css({opacity:0,width:'0px'}).each(function(i){
+							$(this).delay(750+i*200).animate({opacity:1,width:'70px'});
+						});
 					}
 				}
 
 				function SequelSegment(iSeg,$seg,chapter,onComplete){
 					var $el = $('<div class="segment-content">').appendTo($seg).html(chapter.content);
 					$el.find('.story-link').click(function(){
-						onComplete();
+						onComplete(iSeg);
 					})
 
 					this.start = function(){
@@ -549,21 +669,10 @@
 					if(seg.type == 'sequel'){
 						view = new SequelSegment(iSeg,this.$seg,seg,onSegmentComplete);
 					}
-
-					/*this.$seg.find('button.capsule').click(function(){
-						if( $(this).data('target')){
-							var arr = $(this).data('target').split('-');
-							if(arr[0] == 'story'){
-								makeStory(stories[arr[1]])
-							}
-						} else{
-							onComplete(iSeg);
-						}
-					});*/
 				}
 			}
 
-			makeStory(stories[0]);
+			makeStory(0);
 
 			$('.modal-nav button').eq(0).addClass('active');
 			$('.modal-page').eq(0).show();
@@ -608,7 +717,7 @@
 			$('.story-list li').click(function(){
 				var idx = $('.story-list li').index(this);
 				toggleModal();
-				makeStory(stories[idx+1]);
+				makeStory(idx+1);
 
 			})
 		});
@@ -679,6 +788,11 @@
 		.intentions{
 			display: inline-block;
 			text-align: left;
+			background-image: url('./intention-bg.png');
+			background-size: 300px;
+			background-repeat: no-repeat;
+			background-position: left center;
+			padding-left: 300px;
 		}
 
 		.post-it{
@@ -872,6 +986,20 @@
 		.segment.black{
 			background: #222;
 			justify-content: flex-start;
+			background-image: url('./convo-bg.png');
+			background-position: bottom;
+			background-size: 100%;
+			position: relative;
+		}
+
+		.segment.black:before{
+			content: "";
+			position: absolute;
+			top: 0px;
+			left: 0px;
+			right: 0px;
+			bottom: 0px;
+			background: linear-gradient(to top, black, rgba(0,0,0,0.5));
 		}
 
 		.black h1{
@@ -982,9 +1110,22 @@
 			overflow: hidden;
 			background: url('./canteen-drawing-30.jpg');
 			background-position: center;
-			background-size: 150%;
+			background-size: 100%;
 			filter: grayscale(100%);
 			text-align: center;
+		}
+
+		.story-link.n0{
+			background-image: url('./scene-standing.png');
+		}
+		.story-link.n1{
+			background-image: url('./scene-float.png');
+		}
+		.story-link.n2{
+			background-image: url('./scene-couple.png');
+		}
+		.story-link.n3{
+			background-image: url('./scene-phone.png');
 		}
 
 		.story-info:before{
@@ -1337,6 +1478,10 @@
 			background-position: 0% -200%;
 		}
 
+		.learning-node.encourage:before{
+			background-position: 0% -300%;
+		}
+
 		.learning-node h1{
 			line-height: 75px;
 			margin-bottom: 0px;
@@ -1372,6 +1517,30 @@
 			padding: 20px;
 			text-align: center;
 		}
+
+		.list-of-learnings{
+			list-style-type: none;
+			text-align: center;
+			padding: 0px;
+			margin: 0px;
+		}
+
+		.list-of-learnings li{
+			display: inline-block;
+			width: 70px;
+			height: 70px;
+			background-image: url('./WALEC.png');
+			background-size: 100%;
+			padding: 0px;
+			margin: 5px;
+			vertical-align: middle;
+		}
+
+		.list-of-learnings li:nth-of-type(1){ background-position: 0% 0%; }
+		.list-of-learnings li:nth-of-type(2){ background-position: 0% -100%; }
+		.list-of-learnings li:nth-of-type(3){ background-position: 0% -200%; }
+		.list-of-learnings li:nth-of-type(4){ background-position: 0% -300%; }
+		.list-of-learnings li:nth-of-type(5){ background-position: 0% -400%; }
 
 	</style>
 </head>
@@ -1412,27 +1581,27 @@
 			</div>
 			<div class='modal-page'>
 				<ul class='story-list'>
-					<li class='story-link active'>
+					<li class='story-link n0 active'>
 						<div class='story-info'>
-							<h1>Skint & Defensive</h1>
+							<h1>Skint & Defensive (5 minutes)</h1>
 							<h2>Asking the Right Questions</h2>
 						</div>
 					</li>
-					<li class='story-link'>
+					<li class='story-link n1'>
 						<div class='story-info'>
-							<h1>Rejected & Isolated</h1>
+							<h1>Rejected & Isolated (5 minutes)</h1>
 							<h2>Better Listening</h2>
 						</div>
 					</li>
-					<li class='story-link'>
+					<li class='story-link n2'>
 						<div class='story-info'>
-							<h1>Failing & Isolated</h1>
+							<h1>Failing & Isolated (5 minutes)</h1>
 							<h2>Encouraging Action</h2>
 						</div>
 					</li>
-					<li class='story-link'>
+					<li class='story-link n3'>
 						<div class='story-info'>
-							<h1>Drunk & Grieving</h1>
+							<h1>Drunk & Grieving (5 minutes)</h1>
 							<h2>The Art of Checking-In</h2>
 						</div>
 					</li>
@@ -1461,27 +1630,34 @@
 						<div class='walec-content'>
 							<p>Asking the <b>right questions</b> at the <b>right time</b> is vital to help a man open up.</p>
 							<h2>Consider Appropriateness</h2>
-							<ul>
-								<li></li>
-							</ul>
+							<p>It's important to find <b>the right time and place</b> to have sensitive conversations. Consider finding a somewhere private, calm, and sensitive to the needs of the individual man. Dont get hung up on everything being perfect. Consider sitting side-by-side, being delicate, and courageous.</p>
 							<h2>Use Open-ended Conversations</h2>
-							<ul>
-								<li></li>
-							</ul>
+							<p><b>Open-ended questions</b> are a great way to stimulate meaningful conversation. This means asking paying close attention, being specific, and inquiring from a place of genuine care.</p>
 							<h2>Model Honest Conversations</h2>
-							<ul>
-								<li></li>
-							</ul>
+							<p>Demonstrating your own personal ability to be honest, open, and vulnerable is a great way to help a man open up. Risking exposure of your own struggles helps destigmatize the issues and makes strides toward developing a close relationship.</p>
 						</div>
 					</li>
 					<li>
 						<h1><div class='icon'></div>LISTEN</h1>
+						<h2>Support honesty</h2>
+						<p>Good listenting starts with providing a sounding board that can be trusted. This means avoiding <b>assumptions</b>, avoiding <b>judgement</b>, and avoiding the temptation to <b>provide answers</b>.</li>
+						</p>
+						<h2>Identify clarifying questions</h2>
+						<p>Express genuine interest in understanding the man and the conversation.</p><p>Questions like: <li>what do you mean by...</li><li>Are you saying...</li><li>Do you feel...</li><li>Do you mean...</li></p>
 					</li>
 					<li>
 						<h1><div class='icon'></div>ENCOURAGE ACTION</h1>
+						<h2>Encourage Physical Well-being</h2>
+						<p>Our well-being can be drastically effected by how well we take care of our bodies. Encouraging or helping a man to take better care of himself can be a great step toward improved well-bring. You might encourage: <li>Going for a walk</li><li>Exercise</li><li>Improved sleep</li><li>Eating healthy</li></p>
+						<h2>Encourage Help-seeking</h2>
+						<p>We should not expect ourselves to be the only source of support for a friend. It is important to encourage seeking help through a wider network that may include:<li>Parents</li><li>School counsellers</li><li>Psycologists</li></p>
 					</li>
 					<li>
-						<h1><div class='icon'></div>CHECKIN</h1>
+						<h1><div class='icon'></div>CHECK-IN</h1>
+						<h2>Planning a Follow-Up</h2>
+						<p>Ongoing conversation is vital in ensuring the enduring value of our connection. Once we have asked, listened, and encouraged action, always arrange to check-in with a man at a future time.</p>
+						<h2>Developing Trust</h2>
+						<p>Building a relationship and nurturing trust can be a slow process. It's important to be <b>honest</b>, <b>consistent</b>, and always maintain <b>confidentiality</b>.</p>
 					</li>
 				</ul>
 			</div>
