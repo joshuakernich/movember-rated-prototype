@@ -195,9 +195,6 @@
 						<h2>Support honesty</h2>\
 						<p>Good listenting starts with providing a sounding board that can be trusted. This means avoiding <b>assumptions</b>, avoiding <b>judgement</b>, and avoiding the temptation to <b>provide answers</b>.</li>\
 						</p>\
-						<h2>Identify clarifying questions</h2>\
-						<p>Express genuine interest in understanding the man and the conversation.</p><p>Questions like: <li>what do you mean by...</li><li>Are you saying...</li><li>Do you feel...</li><li>Do you mean...</li></p>\
-						</div>\
 						</div>\
 						<button class='learning-capsule capsule'>Let's see that play out</button>",
 					},
@@ -209,6 +206,26 @@
 							{who:"them",d:"No."},
 							{who:"options",list:[{d:"Ok, see ya. I guess."},{d:"Is something going on?", correct:true, f:"Nicely done."},{d:"Suit yourself"}]}
 						],[
+							{who:"them",d:"I don’t want to bring you down."},
+							{who:"me",d:"What’s going on? I've got a minute."},
+							{who:"buttons",list:["I get it."]}
+						]]
+					},{
+
+						type:'learnings',
+						content:"\
+						<div class='learning-node listen'>\
+						<h1>LISTEN</h1>\
+						<h2>Identify clarifying questions</h2>\
+						<p>Express genuine interest in understanding the man and the conversation.</p><p>Questions like: <li>what do you mean by...</li><li>Are you saying...</li><li>Do you feel...</li><li>Do you mean...</li></p>\
+						</div>\
+						</div>\
+						<button class='learning-capsule capsule'>Let's see that play out</button>",
+					},
+					{
+						type:'convo',
+						convos:[
+						[
 							{who:"them",d:"I don’t want to bring you down."},
 							{who:"me",d:"What’s going on? I've got a minute."},
 							{who:"them",d:"If I am not a basketball player, then who am I?"},
@@ -271,14 +288,17 @@
 						type:'convo',
 						convos:[
 							[
-								{who:'me',d:"Where were we in the game?"},
+								/*{who:'me',d:"Where were we in the game?"},
 								{who:'them',d:"I don’t remember, it has been a while since we played Xbox."},
 								{who:'me',d:"Yeah, we used to play all of the time."},
-								{who:'them',d:"I guess, I just feel like playing alone lately."},
-								{who:'me',d:"I got a message earlier from Rob, he says come to the library lounge. We can study together."},
+								{who:'them',d:"I guess, I just feel like playing alone lately."},*/
+								{who:'me',d:"I got a message from Rob. He says come to the library lounge. We can all study together."},
 								{who:'them',d:"You don’t need me. I am just going to slow you down."},
-								{who:'me',d:"What do you mean? You get this stuff way more than any of us! Rob is a big talker, but I don’t think he understands Chemistry. Without you there to correct him, this will go wrong."},
+								'...'],[
+								{who:'me',d:"What do you mean? You get this stuff way more than any of us!"},
+								{who:'me',d:"Rob is a big talker, but I don’t think he understands Chemistry. Without you there to correct him, this will go wrong."},
 								{who:'them',d:"I don’t feel up to it. I want to be alone."},
+								{who:"buttons",list:["Hmm"]}
 							]
 						]
 					},
@@ -300,11 +320,12 @@
 								{who:'me',d:"Kevin, we talked about this. How about we try leaving the room, see what happens."},
 								{who:'them',d:"I can’t do it."},
 
-								{who:'me',d:"What about a walk, get some fresh air."},
-
+								{who:'options',list:[{d:"What about a walk, get some fresh air.",correct:true}]},
+							],[
 								{who:'them',d:"I can’t, I don’t want to leave my room, it’s too much."},
 								{who:'me',d:"Ok, we will stay here. Is there some way I can help?"},
 								{who:'them',d:"I don’t think you can."},
+								{who:"buttons",list:["I get it."]}
 							]
 						]
 					},
@@ -324,11 +345,22 @@
 							[
 								{who:'me',d:"Ok, we will stay here. Is there some way I can help?"},
 								{who:'them',d:"I don’t think you can."},
-								{who:'me',d:"If I can’t help, is there someone else you can talk to?"},
+
+								{who:'options',list:[
+								{correct:true,d:"If I can’t help, is there someone else you can talk to?"}]},
+							],[
+
 								{who:'them',d:"I don’t know."},
-								{who:'me',d:"Have you talked to your parents? I know there is a counselling service on campus, have you tried that?"},
-								{who:'them',d:"I don’t want to bother my parents with this. And I have heard services is always booked up."},
-								{who:'me',d:"If I needed help, I would call my parents. And yes,the counselling service is busy for a reason. It helps people and it never hurts to book an appointment."}
+
+								{who:'options',list:[
+									{correct:true,d:"Have you talked to your parents?"},
+									{correct:true,d:"Maybe the school counsellor?"},
+									{correct:true,d:"Some other close friends?"}]},
+							],[
+
+								{who:'them',d:"Hmm. Maybe that's a good idea."},
+								{who:'me',d:"You don't have to do this alone."},
+								{who:"buttons",list:["I get it."]}
 							]
 						]
 					},
@@ -378,15 +410,22 @@
 								{who:'me',d:"I can smell it from here!"},
 								{who:'them',d:"I was only having a few beers. It helps me forget for a while."},
 								'...',
+							],[	
 								{who:'me',d:"Look, I’m worried about you. How have you been since we talked?"},
 								{who:'them',d:"Me? I am fine, I’m having a great time."},
 								{who:'me',d:"You don’t seem so good."},
 								{who:'them',d:"Don't be such a downer. I'm out of here."},
+								{who:"buttons",list:["I get it."]}
+
 							]
 						]
 					},{
 						type:'learnings',
 						content:"\
+						<div class='learning-node watch'>\
+						<h1>WATCH</h1>\
+						<p><b>Drunkeness</b> and <b>substance abuse</b> can be clear signs that a man is struggling.</p>\
+						</div>\
 						<div class='learning-node checkin'>\
 						<h1>CHECK-IN</h1>\
 						<h2>Planning a Follow-Up</h2>\
@@ -398,7 +437,7 @@
 						convos:[
 							[
 								{who:'them',d:"Don't be such a downer. I'm out of here."},
-								{who:'me',d:"Alright, but let's talk about this tomorrow."}
+								{who:'options',list:[{d:"Alright, but let's talk about this tomorrow.",correct:true,f:'Good option. Your friend is drunk. This is not the time to talk. Plan ahead to check-in at another time.'},{d:'Straighten yourself out.'},{d:"You're the one being a downer."}]},
 							]
 						]
 					},{
@@ -415,15 +454,51 @@
 						convos:[
 							[
 								{who:'me',d:"So how are you going?"},
-								{who:'me',d:"I was worried about you yesterday."},
+								{who:'options',list:[{d:"We need to talk about yesterday."},{d:"You were all over the place yesterday."},{d:"I was worried about you yesterday.",correct:true,f:'Good choice. Expressing genuine concern without being judgemental can help promote honesty and trust.'}]},
+							],[
 								{who:'them',d:"Yeah, I'm sorry. I've been so down."},
 								{who:'them',d:"It's so much easier to cope with a few drinks."},
-								{who:'me',d:"I know mate."},
+								{who:'options',list:[{d:"Snap out of it."},{d:"Things will get better."},{d:"It must be tough. I feel for you.",correct:true,f:'Good choice. Expressing genuine concern without being judgemental can help promote honesty and trust.'}]},
+								],[
 								{who:'me',d:"But we both know there's better ways."},
 								{who:'them',d:"Hey. Thanks for being there."},
-								{who:'them',d:"I'm glad you're looking out for me."},							
+								{who:'them',d:"I'm glad you're looking out for me."},		
+								{who:"buttons",list:["That went well."]}					
 							]
 						]
+					},
+					{
+						type:'summary',
+						content:'\
+							<h1>Remember</h1>\
+							<div class="post-it">\
+								<ul>\
+									<li>Watch for <b>drinking</b> and <b>substance abuse</b>.</li>\
+									<li>Watch for signs of <b>aggression</b>.</li>\
+									<li>Plan to <b>check-in</b> ahead of time.</li>\
+									<li>Develop trust through <b>honesty</b> and <b>consistency</b>.</li>\
+								</ul>\
+							</div><br>\
+							<button class="capsule">Got it.</button>\
+						'
+					},
+					{
+						type:'intention',
+						content:"\
+							<div class='intentions'>\
+							<h1>Over the next few days</h1>\
+							<p>Watch out for men in your life who are <b>aggressive</b> or <b>overdrinking</b>.</p>\
+							<p>Talk to them and be determines to <b>check-in</b> while nurturing an ongoing relationship.</p>\
+							<button class='capsule'>I'm in.</button><button class='capsule'>I can't do this.</button>\
+							</div>\
+						"
+					},
+					{
+						type:'sequel',
+						content:"\
+						<h1>That's all for now</h1>\
+							<div class='sequel-buttons'><button class='capsule'>Review Stories</button><button class='capsule'>Review Learnings</button></div>\
+						"
 					}
 
 				]
@@ -1480,6 +1555,10 @@
 
 		.learning-node.encourage:before{
 			background-position: 0% -300%;
+		}
+
+		.learning-node.checkin:before{
+			background-position: 0% -400%;
 		}
 
 		.learning-node h1{
