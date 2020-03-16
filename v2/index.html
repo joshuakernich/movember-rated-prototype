@@ -204,7 +204,11 @@
 						[
 							{who:"me",d:"So, you’re not coming?"},
 							{who:"them",d:"No."},
-							{who:"options",list:[{d:"Ok, see ya. I guess."},{d:"Is something going on?", correct:true, f:"Nicely done."},{d:"Suit yourself"}]}
+							{who:"options",list:[
+							{d:"Ok, see ya. I guess.",f:"<b>Ouch.</b> It's easy to judge someone to be rude or boring. Try being understanding."},
+							{d:"Is something going on?", correct:true, f:"<b>Nicely done.</b> It's easy to judge someone to be rude or boring. Try, instead, to be curious and caring."},
+							{d:"Suit yourself",f:"<b>Ouch.</b> It's easy to judge someone to be rude or boring. Try being understanding."}
+							]}
 						],[
 							{who:"them",d:"I don’t want to bring you down."},
 							{who:"me",d:"What’s going on? I've got a minute."},
@@ -217,7 +221,7 @@
 						<div class='learning-node listen'>\
 						<h1>LISTEN</h1>\
 						<h2>Identify clarifying questions</h2>\
-						<p>Express genuine interest in understanding the man and the conversation.</p><p>Questions like: <li>what do you mean by...</li><li>Are you saying...</li><li>Do you feel...</li><li>Do you mean...</li></p>\
+						<p>Express genuine interest in understanding the man and the conversation.</p><p>Questions like: <li>What do you mean by...</li><li>Are you saying...</li><li>Do you feel...</li><li>Do you mean...</li></p>\
 						</div>\
 						</div>\
 						<button class='learning-capsule capsule'>Let's see that play out</button>",
@@ -229,19 +233,23 @@
 							{who:"them",d:"I don’t want to bring you down."},
 							{who:"me",d:"What’s going on? I've got a minute."},
 							{who:"them",d:"If I am not a basketball player, then who am I?"},
-							{who:"options",list:[{d:""},{d:"What do you mean?", correct:true, f:"Nicely done."},{d:""}]}
+							{who:"options",list:[
+								{d:"You're so much more than that.",f:"This may sound reassuring. But it dismisses a situation that may have emotional gravity."},
+								{d:"What do you mean?", correct:true, f:"<b>Nicely done.</b> Ask clarifying questions to get to the heart of the problem."},
+								{d:"Cheer up! You'll be alright.",f:"Of course they will. But right now, they need to feel seen and heard."}
+								]}
 						],[
 							{who:"them",d:"I mean,that I didn’t make the team."},
 							{who:"me",d:"What? No way, they need you!"},
 							{who:"them",d:"I didn’t make it."},
 							{who:"me",d:"Are you ok?"},
 							{who:"them",d:"Not really.I feel lost."},
-							{who:"options",list:[{d:""},{d:"What do you mean by lost?", correct:true, f:"Nicely done."},{d:""}]}
+							{who:"options",list:[{d:"We're all lost, my friend.",f:"How wonderfully existential. But you've missed the chance to dig deeper in to the problem."},{d:"What do you mean by lost?", correct:true, f:"<b>Nicely done.</b> You've set this up for a deeper conversation."},{d:"You're in a safe place.",f:"Slightly reassuring, perhaps. But this is a golden opportunity to dig deeper."}]}
 						],[
 							{who:"them",d:"I don’t know, if that is the right word, um, I-"},
 							{who:"them",d:"I wonder how I'm going to make friends."},
 							{who:"me",d:"Want to talk to me about it?"},
-							{who:"buttons",list:["I get it."]}
+							{who:"buttons",list:["That went well."]}
 						]
 						]
 					},
@@ -320,7 +328,7 @@
 								{who:'me',d:"Kevin, we talked about this. How about we try leaving the room, see what happens."},
 								{who:'them',d:"I can’t do it."},
 
-								{who:'options',list:[{d:"What about a walk, get some fresh air.",correct:true}]},
+								{who:'options',list:[{d:"What about a walk, get some fresh air.",correct:true,f:"Great one. Encouraging some physical activity and a change of scene could be very helpful."},{d:"You CAN do it. I believe in you!",f:"How inspiring. But this does nothing in offering real help."},{d:"C'mon mate. Snap out of it.",f:"Where's your compassion?"}]},
 							],[
 								{who:'them',d:"I can’t, I don’t want to leave my room, it’s too much."},
 								{who:'me',d:"Ok, we will stay here. Is there some way I can help?"},
@@ -774,8 +782,6 @@
 				}
 			}
 
-			
-
 			$('.walec > li').click(function(){
 
 				if($(this).hasClass('active')){
@@ -974,10 +980,10 @@
 			margin-right: 10px;
 		}
 
-		.walec > li:nth-of-type(2) h1 .icon{ background-position: 0px -75px; }
-		.walec > li:nth-of-type(3) h1 .icon{ background-position: 0px -150px; }
-		.walec > li:nth-of-type(4) h1 .icon{ background-position: 0px -225px; }
-		.walec > li:nth-of-type(5) h1 .icon{ background-position: 0px -300px; }
+		.walec h1 .icon.ask{ background-position: 0px -75px; }
+		.walec h1 .icon.listen{ background-position: 0px -150px; }
+		.walec h1 .icon.encourage{ background-position: 0px -225px; }
+		.walec h1 .icon.checkin{ background-position: 0px -300px; }
 
 		.walec > li{
 			position: relative;
@@ -1005,6 +1011,7 @@
 		}
 
 		.walec > li.active .walec-content{
+			display: block;
 			visibility: visible;
 		}
 
@@ -1015,13 +1022,14 @@
 		.walec-content{
 			width: 550px;
 			white-space: normal;
+			display: none;
 		}
 
 		.walec-content b{
 			color: black;
 		}
 
-		.walec-content ul{
+		/*.walec-content ul{
 			list-style-type: none;
 			padding-left: 0px;
 		}
@@ -1038,7 +1046,7 @@
 
 		}
 
-		.walec > li:nth-of-type(1) .walec-content li:before{ background:#CFC4F6; }
+		.walec > li:nth-of-type(1) .walec-content li:before{ background:#CFC4F6; }*/
 
 		.segment{
 
@@ -1621,6 +1629,31 @@
 		.list-of-learnings li:nth-of-type(4){ background-position: 0% -300%; }
 		.list-of-learnings li:nth-of-type(5){ background-position: 0% -400%; }
 
+		button.help{
+			
+			background: #DE3223;
+			border-radius: 5px;
+			vertical-align: middle;
+			font-size: 10px;
+			font-weight: bold;
+			padding: 0px;
+			line-height: 15px;
+			color: white;
+			position: absolute;
+			top: 20px;
+			left: 20px;
+			
+			
+
+			background: url('./alert.png');
+			background-size: 30px;
+			background-repeat: no-repeat;
+			background-position: center top;
+			padding-top: 32px;
+			border:none;
+			color: orange;
+		}
+
 	</style>
 </head>
 
@@ -1647,14 +1680,21 @@
 	</div>
 
 	<div class="modal">
-		
 		<button class='toggle-button'>☰</button>
 		<div class='modal-panel'>
+			<a href='./help.html' target='_blank'><button class="help">SEEK HELP</button></a>
 			<div class='modal-nav'><button>About</button>|<button>Conversations</button>|<button>Learnings</button></div>
 			<div class='modal-page'>
 				<div style='text-align:center;'>
 					<div class='logo'></div>
 					<h1 class='product-name'>CONVERSATIONS</h1>
+					<ul class='list-of-learnings'>
+						<li></li>
+						<li></li>
+						<li></li>
+						<li></li>
+						<li></li>
+						</ul>
 					<p>Having better Conversations with the men in your life.</p>
 				</div>
 			</div>
@@ -1689,7 +1729,7 @@
 			<div class='modal-page'>
 				<ul class='walec master'>
 					<li>
-						<h1><div class='icon'></div>WATCH</h1>
+						<h1><div class='icon watch'></div>WATCH</h1>
 						<div class='walec-content'>
 							<p>Watch out for signs that the men around you are struggling.</p>
 							<p>This includes their
@@ -1705,7 +1745,7 @@
 						</div>
 					</li>
 					<li>
-						<h1><div class='icon'></div>ASK</h1>
+						<h1><div class='icon ask'></div>ASK</h1>
 						<div class='walec-content'>
 							<p>Asking the <b>right questions</b> at the <b>right time</b> is vital to help a man open up.</p>
 							<h2>Consider Appropriateness</h2>
@@ -1717,32 +1757,39 @@
 						</div>
 					</li>
 					<li>
-						<h1><div class='icon'></div>LISTEN</h1>
-						<h2>Support honesty</h2>
-						<p>Good listenting starts with providing a sounding board that can be trusted. This means avoiding <b>assumptions</b>, avoiding <b>judgement</b>, and avoiding the temptation to <b>provide answers</b>.</li>
-						</p>
-						<h2>Identify clarifying questions</h2>
-						<p>Express genuine interest in understanding the man and the conversation.</p><p>Questions like: <li>what do you mean by...</li><li>Are you saying...</li><li>Do you feel...</li><li>Do you mean...</li></p>
+						<h1><div class='icon listen'></div>LISTEN</h1>
+						<div class='walec-content'>
+							<h2>Support honesty</h2>
+							<p>Good listenting starts with providing a sounding board that can be trusted. This means avoiding <b>assumptions</b>, avoiding <b>judgement</b>, and avoiding the temptation to <b>provide answers</b>.
+							</p>
+							<h2>Identify clarifying questions</h2>
+							<p>Express genuine interest in understanding the man and the conversation.</p><p>Questions like:<ul><li>What do you mean by...</li><li>Are you saying...</li><li>Do you feel...</li><li>Do you mean...</li></ul></p>
+						</div>
 					</li>
 					<li>
-						<h1><div class='icon'></div>ENCOURAGE ACTION</h1>
-						<h2>Encourage Physical Well-being</h2>
-						<p>Our well-being can be drastically effected by how well we take care of our bodies. Encouraging or helping a man to take better care of himself can be a great step toward improved well-bring. You might encourage: <li>Going for a walk</li><li>Exercise</li><li>Improved sleep</li><li>Eating healthy</li></p>
-						<h2>Encourage Help-seeking</h2>
-						<p>We should not expect ourselves to be the only source of support for a friend. It is important to encourage seeking help through a wider network that may include:<li>Parents</li><li>School counsellers</li><li>Psycologists</li></p>
+						<h1><div class='icon encourage'></div>ENCOURAGE ACTION</h1>
+						<div class="walec-content">
+							<h2>Encourage Physical Well-being</h2>
+							<p>Our well-being can be drastically effected by how well we take care of our bodies. Encouraging or helping a man to take better care of himself can be a great step toward improved well-bring. You might encourage:<ul><li>Going for a walk</li><li>Exercise</li><li>Improved sleep</li><li>Eating healthy</li></ul></p>
+							<h2>Encourage Help-seeking</h2>
+							<p>We should not expect ourselves to be the only source of support for a friend. It is important to encourage seeking help through a wider network that may include:<ul><li>Parents</li><li>School counsellers</li><li>Psycologists</li></ul></p>
+						</div>
 					</li>
 					<li>
-						<h1><div class='icon'></div>CHECK-IN</h1>
-						<h2>Planning a Follow-Up</h2>
-						<p>Ongoing conversation is vital in ensuring the enduring value of our connection. Once we have asked, listened, and encouraged action, always arrange to check-in with a man at a future time.</p>
-						<h2>Developing Trust</h2>
-						<p>Building a relationship and nurturing trust can be a slow process. It's important to be <b>honest</b>, <b>consistent</b>, and always maintain <b>confidentiality</b>.</p>
+						<h1><div class='icon checkin'></div>CHECK-IN</h1>
+						<div class='walec-content'>
+							<h2>Planning a Follow-Up</h2>
+							<p>Ongoing conversation is vital in ensuring the enduring value of our connection. Once we have asked, listened, and encouraged action, always arrange to check-in with a man at a future time.</p>
+							<h2>Developing Trust</h2>
+							<p>Building a relationship and nurturing trust can be a slow process. It's important to be <b>honest</b>, <b>consistent</b>, and always maintain <b>confidentiality</b>.</p>
+						</div>
 					</li>
+					
 				</ul>
 			</div>
 		</div>
 	</div>
-	
+
 </div>
 </body>
 </html>
