@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style>
+		body{
+			padding: 0px;
+			margin: 0px;
+		}
+
+		.scene{
+			width: 100vw;
+			height: 100vh;
+			background: gray;
+			position: relative;
+		}
+
+		.scene .bg{
+			background-image: url('./scene1/movember_scene1_BG.jpg');
+			background-size: cover;
+			width: 100%;
+			height: 100%;
+			position: absolute;
+			top: 0px;
+			left: 0px;
+		}
+
+		.scene .fg{
+			background-image: url('./scene1/movember_scene1_FG.png');
+			background-size: cover;
+			width: 100%;
+			height: 100%;
+			position: absolute;
+			top: 0px;
+			left: 0px;
+		}
+
+		/*scene 1*/
+
+		.scene:nth-of-type(2) .bg{
+			background-image: url('./scene1/movember_scene1_BG2.jpg')
+		}
+
+		.scene:nth-of-type(2) .fg{
+			background-image: url('./scene1/movember_scene1_FG2.png')
+		}
+
+		
+		/*scene 2*/
+
+		.scene:nth-of-type(3) .bg, 
+		.scene:nth-of-type(4) .bg{
+			background-image: url('./scene2/movember_scene2_BG.jpg');
+		}
+
+		.scene:nth-of-type(3) .fg{
+			background-image: url('./scene2/movember_scene2_FG1.png');
+		}
+
+		.scene:nth-of-type(4) .fg{
+			background-image: url('./scene2/movember_scene2_FG2.png');
+		}
+
+		/*scene 2*/
+
+		.scene:nth-of-type(5) .bg, 
+		.scene:nth-of-type(6) .bg{
+			background-image: url('./scene3/movember_scene3_BG.jpg');
+		}
+
+		.scene:nth-of-type(5) .fg{
+			background-image: url('./scene3/movember_scene3_FG1.png');
+		}
+
+		.scene:nth-of-type(6) .fg{
+			background-image: url('./scene3/movember_scene3_FG2.png');
+		}
+
+	</style>
+</head>
+<body>
+	<div class='scene'>
+		<div class='bg'></div>
+		<div class='fg'></div>
+	</div>
+	<div class='scene'>
+		<div class='bg'></div>
+		<div class='fg'></div>
+	</div>
+	<div class='scene'>
+		<div class='bg'></div>
+		<div class='fg'></div>
+	</div>
+	<div class='scene'>
+		<div class='bg'></div>
+		<div class='fg'></div>
+	</div>
+	<div class='scene'>
+		<div class='bg'></div>
+		<div class='fg'></div>
+	</div>
+	<div class='scene'>
+		<div class='bg'></div>
+		<div class='fg'></div>
+	</div>
+</body>
+</html>
