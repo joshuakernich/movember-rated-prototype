@@ -33,6 +33,29 @@
 						<p>Helping you talk to the men in your life.</p>\
 						<button data-target='story-1' class='capsule'>Jump Straight In</button></div>"
 					},
+					{
+						type:'showcase',
+						content:"<h1>Choose Your Story</h1><div class='showcase'>\
+						<div class='story-link n0'>\
+								<div class='story-info'>\
+								<h1>5 minutes</h1>\
+								<h2>Financial Hardship & Job Loss</h2>\
+							</div>\
+						</div>\
+						<div class='story-link n1'>\
+								<div class='story-info'>\
+								<h1>5 minutes</h1>\
+								<h2>Isolation & Boredom</h2>\
+							</div>\
+						</div>\
+						<div class='story-link n2'>\
+								<div class='story-info'>\
+								<h1>5 minutes</h1>\
+								<h2>The Family Man</h2>\
+							</div>\
+						</div>\
+						</div>"
+					}
 				],
 				[
 					{
@@ -742,6 +765,17 @@
 					}
 				}
 
+				function ShowcaseSegment(iSeg,$seg,chapter,onComplete){
+					var $el = $('<div class="showcase-content">').appendTo($seg).html(chapter.content);
+					$el.find('.story-link').click(function(){
+						onComplete(iSeg);
+					})
+
+					this.start = function(){
+
+					}
+				}
+
 				function SummarySegment(iSeg,$seg,chapter,onComplete){
 					var $el = $('<div class="segment-content centered">').appendTo($seg).html(chapter.content);
 					$el.find('.capsule').click(function(){
@@ -781,6 +815,10 @@
 
 					if(seg.type == 'sequel'){
 						view = new SequelSegment(iSeg,this.$seg,seg,onSegmentComplete);
+					}
+
+					if(seg.type == 'showcase'){
+						view = new ShowcaseSegment(iSeg,this.$seg,seg,onSegmentComplete);
 					}
 				}
 			}
@@ -865,6 +903,21 @@
 		button{
 			cursor: pointer;
 			outline: none;
+		}
+
+		.showcase{
+			list-style-type: none;
+			padding: 50px;
+		}
+
+		.showcase li{
+			width: 350px;
+			background: black;
+			height: 350px;
+			display: inline-block;
+			background-image: url('./convo-bg.png');
+			background-position: center;
+			background-size: cover;
 		}
 
 		.dots{
@@ -1226,6 +1279,13 @@
 			background-size: 100%;
 			filter: grayscale(100%);
 			text-align: center;
+		}
+
+		.showcase .story-link{
+			width: 350px;
+			display: inline-block;
+			background-size: cover;
+			text-align: left;
 		}
 
 		.story-link.n0{
@@ -1766,7 +1826,6 @@
 					</li>
 					<li class='story-link wrapup'>
 						<div class='story-info'>
-							<h1>Wrap up (1 minute)</h1>
 							<h2>When Things Get Serious</h2>
 						</div>
 					</li>
