@@ -172,7 +172,9 @@
 							<h1>Over the next few days</h1>\
 							<p>Watch out for men in your life who have <b>financial hardship</b> or are unusually <b>defensive</b>.</p>\
 							<p>Take the time to <b>ask questions</b> and nurture open conversation.</p>\
-							<button class='capsule'>I'm in.</button><button class='capsule'>I can't do this.</button>\
+							<h1>Are you ready to walk the talk?</h1>\
+							<p>How confident do you feel in having this conversation?</p>\
+							<button class='capsule'>Not yet</button><button class='capsule'>Getting there</button><button class='capsule'>I'm ready</button>\
 							</div>\
 						"
 					},
@@ -756,6 +758,10 @@
 
 				function SequelSegment(iSeg,$seg,chapter,onComplete){
 					var $el = $('<div class="segment-content">').appendTo($seg).html(chapter.content);
+					var $feedback = $('<div class="feedback-panel"><div class="tab">Have some feedback for us?</div><p>We\'d love to hear what you think.<br>Enter your email address and we\'ll ask you some questions.</p><input width=300/><br><button>Submit</button><div>').appendTo($el);
+					$feedback.click(function(){
+						$(this).toggleClass('open');
+					})
 					$el.find('.story-link').click(function(){
 						onComplete(iSeg);
 					})
@@ -957,6 +963,10 @@
 			background-repeat: no-repeat;
 			background-position: left center;
 			padding-left: 300px;
+		}
+
+		.intentions button.capsule{
+			padding: 10px 20px;
 		}
 
 		.post-it{
@@ -1745,6 +1755,48 @@
 			padding-top: 32px;
 			border:none;
 			color: orange;
+		}
+
+		.feedback-panel{
+			position: absolute;
+			bottom: -150px;
+			height: 150px;
+			left: 10px;
+			background: blue;
+			padding: 5px 15px;
+			color: white;
+			transition: all 0.5s;
+			box-sizing: border-box;
+
+		}
+
+		.feedback-panel p{
+			margin: 0px;
+		}
+
+		.feedback-panel .tab{
+			position: absolute;
+			top: -40px;
+			background: blue;
+			color: white;
+			left: 0px;
+			line-height: 40px;
+			padding: 0px 15px;
+			white-space: nowrap;
+			font-weight: bold;
+		}
+
+		.feedback-panel input, .feedback-panel button{
+			padding: 5px;
+			font: inherit;
+			width: 450px;
+			box-sizing: border-box;
+			border: none;
+			margin-top: 5px;
+		}
+
+		.feedback-panel.open{
+			bottom: 0px;
 		}
 
 	</style>
