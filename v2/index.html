@@ -1252,6 +1252,18 @@
 		.nav button.conversations{ background-image: url('./conversations.png'); }
 		.nav button.list{ background-image: url('./list.png'); }
 
+		@keyframes jiggle{
+			0%{
+				top:0px;
+			}
+			50%{
+				top: 5px;
+			}
+			100%{
+				top: 0px;
+			}
+		}
+
 		button.capsule{
 			width: 300px;
 			line-height: 30px;
@@ -1279,9 +1291,19 @@
 			padding: 20px 25px;
 		}*/
 
-		button.capsule:after{
-			left: auto;
+		button.capsule:after, button.capsule:before{
+			content: "▽";
+			position: absolute;
 			right: 0px;
+			width: 40px;
+			animation-name: jiggle;
+			animation-iteration-count: infinite;
+			animation-duration: 0.5s;
+		}
+
+		button.capsule:before{
+			left: 0px;
+			right: auto;
 		}
 
 		button.capsule:hover{
