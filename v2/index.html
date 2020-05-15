@@ -19,7 +19,7 @@
 						{who:"header",d:"What would you say?"},
 						{who:"buttons",list:["Get Started"]}]]
 					},
-					{
+					/*{
 
 						type:'learnings',
 						content:"<div style='text-align:center'>\
@@ -30,10 +30,10 @@
 							<li><h1>Powered by <b>ALEC</b></h1><p>Prompting more productive conversation through <b>four simple steps</b>.</p></li>\
 						</ul>\
 						<button data-target='story-1' class='capsule'>Jump Straight In</button></div>"
-					},
+					},*/
 					{
 						type:'showcase',
-						content:"<h1>Choose Your Conversation</h1><div class='showcase'>\
+						content:"<div style='align:center'><img width=300 src='logo-black.svg'/></div><div class='rundown-v2'><br><h1>Lost for words?</h1><p>Movember Conversations is an interactive tool to <b>experiment and practise questions and responses</b>, giving you the skills and confidence to approach difficult conversations.<p><h1>Choose Your Conversation</h1></div><div class='showcase'>\
 						<div class='story-link n0'>\
 								<div class='story-info'>\
 								<h1>5 minutes</h1>\
@@ -83,12 +83,12 @@
 						type:'learnings',
 						content:"\
 						<div class='learning-node watch'>\
-						<h1>WATCH</h1>\
 						<p><b>Financial hardship</b> can be an immense source of worry. Especially where other pressures are compound the difficulties.</p>\
 						<p><b>Irritability</b> and <b>defensiveness</b> can be clear signs that a man is struggling.</p>\
 						</div>\
 						<div class='learning-node ask'>\
-						<h1>ASK</h1>\
+						<div class='alec-mapper'><span class='alec-map'><b>A</b>LEC</span><span class='alec'>ASK</span></div>\
+						<h2>Consider Appropriateness</h2>\
 						<p>It's important to find <b>the right time and place</b> to have sensitive conversations. Consider finding a somewhere private, calm, and sensitive to the needs of the individual man. Dont get hung up on everything being perfect. Consider sitting side-by-side, being delicate, and courageous.</p></div>\
 						</div>\
 						<button class='learning-capsule capsule'>Let's see that play out</button>",
@@ -112,7 +112,7 @@
 						type:'learnings',
 						content:"\
 						<div class='learning-node ask'>\
-						<h1>ASK</h1>\
+						<h1><span class='alec'><b>A</b>LEC</span>ASK</h1>\
 						<h2>Open-ended questions</h2>\
 						<p><b>Open-ended questions</b> are a great way to stimulate meaningful conversation. This means asking paying close attention, being specific, and inquiring from a place of genuine care.</p>\
 						<h2>Model honest conversation</h2>\
@@ -742,6 +742,7 @@
 				}
 
 				function LearningsSegment(iSeg,$seg,chapter,onComplete){
+					$seg.addClass('learnings');
 					var $el = $('<div class="segment-content">').appendTo($seg).html(chapter.content);
 					$el.find('.capsule').click(function(){
 						onComplete(iSeg);
@@ -876,6 +877,21 @@
 		});
 	</script>
 	<style type="text/css">
+		.rundown-v2{
+			width: 500px;
+			text-align: left;
+			margin: auto;
+		}
+
+		.rundown-v2 h1{
+			background: black;
+			padding: 5px 10px;
+			color: #F7CB45;
+			font-size: 20px;
+			display: inline-block;
+			font-weight: normal;
+		}
+
 		@font-face {
 			font-family: "HeaderFont";
 			src: url("./Anton-Regular.ttf");
@@ -949,7 +965,7 @@
 
 		.showcase{
 			list-style-type: none;
-			padding: 50px;
+
 		}
 
 		.showcase li{
@@ -1076,6 +1092,49 @@
 			color: black;
 		}
 
+		.alec-mapper{
+
+			color: #F7CB45;
+			background: black;
+			margin-right: 10px;
+			padding: 5px 10px;
+			margin-top: 0px;
+			display: inline-block;
+
+			font-family: 'HeaderFont';
+			
+			font-weight: normal;
+			margin-bottom: 10px;
+		}
+
+		.alec-map{
+			letter-spacing: 0.5em;
+			display: block;
+			font-size: 1em;
+
+			padding: 0px;
+			margin: 0px;
+			padding-left: 3px;
+			background: black;
+			
+
+			color: rgba(247,203,69,0.4);
+		}
+
+		.alec-map b{
+			color: #F7CB45;
+		}
+
+		.alec{
+			padding: 0px;
+			margin: 0px;
+
+			font-size: 40px;
+			line-height: 40px;
+		}
+
+
+
 		.walec{
 			text-align: left;
 			display: inline-block;
@@ -1196,7 +1255,9 @@
 			box-sizing: border-box;
 		}
 
+		.segment.learnings{
 
+		}
 		
 
 		.container{
@@ -1321,7 +1382,6 @@
 
 		.story-link{
 			display: block;
-			margin: 0px 5px 5px 5px;
 			
 			height: 250px;
 			background: #eee;
@@ -1336,10 +1396,12 @@
 		}
 
 		.showcase .story-link{
-			width: 350px;
-			display: inline-block;
+			width: 500px;
+			display: block;
 			background-size: cover;
 			text-align: left;
+			margin: auto;
+			margin-bottom: 10px;
 		}
 
 		.story-link.n0{
@@ -1679,13 +1741,13 @@
 		}
 
 		.learning-node{
-			padding-left: 90px;
+			padding-left: 0px;
 			position: relative;
 			margin-bottom: 20px;
 		}
 
 		.learning-node:before{
-			content: "";
+
 			display: inline-block;
 			width: 75px;
 			height: 75px;
@@ -1742,7 +1804,7 @@
 		}
 
 		.learning-capsule{
-			margin-left: 85px;
+			
 		}
 
 		.sequel-buttons{
