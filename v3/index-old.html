@@ -1,0 +1,2187 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>CONVERSATIONS by Movember</title>
+	<script type="text/javascript" src="./jquery-3.4.1.min.js"></script>
+	<script type="text/javascript">
+		$(function(){
+
+			var stories = [
+				[
+					{
+						type:'convo',
+						convos:[[
+						{who:"header",d:"<img width=300 src='logo-black.svg'/>"},
+						{who:"them",d:"I'm sick of this."},
+						{who:"them",d:"I miss friends."},
+						{who:"them",d:"I miss people."},
+						{who:'options',
+									list:[
+										{who:'me',d:"Yeah man. I'm tired of it too.", correct:true, f:"<b>Great Start!</b> Exposing your own flaws and vulnerabilities can help the other man open up. Let's keep it going."},
+										{who:'me',d:"Yeah, but you've got to keep positive.",f:"This is not about you. Don't get defensive yourself."},
+										{who:'me',d:"This is just how it is for now.",f:"Don't overdo it. You aren't a pschologist. You're a friend. Demonstrate genuine interest without getting overly earnest." }
+										]},
+						{who:"them",d:"Yeah, But it's alright. I'll be ok."},
+						{who:"header",d:"What would you say?"},
+						{who:"buttons",list:["Get Started"]}]]
+					},
+					/*{
+
+						type:'learnings',
+						content:"<div style='text-align:center'>\
+						<img width=300 src='logo-black.svg'/>\
+						<ul class='rundown'>\
+							<li><h1>Lost for Words?</h1><p><b>Practical examples</b> on what to say to a friend that is struggling and how to say it.</p></li>\
+							<li><h1>Real Conversations</h1><p>Responding to challenges specific to <b>Covid-19</b>.</p></li>\
+							<li><h1>Powered by <b>ALEC</b></h1><p>Prompting more productive conversation through <b>four simple steps</b>.</p></li>\
+						</ul>\
+						<button data-target='story-1' class='capsule'>Jump Straight In</button></div>"
+					},*/
+					{
+						type:'showcase',
+						content:"<div style='align:center'><img width=300 src='logo-black.svg'/></div><div class='rundown-v2'><br><h1>Lost for words?</h1><p>Movember Conversations is an interactive tool to <b>experiment and practise questions and responses</b>, giving you the skills and confidence to approach difficult conversations.<p><h1>Choose Your Conversation</h1></div><div class='showcase'>\
+						<div class='story-link n0'>\
+								<div class='story-info'>\
+								<h1>5 minutes</h1>\
+								<h2>Job Loss</h2>\
+							</div>\
+						</div>\
+						<div class='story-link n1'>\
+								<div class='story-info'>\
+								<h1>5 minutes</h1>\
+								<h2>Isolation</h2>\
+							</div>\
+						</div>\
+						<div class='story-link n2'>\
+								<div class='story-info'>\
+								<h1>5 minutes</h1>\
+								<h2>Family Man</h2>\
+							</div>\
+						</div>\
+						</div>"
+					}
+				],
+				[
+					{
+						type:'convo',
+						convos:[
+							[
+								{who:"me",d:"Hey man. Come join us. It's chicken night!"},
+								{who:"them",d:"I can’t I'm busy."},
+								{who:"me",d:"Come on, we are all busy, still got to eat right?"},
+								'...',
+							],[
+								{who:"them",d:"Yeah, ok. I won’t eat, but I will hang out."},
+								{who:"me",d:"Are you sure you aren’t hungry? I never use all of my credits, swipe my card."},
+								{who:"them",d:"I am not a charity case."},
+								'...',
+							],[
+								{who:"me",d:"I didn’t think you were. Since we are here, just use mine."},
+								{who:"them",d:"No, I can take care of myself. My motto is do for yourself or do without. I have taken care of myself my whole life, that isn’t going to change now."},
+								{who:"buttons",list:["Sounds familiar","Other stories"]}
+							]
+						]
+
+					},
+					{
+
+					
+						type:'learnings',
+						content:"\
+						<div class='new-learning-node'>\
+						 <h1><div class='alec-icon'><b>A</b>LEC</div>ASK</h1>\
+						 Ask <b>open-ended questions</b> that can’t be answered with yes or no.\
+							<ul><li>How are you going?</li>\
+							<li>What’s on your mind?</li>\
+							<li>What’s been happening?</li></ul>\
+						</div><div class='new-learning-node'>\
+ 						<h1><div class='alec-icon'>A<b>L</b>EC</div>LISTEN</h1>\
+ 						Ask <b>clarifying questions</b> to make sure you understand.\
+ 						<ul><li>What do you mean by...? </li>\
+ 						<li>Can you tell me a bit more about...? </li>\
+ 						<li>Are you saying...? </li></ul></div>\
+						<button class='learning-capsule capsule'>Let's see that play out</button>",
+						
+
+					},{
+						type:'convo',
+						convos:[[
+							{who:"them",d:"I am not a charity case."},
+							{who:"me",d:"I didn’t think you were. Since we are here, just use mine."},
+							{who:"them",d:"No, I can take care of myself. My motto is do for yourself or do without. I have taken care of myself my whole life, that isn’t going to change now."},
+							{who:'options',
+								list:[
+									{who:'me',d:"We should talk about this sometime.",f:'Delaying conversation to another, unspecificed time is missing a key opportunity to nurture open conversation.'},
+									{who:'me',d:"Mate, you know I'm here for you.",f:'Reassurance can be encouraging but it misses the immediate opportunity to start an open conversation.'},
+									{who:'me',d:"Hey man, want to take a walk?",correct:true,f:"<b>Great Response!</b> This response is acts on the conversation immediately and creates opportunity for a private conversation." }
+									]},
+						]]
+					},
+					{
+						type:'learnings',
+						content:"\
+						<div class='learning-node ask'>\
+						<h1><span class='alec'><b>A</b>LEC</span>ASK</h1>\
+						<h2>Open-ended questions</h2>\
+						<p><b>Open-ended questions</b> are a great way to stimulate meaningful conversation. This means asking paying close attention, being specific, and inquiring from a place of genuine care.</p>\
+						<h2>Model honest conversation</h2>\
+						<p>Demonstrating your own personal ability to be <b>honest, open, and vulnerable</b> is a great way to help a man open up. Risking exposure of your own struggles helps destigmatize the issues and makes strides toward developing a close relationship.</p>\
+						</div>\
+						<button class='learning-capsule capsule'>Give it a try</button>",
+					},
+					{
+						type:'convo',
+						convos:[
+							[
+								{who:'me',d:"So, is something up?"},
+								{who:'them',d:"Yeah, I am fine. I am just not a charity case."},
+								{who:'options',
+									list:[
+										{who:'me',d:"Yeah man. I hate asking for help as well.", correct:true, f:"<b>Great Start!</b> Exposing your own flaws and vulnerabilities can help the other man open up. Let's keep it going."},
+										{who:'me',d:"I never said you were.",f:"This is not about you. Don't get defensive yourself."},
+										{who:'me',d:"Tell me more about your feelings.",f:"Don't overdo it. You aren't a pschologist. You're a friend. Demonstrate genuine interest without getting overly earnest." }
+										]},
+							],[
+								{who:'me',d:"This summer, I worked three jobs. I knew I couldn’t ask for help from my family. It was all on me to do. So, yeah, I get it."},
+								{who:'them',d:"You do?"},
+								{who:'me',d:"Yeah, it was tough."},
+								{who:'them',d:"I am going to get this. It’s a money situation, but I do have a plan."},
+								{who:'options',
+									list:[
+										{who:'me',d:"Cool, want to tell me about it?", correct:true, f:"<b>Nice one!</b> This is an open-ended question that will keep the conversation going. We're well on our way to an open conversation."},
+										{who:'me',d:"Sounds great.",f:"<b>Not great.</b> A fair thing to say but a conversation killer. Ask an open question instead."},
+										{who:'me',d:"Do you have a budget?",f:"<b>Not great.</b> We're not here to solve the problem. We are here to ask and listen. Ask open-ended questions." }
+										]},
+							]
+						]
+
+
+					},
+					{
+						type:'summary',
+						content:'\
+							<h1>Remember</h1>\
+							<div class="post-it">\
+								<ul>\
+									<li>Watch for <b>irritability</b> and <b>defensiveness</b></li>\
+									<li>Find an appropriate <b>time</b> and <b>place</b></li>\
+									<li>Model <b>honest</b> conversation</li>\
+									<li>Ask <b>open-ended questions</b></li>\
+								</ul>\
+							</div><br>\
+							<button class="capsule">Got it.</button>\
+						'
+					},
+					{
+						type:'intention',
+						content:"\
+							<div class='intentions'>\
+							<h1>Over the next few days</h1>\
+							<p>Watch out for men in your life who have <b>financial hardship</b> or are unusually <b>defensive</b>.</p>\
+							<p>Take the time to <b>ask questions</b> and nurture open conversation.</p>\
+							<h1>Are you ready to walk the talk?</h1>\
+							<p>How confident do you feel in having this conversation?</p>\
+							<button class='capsule'>Not yet</button><button class='capsule'>Getting there</button><button class='capsule'>I'm ready</button>\
+							</div>\
+						"
+					},
+					{
+						type:'sequel',
+						content:"\
+						<h1>Next Up</h1>\
+							<div class='story-link n1'>\
+								<div class='story-info'>\
+									<h1>Rejected & Isolated</h1>\
+									<h2>Better Listening</h2>\
+								</div>\
+							</div>\
+							<div class='sequel-buttons'><button class='capsule'>Other Stories</button><button class='capsule'>Review Learnings</button></div>\
+						"
+					}
+				],
+				[
+					{
+						type:'convo',
+						convos:[[
+						{who:"me",d:"So, are you coming?"},
+						{who:"them",d:"Not tonight, I am not in the mood."},
+						{who:"me",d:"What you are doing in here?"},
+						{who:"me",d:"Are you alone?"},
+						{who:"them",d:"Yes, I am. I just want to hang out here tonight."},
+						'...'
+						],[
+						{who:"me",d:"So, you’re not coming?"},
+						{who:"them",d:"No."},
+						{who:"me",d:"Ok, see ya. I guess."},
+						{who:"buttons",list:["Sounds familiar","Other stories"]}
+						]]
+					},{
+
+						type:'learnings',
+						content:"\
+						<div class='learning-node watch'>\
+						<h1>WATCH</h1>\
+						<p><b>Social isolation</b> can be a clear sign that a man is struggling. Being naturally introverted or shy is no cause for alarm. But if there is a <b>sudden or significant change</b> in social patterns, it is important to pay attention.</p>\
+						</div>\
+						<div class='learning-node listen'>\
+						<h1>LISTEN</h1>\
+						<h2>Support honesty</h2>\
+						<p>Good listenting starts with providing a sounding board that can be trusted. This means avoiding <b>assumptions</b>, avoiding <b>judgement</b>, and avoiding the temptation to <b>provide answers</b>.</li>\
+						</p>\
+						</div>\
+						<button class='learning-capsule capsule'>Let's see that play out</button>",
+					},
+					{
+						type:'convo',
+						convos:[
+						[
+							{who:"me",d:"So, you’re not coming?"},
+							{who:"them",d:"No."},
+							{who:"options",list:[
+							{d:"Ok, see ya. I guess.",f:"<b>Ouch.</b> It's easy to judge someone to be rude or boring. Try being understanding."},
+							{d:"Is something going on?", correct:true, f:"<b>Nicely done.</b> It's easy to judge someone to be rude or boring. Try, instead, to be curious and caring."},
+							{d:"Suit yourself",f:"<b>Ouch.</b> It's easy to judge someone to be rude or boring. Try being understanding."}
+							]}
+						],[
+							{who:"them",d:"I don’t want to bring you down."},
+							{who:"me",d:"What’s going on? I've got a minute."},
+							{who:"buttons",list:["I get it."]}
+						]]
+					},{
+
+						type:'learnings',
+						content:"\
+						<div class='learning-node watch'>\
+						<h1>WATCH</h1>\
+						<p><b>Loss of identity</b> or <b>rejection</b> can cause significant distress. Pay attention to moments when a man loses connection with people, sports, hobbies, and other interests in his life.</p>\
+						</div>\
+						<div class='learning-node listen'>\
+						<h1>LISTEN</h1>\
+						<h2>Identify clarifying questions</h2>\
+						<p>Express genuine interest in understanding the man's thoughts by asking open questions without making assumptions. Questions like: <li>What do you mean by...</li><li>Are you saying...</li><li>Do you feel...</li><li>Do you mean...</li></p>\
+						</div>\
+						</div>\
+						<button class='learning-capsule capsule'>Let's see that play out</button>",
+					},
+					{
+						type:'convo',
+						convos:[
+						[
+							{who:"them",d:"I don’t want to bring you down."},
+							{who:"me",d:"What’s going on? I've got a minute."},
+							{who:"them",d:"If I am not a basketball player, then who am I?"},
+							{who:"options",list:[
+								{d:"You're so much more than that.",f:"This may sound reassuring. But it dismisses a situation that may have emotional gravity."},
+								{d:"What do you mean?", correct:true, f:"<b>Nicely done.</b> Ask clarifying questions to get to the heart of the problem."},
+								{d:"Cheer up! You'll be alright.",f:"Of course they will. But right now, they need to feel seen and heard."}
+								]}
+						],[
+							{who:"them",d:"I mean,that I didn’t make the team."},
+							{who:"me",d:"What? No way, they need you!"},
+							{who:"them",d:"I didn’t make it."},
+							{who:"me",d:"Are you ok?"},
+							{who:"them",d:"Not really.I feel lost."},
+							{who:"options",list:[{d:"We're all lost, my friend.",f:"How wonderfully existential. But you've missed the chance to dig deeper in to the problem."},{d:"What do you mean by lost?", correct:true, f:"<b>Nicely done.</b> You've set this up for a deeper conversation."},{d:"You're in a safe place.",f:"Slightly reassuring, perhaps. But this is a golden opportunity to dig deeper."}]}
+						],[
+							{who:"them",d:"I don’t know, if that is the right word, um, I-"},
+							{who:"them",d:"I wonder how I'm going to make friends."},
+							{who:"me",d:"Want to talk to me about it?"},
+							{who:"buttons",list:["That went well."]}
+						]
+						]
+					},
+					{
+						type:'summary',
+						content:'\
+							<h1>Remember</h1>\
+							<div class="post-it">\
+								<ul>\
+									<li>Watch for <b>social isolation</b>.</li>\
+									<li>Support honesty by avoiding <b>assumptions</b>, <b>judgment</b>, or providing <b>answers</b>.</li>\
+									<li>Ask <b>clarifying questions</b>.</li>\
+								</ul>\
+							</div><br>\
+							<button class="capsule">Got it.</button>\
+						'
+					},
+					{
+						type:'intention',
+						content:"\
+							<div class='intentions'>\
+							<h1>Over the next few days</h1>\
+							<p>Watch out for men in your life who are <b>isolating themeselves</b> or may be experiencing <b>rejection</b>.</p>\
+							<p>Take the time to <b>listen</b> with genuine interest and care.</p>\
+							<button class='capsule'>I'm in.</button><button class='capsule'>I can't do this.</button>\
+							</div>\
+						"
+					},
+					{
+						type:'sequel',
+						content:"\
+						<h1>Next Up</h1>\
+							<div class='story-link n2'>\
+								<div class='story-info'>\
+								<h1>Failing & Isolated (5 minutes)</h1>\
+								<h2>Encouraging Action</h2>\
+							</div>\
+							</div>\
+							<div class='sequel-buttons'><button class='capsule'>Other Stories</button><button class='capsule'>Review Learnings</button></div>\
+						"
+					}
+				],[
+					{
+						type:'convo',
+						convos:[
+							[
+								/*{who:'me',d:"Where were we in the game?"},
+								{who:'them',d:"I don’t remember, it has been a while since we played Xbox."},
+								{who:'me',d:"Yeah, we used to play all of the time."},
+								{who:'them',d:"I guess, I just feel like playing alone lately."},*/
+								{who:'me',d:"I got a message from Rob. He says come to the library lounge. We can all study together."},
+								{who:'them',d:"You don’t need me. I am just going to slow you down."},
+								'...'],[
+								{who:'me',d:"What do you mean? You get this stuff way more than any of us!"},
+								{who:'me',d:"Rob is a big talker, but I don’t think he understands Chemistry. Without you there to correct him, this will go wrong."},
+								{who:'them',d:"I don’t feel up to it. I want to be alone."},
+								{who:"buttons",list:["Hmm"]}
+							]
+						]
+					},
+					{
+						type:'learnings',
+						content:"\
+						<div class='learning-node watch'>\
+						<h1>WATCH</h1>\
+						<p><b>Academic pressure</b> can cause anyone to feel overwhelmed, especially if they are struggling to keep up.</p>\
+						</div>\
+						<div class='learning-node encourage'>\
+						<h1>ENCOURAGE ACTION</h1>\
+						<h2>Encourage Physical Well-being</h2>\
+						<p>Our well-being can be drastically effected by how well we take care of our bodies. Encouraging or helping a man to take better care of himself can be a great step toward improved well-bring. You might encourage: <li>Going for a walk</li><li>Exercise</li><li>Improved sleep</li><li>Eating healthy</li></p>\
+						</div>\
+						<button class='learning-capsule capsule'>Give it a try</button>",
+					},
+					{
+						type:'convo',
+						convos:[
+							[
+								{who:'them',d:"I don’t feel up to it. I want to be alone."},
+								{who:'me',d:"Kevin, we talked about this. How about we try leaving the room, see what happens."},
+								{who:'them',d:"I can’t do it."},
+
+								{who:'options',list:[{d:"What about a walk, get some fresh air.",correct:true,f:"Great one. Encouraging some physical activity and a change of scene could be very helpful."},{d:"You CAN do it. I believe in you!",f:"How inspiring. But this does nothing in offering real help."},{d:"C'mon mate. Snap out of it.",f:"Where's your compassion?"}]},
+							],[
+								{who:'them',d:"I can’t, I don’t want to leave my room, it’s too much."},
+								{who:'me',d:"Ok, we will stay here. Is there some way I can help?"},
+								{who:'them',d:"I don’t think you can."},
+								{who:"buttons",list:["I get it."]}
+							]
+						]
+					},
+					{
+						type:'learnings',
+						content:"\
+						<div class='learning-node encourage'>\
+						<h1>ENCOURAGE ACTION</h1>\
+						<h2>Encourage Help-seeking</h2>\
+						<p>We should not expect ourselves to be the only source of support for a friend. It is important to encourage seeking help through a wider network that may include:<li>Parents</li><li>School counsellers</li><li>Psycologists</li></p>\
+						</div>\
+						<button class='learning-capsule capsule'>Give it a try</button>",
+					},
+					{
+						type:'convo',
+						convos:[
+							[
+								{who:'me',d:"Ok, we will stay here. Is there some way I can help?"},
+								{who:'them',d:"I don’t think you can."},
+
+								{who:'options',list:[
+								{d:"You need to learn to take care of yourself.",f:"We are here to offer help and support. Not provide answers. Especially those that suggest they are alone."},
+								{d:"I remember when I was like you.",f:"Cool story."},
+								{correct:true,d:"Is there someone else you can talk to?",f:"Great question. Encouraging them to consider other sources of support is a good place to start."},
+								]},
+							],[
+
+								{who:'them',d:"I don’t know."},
+
+								{who:'options',list:[
+									{correct:true,d:"Have you talked to your parents?",f:"Great option. There's no wrong answers here. The important thing is to discuss options."},
+									{correct:true,d:"Maybe the school counsellor?",f:"Great option. There's no wrong answers here. The important thing is to discuss options."},
+									{correct:true,d:"Some other close friends?",f:"Great option. There's no wrong answers here. The important thing is to discuss options."}]},
+							],[
+
+								{who:'them',d:"Hmm. Maybe that's a good idea."},
+								{who:'me',d:"You don't have to do this alone."},
+								{who:"buttons",list:["I get it."]}
+							]
+						]
+					},
+					{
+						type:'summary',
+						content:'\
+							<h1>Remember</h1>\
+							<div class="post-it">\
+								<ul>\
+									<li>Watch for <b>social isolation</b>.</li>\
+									<li>Promote action by encouraging <b>physical well-being</b> and <b>help-seeking</b>.</li>\
+								</ul>\
+							</div><br>\
+							<button class="capsule">Got it.</button>\
+						'
+					},
+					{
+						type:'intention',
+						content:"\
+							<div class='intentions'>\
+							<h1>Over the next few days</h1>\
+							<p>Watch out for men in your life who are <b>isolating themeselves</b> or <b>struggling academically</b>.</p>\
+							<p>Think about how you might <b>encourage action</b> toward improved outcomes in their well-being.</p>\
+							<button class='capsule'>I'm in.</button><button class='capsule'>I can't do this.</button>\
+							</div>\
+						"
+					},
+					{
+						type:'sequel',
+						content:"\
+						<h1>Next Up</h1>\
+							<div class='story-link n3'>\
+								<div class='story-info'>\
+									<h1>Drunk & Grieving</h1>\
+									<h2>The Art of Checking-In</h2>\
+								</div>\
+							</div>\
+							<div class='sequel-buttons'><button class='capsule'>Other Stories</button><button class='capsule'>Review Learnings</button></div>\
+						"
+					}
+				],[
+					{
+						type:'convo',
+						convos:[
+							[
+								{who:'me',d:"Dude, is this the way you want to cope?"},
+								{who:'me',d:"I can smell it from here!"},
+								{who:'them',d:"I was only having a few beers. It helps me forget for a while."},
+								'...',
+							],[	
+								{who:'me',d:"Look, I’m worried about you. How have you been since we talked?"},
+								{who:'them',d:"Me? I am fine, I’m having a great time."},
+								{who:'me',d:"You don’t seem so good."},
+								{who:'them',d:"Don't be such a downer. I'm out of here."},
+								{who:"buttons",list:["I get it."]}
+
+							]
+						]
+					},{
+						type:'learnings',
+						content:"\
+						<div class='learning-node watch'>\
+						<h1>WATCH</h1>\
+						<p><b>Drunkeness</b> and <b>substance abuse</b> can be clear signs that a man is struggling. This is especially true when their behaviour becomes <b>aggressive</b> or <b>defensive</b>.</p>\
+						</div>\
+						<div class='learning-node checkin'>\
+						<h1>CHECK-IN</h1>\
+						<h2>Planning a Follow-Up</h2>\
+						<p>Ongoing conversation is vital in ensuring the enduring value of our connection. Once we have asked, listened, and encouraged action, always <b>arrange to check-in</b> with a man at a future time.</p>\
+						</div>\
+						<button class='learning-capsule capsule'>Give it a try</button>",
+					},{
+						type:'convo',
+						convos:[
+							[
+								{who:'them',d:"Don't be such a downer. I'm out of here."},
+								{who:'options',list:[{d:"Alright, but let's talk about this tomorrow.",correct:true,f:'Good option. Your friend is drunk. This is not the time to talk. Plan ahead to check-in at another time.'},{d:'Straighten yourself out.',f:"I'm sure he'd like to. But this is your chance to be a friend and ally."},{d:"You're the one being a downer.",f:"Probably a fair statement. But try your best to not get defensive."}]},
+							]
+						]
+					},{
+						type:'learnings',
+						content:"\
+						<div class='learning-node checkin'>\
+						<h1>CHECK-IN</h1>\
+						<h2>Developing Trust</h2>\
+						<p>Building a relationship and nurturing trust can be a slow process. It's important to be <b>honest</b>, <b>consistent</b>, and always maintain <b>confidentiality</b>.</p>\
+						</div>\
+						<button class='learning-capsule capsule'>Give it a try</button>",
+					},{
+						type:'convo',
+						convos:[
+							[
+								{who:'me',d:"So how are you going?"},
+								{who:'options',list:[{d:"We need to talk about yesterday.",f:"Not a bad comment. But very earnest and mothering. Be a friend first."},{d:"You were all over the place yesterday.",f:"Don't get judgy. Express genuine concern."},{d:"I was worried about you yesterday.",correct:true,f:'Good choice. Expressing genuine concern without being judgemental can help promote honesty and trust.'}]},
+							],[
+								{who:'them',d:"Yeah, I'm sorry. I've been so down."},
+								{who:'them',d:"It's so much easier to cope with a few drinks."},
+								{who:'options',list:[{d:"Snap out of it.",f:"It's easy to get impatient when someone is struggling and coping poorly. Exercise patience and understanding."},{d:"Things will get better.",f:"No doubt. But this is unhelpful. It dismisses the current struggle, while missing an opportunity to demonstrate compassion."},{d:"It must be tough. I feel for you.",correct:true,f:'Good choice. Expressing genuine concern without being judgemental can help promote honesty and trust.'}]},
+								],[
+								{who:'me',d:"But we both know there's better ways."},
+								{who:'them',d:"Hey. Thanks for being there."},
+								{who:'them',d:"I'm glad you're looking out for me."},		
+								{who:"buttons",list:["That went well."]}					
+							]
+						]
+					},
+					{
+						type:'summary',
+						content:'\
+							<h1>Remember</h1>\
+							<div class="post-it">\
+								<ul>\
+									<li>Watch for <b>drinking</b> and <b>substance abuse</b>.</li>\
+									<li>Watch for signs of <b>aggression</b>.</li>\
+									<li>Plan to <b>check-in</b> ahead of time.</li>\
+									<li>Develop trust through <b>honesty</b> and <b>consistency</b>.</li>\
+								</ul>\
+							</div><br>\
+							<button class="capsule">Got it.</button>\
+						'
+					},
+					{
+						type:'intention',
+						content:"\
+							<div class='intentions'>\
+							<h1>Over the next few days</h1>\
+							<p>Watch out for men in your life who are <b>drinking a lot</b> or <b>aggresive</b>.</p>\
+							<p>Be determined to <b>check-in</b> and nurture an ongoing relationship or trust and support.</p>\
+							<button class='capsule'>I'm in.</button><button class='capsule'>I can't do this.</button>\
+							</div>\
+						"
+					},
+					{
+						type:'sequel',
+						content:"\
+						<h1>Let's Finish Up</h1>\
+						<div class='story-link wrapup'>\
+								<div class='story-info'>\
+									<h1>Wrap up (1 minute)</h1>\
+									<h2>When Things Get Serious</h2>\
+								</div>\
+							</div>\
+							<div class='sequel-buttons'><button class='capsule'>Review Stories</button><button class='capsule'>Review Learnings</button></div>\
+						"
+					}
+
+				],
+				[
+					{
+						type:'learnings',
+						content:"\
+						<div class='learning-node watch'>\
+						<h1>WATCH</h1>\
+						<h2>When things are more serious</h2>\
+						<p>Sometimes the signs of struggle can point to more <b>serious mental health concerns</b>. A man may become so isolated, or down on themselves, that we may be concerned for their physical well-being. It may become apparent that they suffer from <b>anxiety, depression, or are a threat to themselves or others</b>. In such a case, it is important to act more decisively in <a target='_blank' href='./help.html'>seeking additional support</a>.</p>\
+						</div>",
+
+					},
+				]
+			]
+
+			
+			function makeStory(iStory){
+				var story = stories[iStory];
+
+				$('.scroller').empty();
+				$('html, body').scrollTop(0);
+
+				var $dots = $('<ul class="dots">').appendTo($('.scroller'));
+
+				var iSegCurrent = 0;
+				var $seg;
+				var segs = [];
+				
+				for(var iSeg in story){
+					var seg = new Segment(iSeg,onSegmentComplete);	
+					segs[iSeg] = seg;		
+					$('<li class="dot">').appendTo($dots);
+				}
+
+				function onSegmentComplete(iSeg){
+
+					iSeg = parseInt(iSeg);
+					if(segs[iSeg+1]){
+						segs[iSeg+1].play();
+						$('.dot').removeClass('active').eq(iSeg+1).addClass('active');
+						scrollTo(segs[iSeg+1].$seg);
+					} else {
+						makeStory(iStory+1);
+					}
+					
+				}
+
+				onSegmentComplete(-1);
+
+				function scrollTo($seg,$thing){
+					if(!$thing) $thing = $seg;
+					var topOfSeg = $seg.offset().top;
+					var bottomOfSeg = topOfSeg + $seg.outerHeight() - $(window).height();
+					$('html, body').animate({scrollTop:Math.max(topOfSeg,Math.min(bottomOfSeg,$thing.offset().top - 200))},1000);
+				}
+
+				function ConversationsSegment(iSeg,$seg,chapter,onComplete){
+
+					var convos = [];
+					var iConvo = 0;
+
+					function onConvoComplete(){
+						iConvo++;
+						if(convos[iConvo]) doNextConvo();
+						else onComplete(iSeg);
+					}
+
+					function doNextConvo(){
+						convos[iConvo].play();
+					}
+
+					for(var c in chapter.convos){
+						var convo = new Conversation(iSeg,$seg,chapter.convos[c],onConvoComplete,onComplete);
+						//convo.reset();
+						convos[c] = convo;
+					}
+					
+					this.start = function(){
+						for(var c in convos) convos[c].reset();
+						iConvo = 0;
+						doNextConvo();
+					}
+				}
+
+				function Conversation(iSeg,$seg,convo,onPieceComplete,onAllComplete){
+	
+					var $convo = $('<ul class="conversation">').appendTo($seg);
+					var was = 'noone';
+					var $series;
+
+					this.reset = function(){
+						$convo.find('> li').css({opacity:0});
+					}
+
+					this.play = function(){
+						$convo.find('> li').each(function(i){
+							$(this).delay(750 + i*1500).animate({opacity:1});
+						})
+					}
+					
+					for( i in convo){
+						if(convo[i] == '...'){
+							var $btn = $('<li class="break breakpoint"></li>').appendTo($convo);
+							$btn.click(function(){
+								$(this).hide();
+								onPieceComplete();
+							})
+						}
+						else if(convo[i].who =='header'){
+							var $h = $('<li class="header"><h1>'+convo[i].d+'</h1></li>').appendTo($convo);
+						} else if(convo[i].who =='buttons'){
+							var $btns = $('<li class="buttons">').appendTo($convo);
+							for(var b in convo[i].list){
+								var $btn = $('<button class="capsule">'+convo[i].list[b]+'</button>').appendTo($btns);
+								$btn.click(function(){
+
+									onAllComplete(iSeg);
+								})
+							}
+
+						} else if( convo[i].who =='options' ){
+
+							var $decisionPoint = $('<li class="decision-point">').appendTo($convo);
+
+							var $me = $('<li class="me from-an-option">').appendTo($decisionPoint);
+							var $options = $('<li class="options breakpoint">').appendTo($decisionPoint);
+							var $feedback = $('<li class="feedback"></li>').appendTo($decisionPoint);
+							var $btns = $('<li class="buttons"><button class="capsule">Try something else</button></li>').appendTo($decisionPoint);
+
+							var isCorrect = false;
+
+
+							$btns.css({opacity:0});
+
+							for(var b in convo[i].list){
+				
+								var $btn = $('<button class="bubble">'+convo[i].list[b].d+'</button>').appendTo($options);
+								$btn.data('node',convo[i].list[b]);
+		
+								$btn.click(function(){
+
+									var $decisionPoint = $btn.closest('.decision-point');
+									var $options = $decisionPoint.find('.options');
+									var $feedback = $decisionPoint.find('.feedback');
+									var $btns = $decisionPoint.find('.buttons');
+
+									var node = $(this).data('node');
+									
+									$me.html('<p>'+node.d+'</p>');
+									//var $me = $('<li class="'+node.who+'"><p>'+node.d+'</p></li>').appendTo($convo);
+									$feedback.removeClass('correct')
+									$feedback.removeClass('incorrect')
+									if(node.correct) $feedback.addClass('correct')
+									else $feedback.addClass('incorrect')
+
+									$feedback.html(node.f).show();
+
+									var o = $(this).offset();
+									
+									$options.hide();
+
+									$me.offset(o).animate({top:0,left:0});
+									$feedback.css({opacity:0}).delay(500).animate({opacity:1});
+
+									/*if(node.correct){
+										$btns.find('button').html("What's next?").click(function(){
+
+											onPieceComplete();
+											$(this).hide();
+											$(this).off('click');
+										})	
+									} else {
+										$btns.find('button').click(function(){
+											console.log('here incorrect');
+											$btns.show().css({opacity:0});
+											$options.show();
+											$me.empty();
+											$feedback.hide();
+
+											$(this).off('click');
+										})
+									}*/
+
+									$btns.css({opacity:0}).delay(1000).animate({opacity:1});
+								});
+
+							}
+						} else {
+							if(convo[i].who != was) $series = $('<ul class="series '+convo[i].who+'"></ul>').appendTo($convo);
+							var $bubble = $('<li class="'+convo[i].who+'"><p>'+convo[i].d+'</p></li>').appendTo($series);
+						}
+
+						was = convo[i].who;
+					}
+				}
+
+				function LearningsSegment(iSeg,$seg,chapter,onComplete){
+					$seg.addClass('learnings');
+					var $el = $('<div class="segment-content">').appendTo($seg).html(chapter.content);
+					$el.find('.capsule').click(function(){
+						onComplete(iSeg);
+					})
+
+					this.start = function(){
+						$el.find('.list-of-learnings li').css({opacity:0,width:'0px'}).each(function(i){
+							$(this).delay(750+i*200).animate({opacity:1,width:'70px'});
+						});
+					}
+				}
+
+				function SequelSegment(iSeg,$seg,chapter,onComplete){
+					var $el = $('<div class="segment-content">').appendTo($seg).html(chapter.content);
+					var $feedback = $('<div class="feedback-panel"><div class="tab">Have some feedback for us?</div><p>We\'d love to hear what you think.<br>Enter your email address and we\'ll ask you some questions.</p><input width=300/><br><button>Submit</button><div>').appendTo($el);
+					$feedback.click(function(){
+						$(this).toggleClass('open');
+					})
+					$el.find('.story-link').click(function(){
+						onComplete(iSeg);
+					})
+
+					this.start = function(){
+
+					}
+				}
+
+				function ShowcaseSegment(iSeg,$seg,chapter,onComplete){
+					var $el = $('<div class="showcase-content">').appendTo($seg).html(chapter.content);
+					$el.find('.story-link').click(function(){
+						onComplete(iSeg);
+					})
+
+					this.start = function(){
+
+					}
+				}
+
+				function SummarySegment(iSeg,$seg,chapter,onComplete){
+					var $el = $('<div class="segment-content centered">').appendTo($seg).html(chapter.content);
+					$el.find('.capsule').click(function(){
+						onComplete(iSeg);
+					})
+
+					this.start = function(){
+						$el.find('.post-it b').each(function(i){
+							$(this).delay(750+i*500).animate({opacity:1},500,function(){ $(this).addClass('highlighted');});
+						});
+					}
+				}
+
+				function Segment(iSeg,onComplete){
+
+					this.$seg = $('<div class="segment">').appendTo('.scroller');
+					var view;
+
+					this.play = function(){
+						
+						if(view) view.start();
+					}
+
+					var seg = story[iSeg];
+					
+					if(seg.type == 'convo'){
+						this.$seg.addClass('black');
+						view = new ConversationsSegment(iSeg,this.$seg,seg,onSegmentComplete);
+					}
+					if(seg.type == 'learnings'){
+						view = new LearningsSegment(iSeg,this.$seg,seg,onSegmentComplete);
+					}
+
+					if(seg.type == 'summary' || seg.type == 'intention' ){
+						view = new SummarySegment(iSeg,this.$seg,seg,onSegmentComplete);
+					}
+
+					if(seg.type == 'sequel'){
+						view = new SequelSegment(iSeg,this.$seg,seg,onSegmentComplete);
+					}
+
+					if(seg.type == 'showcase'){
+						view = new ShowcaseSegment(iSeg,this.$seg,seg,onSegmentComplete);
+					}
+				}
+			}
+
+			makeStory(0);
+
+			$('.modal-nav button').eq(0).addClass('active');
+			$('.modal-page').eq(0).show();
+
+			$('.modal-nav button').click(function() {
+				var i = $('.modal-nav button').index(this);
+				$('.modal-nav button').removeClass('active').eq(i).addClass('active');
+				$('.modal-page').hide().eq(i).show();
+			})
+
+			var bToggle = false;
+
+			$('.modal .toggle-button').click(toggleModal);
+
+			function toggleModal(){
+				bToggle = !bToggle;
+
+				$('.modal').removeClass('alive');
+				$('.scroller').removeClass('offset');
+
+				if(bToggle){
+					$('.modal').toggleClass('alive');
+					$('.scroller').toggleClass('offset');
+				}
+			}
+
+			$('.walec > li').click(function(){
+
+				if($(this).hasClass('active')){
+					$('.walec > li').removeClass('inactive');
+					$('.walec > li').removeClass('active');
+				}else{
+					$('.walec > li').addClass('inactive');
+					$('.walec > li').removeClass('active');
+					$(this).removeClass('inactive');
+					$(this).addClass('active');
+				}
+			})
+
+			$('.story-list li').click(function(){
+				var idx = $('.story-list li').index(this);
+				toggleModal();
+				makeStory(idx+1);
+
+			})
+		});
+	</script>
+	<style type="text/css">
+
+
+		.rundown-v2{
+			width: 500px;
+			text-align: left;
+			margin: auto;
+		}
+
+		.rundown-v2 h1{
+			background: black;
+			padding: 5px 10px;
+			color: #F7CB45;
+			font-size: 20px;
+			display: inline-block;
+			font-weight: normal;
+		}
+
+		.new-learning-node h1{
+			font-family: HeaderFont;
+			font-weight: normal;
+			display: none;
+		}
+
+		.new-learning-node b{
+			color: rgba(247, 203, 69, 1);
+			background: black;
+			font-weight: normal;
+			padding: 0px 5px;
+		}
+
+		.new-learning-node:before{
+			content: "";
+			
+		}
+
+		.alec-icon{
+			display: inline-block;
+			padding: 2px 10px;
+			background: black;
+			color: rgba(247, 203, 69, 0.5);
+			margin-right: 10px;
+		}
+
+		.alec-icon b{
+			font-weight: normal;
+			color: rgba(247, 203, 69, 1);
+		}
+
+		@font-face {
+			font-family: "HeaderFont";
+			src: url("./Anton-Regular.ttf");
+		}
+
+		@font-face {
+			font-family: "BodyFont";
+			src: url("./Overpass-Light.ttf");
+		}
+
+		@font-face {
+		  font-family: BodyFont;
+		  src: url("./Overpass-Bold.ttf");
+		  font-weight: bold;
+		}	
+
+		@font-face {
+		  font-family: HandFont;
+		  src: url("./AnnieUseYourTelescope-Regular.ttf");
+		  font-weight: normal;
+		}
+		
+		body{
+			font-family: "BodyFont";
+			padding: 0px;
+			margin: 0px;
+			background: #F7CB45;
+		}
+
+		button{
+			cursor: pointer;
+			outline: none;
+		}
+
+		.rundown{
+			list-style-type: none;
+			margin:25px 0px;
+		}
+
+		.rundown li h1{
+			font-weight: normal;
+			font-size: 20px;
+			color: white;
+			background: black;
+			color: #F7CB45;
+			padding: 0px 5px;
+			margin-top: 0px;
+		}
+
+
+		.rundown li p{
+			margin-bottom: 0px;
+		}
+
+
+		.rundown li{
+			display: inline-block;
+			width: 210px;
+			text-align: left;
+			padding: 0px 10px;
+			box-sizing: border-box;
+			border-left: 1px solid;
+			vertical-align: top;
+
+		}
+
+		.rundown li:first-of-type{
+			border: none;
+
+		}
+
+		.showcase{
+			list-style-type: none;
+
+		}
+
+		.showcase li{
+			width: 350px;
+			background: black;
+			height: 350px;
+			display: inline-block;
+			background-image: url('./convo-bg.png');
+			background-position: center;
+			background-size: cover;
+		}
+
+		.dots{
+			display: flex;
+			flex-direction: column;
+		 	align-items: center;
+		 	justify-content: center;
+		 	position: fixed;
+		 	right: 0px;
+		 	width: 50px;
+		 	height: 100vh;
+		 	z-index: 1;
+		}
+
+		.dot{
+			content: "";
+			width: 6px;
+			height: 6px;
+			background: rgba(150,150,150,0.5);
+			color: white;
+			display: block;
+			border-radius: 5px;
+			margin: 3px;
+		}
+
+		.dot.active{
+			width: 10px;
+			height: 10px;
+			box-shadow: 0px 0px 2px black, inset 0px 0px 1px rgba(255,255,255,0.5);
+		}
+
+		.intentions{
+			display: inline-block;
+			text-align: left;
+			background-image: url('./intention-bg.png');
+			background-size: 300px;
+			background-repeat: no-repeat;
+			background-position: left center;
+			padding-left: 300px;
+		}
+
+		.intentions button.capsule{
+			padding: 10px 20px;
+		}
+
+		.post-it{
+			width: 500px;
+			height: 460px;
+			
+			padding: 100px 70px 50px 60px;
+			display: inline-block;
+			background-image: url('./post-it.png');
+			background-position: center;
+			background-size: 100%;
+			text-align: left;
+			box-sizing: border-box;
+			font-family: HandFont;
+			font-size: 25px;
+			font-weight: normal;
+			color: #0E235D;
+		}
+
+		.post-it ul{
+			transform: rotate(3deg);
+			list-style-type: none;
+		}
+
+		.post-it li{
+			position: relative;
+			padding-left: 20px;
+		}
+
+		.post-it li:before{
+			content: "-";
+			position: absolute;
+			left: 0px;
+			top: 0px;
+
+		}
+
+		.post-it b{
+			display: inline-block;
+			position: relative;
+		}
+
+		.post-it b:before{
+			content: "";
+			background-image: url('./highlighter.png');
+			background-size: stretch;
+			position: absolute;
+			top:-5px;
+			left:-3px;
+			right:-3px;
+			bottom: 0px;
+			z-index: -1;
+
+			clip-path: inset(0px 100% 0px 0px);
+			transition: all 0.5s;
+		}
+
+		.post-it b.highlighted:before{
+			clip-path: inset(0px 0% 0px 0px);
+		}
+
+		.segment-content{
+			width: 700px;
+			max-width: 100%;
+			text-align: left;
+			margin: auto;
+		}
+
+		h1{
+			font-size: 25px;
+			color: black;
+		}
+
+		.alec-mapper{
+
+			color: #F7CB45;
+			background: black;
+			margin-right: 10px;
+			padding: 5px 10px;
+			margin-top: 0px;
+			display: inline-block;
+
+			font-family: 'HeaderFont';
+			
+			font-weight: normal;
+			margin-bottom: 10px;
+		}
+
+		.alec-map{
+			letter-spacing: 0.5em;
+			display: block;
+			font-size: 1em;
+
+			padding: 0px;
+			margin: 0px;
+			padding-left: 3px;
+			background: black;
+			
+
+			color: rgba(247,203,69,0.4);
+		}
+
+		.alec-map b{
+			color: #F7CB45;
+		}
+
+		.alec{
+			padding: 0px;
+			margin: 0px;
+
+			font-size: 40px;
+			line-height: 40px;
+		}
+
+
+
+		.walec{
+			text-align: left;
+			display: inline-block;
+			border-left: 1px solid #ddd;
+			border-right: 1px solid #ddd;
+			padding: 0px 50px;
+			margin: auto;
+			width: 600px;
+		}
+
+		.walec > li{
+			list-style-type: none;
+			padding: 0px;
+			margin: 0px;
+		}
+
+		.walec h1{
+			vertical-align: middle;
+			font-family: 'HeaderFont';
+			font-size: 2.5em;
+			font-weight: normal;
+		}
+
+		.walec h1 .icon{
+			content: "";
+			display: inline-block;
+			width: 75px;
+			height: 75px;
+			background: url('./WALEC.png');
+			background-size: 100%;
+			vertical-align: middle;
+			margin-right: 10px;
+		}
+
+		.walec h1 .icon.ask{ background-position: 0px -75px; }
+		.walec h1 .icon.listen{ background-position: 0px -150px; }
+		.walec h1 .icon.encourage{ background-position: 0px -225px; }
+		.walec h1 .icon.checkin{ background-position: 0px -300px; }
+
+		.walec > li{
+			position: relative;
+			cursor: pointer;
+			opacity: 1;
+			transition: all 0.3s;
+			width: 600px;
+		}
+
+		.walec > li:after{
+			content: "×";
+			position: absolute;
+			width: 75px;
+			height: 75px;
+			right: 0px;
+			top: 0px;
+			line-height: 75px;
+			font-size: 60px;
+			text-align: center;
+			display: none;
+		}
+
+		.walec > li.active:after{
+			display: block;
+		}
+
+		.walec > li.active .walec-content{
+			display: block;
+			visibility: visible;
+		}
+
+		.walec > li.inactive {
+			opacity: 0.05;
+		}
+
+		.walec-content{
+			width: 550px;
+			white-space: normal;
+			display: none;
+		}
+
+		.walec-content b{
+			color: black;
+		}
+
+		/*.walec-content ul{
+			list-style-type: none;
+			padding-left: 0px;
+		}
+
+		.walec-content li:before{
+			content: "";
+			width: 10px;
+			height: 10px;
+			border-radius: 10px;
+			background: black;
+			display: inline-block;
+			margin-right: 15px;
+			vertical-align: middle;
+
+		}
+
+		.walec > li:nth-of-type(1) .walec-content li:before{ background:#CFC4F6; }*/
+
+		.segment{
+
+			width: 100%;
+			margin: 0px auto;
+			color: black;
+			clear: both;
+			position: relative;
+			overflow: hidden;
+			min-height: 100vh;
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+
+			text-align: center;
+			padding: 50px 0px;
+			box-sizing: border-box;
+		}
+
+		.segment.learnings{
+
+		}
+		
+
+		.container{
+			width: 100vw;
+			overflow-x: hidden;
+		}
+
+		.scroller{
+			position: relative;
+			transition: all 0.3s;
+			width: 100vw;
+			left: 0px;
+		}
+
+		.scroller.offset{
+			left: 250px;
+		}
+
+		.column{
+			width: 100vw;
+			display: inline-block;
+			background: white;
+			vertical-align: top;
+		}
+
+		.nav{
+			text-align: center;
+			position: absolute;
+			top: 0px;
+		}
+
+		.nav button{
+			width: 75px;
+			height: 75px;
+			
+			line-height: 75px;
+			text-align: center;
+			color: #999;
+			background: none;
+			border: none;
+			font-size: 40px;
+			
+			opacity: 0.5;
+			cursor: pointer;
+			outline: none;
+		}
+
+		.nav button:hover{
+			opacity: 0.75;
+		}
+
+		.nav button.grid{ background-image: url('./grid.png'); }
+		.nav button.conversations{ background-image: url('./conversations.png'); }
+		.nav button.list{ background-image: url('./list.png'); }
+
+		@keyframes jiggle{
+			0%{
+				top:0px;
+			}
+			50%{
+				top: 5px;
+			}
+			100%{
+				top: 0px;
+			}
+		}
+
+		button.capsule{
+			width: 300px;
+			line-height: 30px;
+			font-family: inherit;
+			
+			font-size: large;
+			background: none;
+			border: 1px solid #333;
+			color: inherit;
+			cursor: pointer;
+			font-size: 15px;
+			
+			position: relative;
+			white-space: nowrap;
+			background: blue;
+			color: white;
+			border: 1px solid blue;
+		}
+
+		/*button.capsule:after,button.capsule:before{
+			content: "↓";
+			position: absolute;
+			top: 0px;
+			left: 0px;
+			padding: 20px 25px;
+		}*/
+
+		button.capsule:after, button.capsule:before{
+			content: "▽";
+			position: absolute;
+			right: 0px;
+			width: 40px;
+			animation-name: jiggle;
+			animation-iteration-count: infinite;
+			animation-duration: 0.5s;
+		}
+
+		button.capsule:before{
+			left: 0px;
+			right: auto;
+		}
+
+		button.capsule:hover{
+			background: white;
+			border: 1px solid blue;
+			color: blue;
+		}
+
+		.story-list{
+			list-style-type:none;
+			padding: 0px;
+			white-space: normal;
+			margin: 0px;
+		}
+
+		.story-link{
+			display: block;
+			
+			height: 250px;
+			background: #eee;
+			cursor: pointer;
+			position: relative;
+			overflow: hidden;
+			background: url('./canteen-drawing-30.jpg');
+			background-position: center;
+			background-size: 100%;
+			filter: grayscale(100%);
+			text-align: center;
+		}
+
+		.showcase .story-link{
+			width: 500px;
+			display: block;
+			background-size: cover;
+			text-align: left;
+			margin: auto;
+			margin-bottom: 10px;
+		}
+
+		.story-link.n0{
+			background-image: url('./scene-standing.png');
+		}
+		.story-link.n1{
+			background-image: url('./scene-float.png');
+		}
+		.story-link.n2{
+			background-image: url('./scene-couple.png');
+		}
+		.story-link.n3{
+			background-image: url('./scene-phone.png');
+		}
+		.story-link.wrapup{
+			background: #999;
+		}
+
+		.story-info:before{
+			content: "";
+			position: absolute;
+			top: 0px;
+			left: 0px;
+			right: 0px;
+			bottom: 0px;
+			background-image: url('./chat.png');
+			background-position: center;
+			background-repeat: no-repeat;
+			background-size: 75px;
+
+		}
+
+		.story-link.active{
+
+			border: 5px solid orange;
+			filter: grayscale(0%);
+		}
+
+		.story-link.active:after{
+			
+		}
+
+		.story-info{
+			position: absolute;
+			top: 0px;
+			left: 0px;
+			right: 0px;
+			bottom: 0px;
+			background: linear-gradient(to top, black, transparent);
+		}
+
+		.story-info h1{
+			position: absolute;
+			bottom: 50px;
+			left: 20px;
+			margin: 0px;
+			padding: 0px;
+			color: white;
+			font-size: 20px;
+			font-weight: normal;
+			opacity: 0.5;
+		}
+
+		.story-info h2{
+			position: absolute;
+			bottom: 10px;
+			left: 20px;
+			margin: 0px;
+			padding: 0px;
+			color: white;
+			font-size: 30px;
+			font-weight: normal;
+		}
+
+
+
+		.conversation{
+			width: 400px;
+			margin: 0px;
+			padding: 0px;
+			margin: 0px auto;
+			text-align: left;
+			white-space: normal;
+		}
+
+		.conversation li{
+			margin: 2px;
+			list-style-type: none;
+			padding: 0px;
+			margin: 0px;
+			margin-bottom: 2px;
+			display: block;
+			position: relative;
+		}
+
+		.conversation li.buttons{
+			padding: 20px 0px;
+			text-align: center;
+		}
+
+		.conversation li.feedback{
+
+			display: inline-block;
+			color: orange;
+
+			padding-left: 70px;
+			margin-top: 20px;
+
+			background: white;
+			width: 100%;
+			box-sizing: border-box;
+
+			background-image: url('./alert.png');
+			background-position: left center;
+			background-repeat: no-repeat;
+			background-size: 50px;
+			min-height: 50px;
+		}
+
+		.conversation li.feedback.correct{
+			color: #3BB54A;
+			background-image: url('./tick.png');
+		}
+
+		.bubble{
+			cursor: pointer;
+		}
+
+		.bubble, .conversation li p{
+			max-width: 80%;
+			padding: 10px 20px;
+			background: black;
+			color: white;
+			
+			display: inline-block;
+			margin: 0px;
+			position: relative;
+			font-size: inherit;
+			border: none;
+			font-family: inherit;
+
+		}
+
+		.conversation .series{
+			padding-left: 0px;
+		}
+
+		.conversation .series li:last-of-type p:after{
+			content: "";
+			width: 0;
+			height: 0;
+			border-style: solid;
+			border-width: 10px 10px 0 0;
+			border-color: black transparent transparent transparent;
+			position: absolute;	
+			left: 10px;
+			bottom: -10px;
+		}
+
+		.conversation .series li.me:last-of-type p:after{
+			right: 10px;
+			left: auto;
+			border-width: 0 10px 10px 0;
+			border-color: transparent white transparent transparent;
+		}
+
+		.conversation li.options{
+			
+			margin: auto;
+			text-align: right;
+			display: inline-block;
+			width: 400px;
+			position: relative;
+			margin-top: 5px;
+		}
+
+		.conversation .options .bubble{
+			
+			border: 1px solid white;
+			/*animation-name: throboutline;
+			animation-duration: 1s;
+			animation-iteration-count: infinite;*/
+			background: white;
+			color: blue;
+			display: inline-block;
+			text-align: left;
+			max-width: 85%;
+			width: 85%;
+			border: 1px solid blue;
+			border-bottom: none;
+			position: relative;
+			padding-left: 40px;
+		}
+
+		.conversation .options .bubble:first-of-type{
+
+			
+		}
+
+		.conversation .options .bubble:last-of-type{
+			border-bottom: 1px solid blue;
+			
+		}
+
+		.conversation .options .bubble:before{
+			content: "1";
+			width: 20px;
+			height: 20px;
+			background: blue;
+			color: white;
+			border-radius: 10px;
+			display: inline-block;
+			position: absolute;
+			top: 12px;
+			left: 12px;
+			text-align: center;
+			line-height: 20px;
+			font-size: 12px;
+			font-weight: bold;
+		}
+
+		.conversation .options .bubble:nth-of-type(2):before{
+			content: "2";
+		}
+
+		.conversation .options .bubble:nth-of-type(3):before{
+			content: "3";
+		}
+
+		.conversation li .options:after, .conversation li .options:before{
+			position: absolute;
+			content: "";
+			width: 0;
+			height: 0;
+			border-style: solid;
+			right: 10px;
+			bottom: -10px;
+			left: auto;
+			border-width: 0 10px 10px 0;
+			border-color: transparent blue transparent transparent;
+		}
+
+		.conversation li .options:after{
+			bottom: -8px;
+			right: 11px;
+			border-width: 0 8px 9px 0;
+			border-color: transparent white transparent transparent;
+		}
+
+		@keyframes throboutline{
+			0%{	border-color: rgba(255,255,255,1); }
+			50%{ border-color: rgba(255,255,255,0.2); }
+			100%{ border-color: rgba(255,255,255,1); }
+		}
+
+		.conversation li.me{
+			text-align: right;
+	
+		}
+
+		.conversation li.them{
+
+		}
+
+		.conversation li.break{
+			text-align: center;
+			margin: 40px;
+		}
+
+		.conversation li.break:after{
+			content: "●●●";
+			background: rgba(255,255,255,0.1);
+			display: inline-block;
+			margin: auto;
+			font-weight: bold;
+			font-size: 15px;
+			color: white;
+			border: 1px solid white;
+			height: 40px;
+			line-height: 40px;
+			width: 70px;
+			text-align: center;
+			border-radius: 50px;
+			cursor: pointer;
+			animation-name: throb;
+			animation-duration: 1s;
+			animation-iteration-count: infinite;
+		}
+
+		.conversation li.header{
+			text-align: center;
+		}
+
+		@keyframes throb{
+			0%{	opacity: 1; }
+			50%{	opacity: 0.2; }
+			100%{	opacity: 1; }
+		}
+
+		.bubble, .conversation li.me p{
+			background: white;
+			color: black;
+		}
+
+		
+
+		.modal{
+			position: fixed;
+			top: 0px;
+			left: 0px;
+			width: 0px;
+		}
+
+		.modal:before{
+			content: "";
+			position: absolute;
+			top:0px;
+			left:0px;
+			width: 100vw;
+			height: 100vh;
+			transition: all 0.3s;
+			background: rgba(50,50,50,0);
+			display: none;
+		}
+
+		.modal-panel{
+			width: 650px;
+			background: white;
+			position: relative;
+			left: -650px;
+			transition: all 0.3s;
+			height: 100vh;
+			overflow-y: scroll;
+		}
+
+		.modal-page{
+			display: none;
+		}
+
+		.modal.alive .modal-panel{
+			left: 0px;
+		}
+
+		.modal.alive:before{
+			background: rgba(50,50,50,0.5);
+			display: block;
+		}
+		
+		.modal.alive .toggle-button{
+			left: 650px;
+			background: white;
+			opacity: 1;
+		}
+
+		.modal-nav{
+			text-align: center;
+			padding-top: 10px;
+			color: #999;
+		}
+
+		.modal-nav button{
+			background: none;
+			font: inherit;
+			padding: 15px 20px;
+			font-size: 20px;
+			border: none;
+			color: inherit;
+		}
+
+		.modal-nav button.active{
+			color: black;
+			font-weight: bold;
+		}
+
+		.modal .toggle-button{
+			width: 60px;
+			height: 60px;
+			
+			line-height: 20px;
+			text-align: center;
+			color: #999;
+			background: none;
+			border: none;
+			font-size: 40px;
+	
+			cursor: pointer;
+			outline: none;
+			background: #eee;
+			position: absolute;
+			left: 0px;
+			top: 10px;
+			transition: all 0.3s;
+
+			background: none;
+			opacity: 0.5
+		}
+
+		.logo{
+			width: 150px;
+			height: 70px;
+			background-image: url('./logo.png');
+			background-position: center;
+			background-size: 100%;
+			margin: auto;
+		}
+
+		.product-name{
+			font-family: "HeaderFont";
+			font-size: 70px !important;
+			font-weight: normal;
+			margin: 0px;
+		}
+
+		.learning-node{
+			padding-left: 0px;
+			position: relative;
+			margin-bottom: 20px;
+		}
+
+		.learning-node:before{
+
+			display: inline-block;
+			width: 75px;
+			height: 75px;
+			background: url('./WALEC.png');
+			background-size: 100%;
+			vertical-align: middle;
+			margin-right: 10px;
+			position: absolute;
+			left: 0px;
+			top: 0px;
+		}
+
+		.learning-node.ask:before{
+			background-position: 0% -100%;
+		}
+
+		.learning-node.listen:before{
+			background-position: 0% -200%;
+		}
+
+		.learning-node.encourage:before{
+			background-position: 0% -300%;
+		}
+
+		.learning-node.checkin:before{
+			background-position: 0% -400%;
+		}
+
+		.learning-node h1{
+			line-height: 75px;
+			margin-bottom: 0px;
+			font-size: 2.5em;
+			font-weight: normal;
+			font-family: 'HeaderFont';
+		}
+
+		.learning-node h2{
+			margin-top: 0px;
+		}
+
+		.learning-node p{
+			font-weight: normal;
+			margin-top: 0px;
+		}
+
+		
+
+		.segment-content.centered{
+			text-align: center;
+		}
+
+		.segment-content button.capsule{
+			margin-right: 5px;
+		}
+
+		.learning-capsule{
+			
+		}
+
+		.sequel-buttons{
+			padding: 20px;
+			text-align: center;
+		}
+
+		.list-of-learnings{
+			list-style-type: none;
+			text-align: center;
+			padding: 0px;
+			margin: 0px;
+		}
+
+		.list-of-learnings li{
+			display: inline-block;
+			width: 70px;
+			height: 70px;
+			background-image: url('./WALEC.png');
+			background-size: 100%;
+			padding: 0px;
+			margin: 5px;
+			vertical-align: middle;
+		}
+
+		.list-of-learnings li:nth-of-type(1){ background-position: 0% 0%; }
+		.list-of-learnings li:nth-of-type(2){ background-position: 0% -100%; }
+		.list-of-learnings li:nth-of-type(3){ background-position: 0% -200%; }
+		.list-of-learnings li:nth-of-type(4){ background-position: 0% -300%; }
+		.list-of-learnings li:nth-of-type(5){ background-position: 0% -400%; }
+
+		button.help{
+			
+			background: #DE3223;
+			border-radius: 5px;
+			vertical-align: middle;
+			font-size: 10px;
+			font-weight: bold;
+			padding: 0px;
+			line-height: 15px;
+			color: white;
+			position: absolute;
+			top: 20px;
+			left: 20px;
+			
+			
+
+			background: url('./alert.png');
+			background-size: 30px;
+			background-repeat: no-repeat;
+			background-position: center top;
+			padding-top: 32px;
+			border:none;
+			color: orange;
+		}
+
+
+
+		.feedback-panel{
+			position: absolute;
+			bottom: -150px;
+			height: 150px;
+			left: 10px;
+			background: blue;
+			padding: 5px 15px;
+			color: white;
+			transition: all 0.5s;
+			box-sizing: border-box;
+
+		}
+
+		.feedback-panel p{
+			margin: 0px;
+		}
+
+		.feedback-panel .tab{
+			position: absolute;
+			top: -40px;
+			background: blue;
+			color: white;
+			left: 0px;
+			line-height: 40px;
+			padding: 0px 15px;
+			white-space: nowrap;
+			font-weight: bold;
+		}
+
+		.feedback-panel input, .feedback-panel button{
+			padding: 5px;
+			font: inherit;
+			width: 450px;
+			box-sizing: border-box;
+			border: none;
+			margin-top: 5px;
+		}
+
+		.feedback-panel.open{
+			bottom: 0px;
+		}
+
+	</style>
+</head>
+
+<body>
+<div class='container'>
+	
+	<div class='scroller'>
+		<!--<div class='column conversation-stream'>
+			<div class='segment black'>
+				<ul class='conversation'>
+					<li class='me'><p>Hey mate, How are you?</p></li>
+					<li><p>Oh, so now you're interested!?</p></li>
+					<li class='me'><p>What do you mean?</p></li>
+					<li><p>How about not ignoring me for weeks because things are going so well for you.</p><br>
+						<p>I see you posting about all the cool things you've been up to but haven't invited me once.</p><br>
+						<p>And NOW you ask how I am!?</p></li>
+				</ul>
+				<h1>What would you say?</h1>
+				<div>
+				<button class='capsule'>Continue this conversation</button><button class='capsule more-convo'>More...</button>
+				</div>
+			</div>
+		</div>-->
+	</div>
+
+	<div class="modal">
+		<button class='toggle-button'>☰</button>
+		<div class='modal-panel'>
+			<!--<a href='./help.html' target='_blank'><button class="help">SEEK HELP</button></a>-->
+			<div class='modal-nav'><button>About</button>|<button>Conversations</button>|<button>Learnings</button></div>
+			<div class='modal-page'>
+				<div style='text-align:center;'>
+					<div class='logo'></div>
+					<h1 class='product-name'>CONVERSATIONS</h1>
+					<ul class='list-of-learnings'>
+						<li></li>
+						<li></li>
+						<li></li>
+						<li></li>
+						<li></li>
+						</ul>
+					<p>Helping you talk to the men in your life.</p>
+				</div>
+				<div style='padding:0px 50px 50px 50px'>
+				<hr>
+				<h1>Who are Movember?</h1>
+				<p>Movember are the leading charity changing the face of men’s health. We know what works for men – and what doesn’t.</p><p>Movember looks at mental health through a male lens, focusing on prevention, early intervention and health promotion.</p><p>We’re working towards a world where men take action to be mentally well, and are supported by those around them.</p>
+				<h1>Why Conversations?</h1>
+				<p>Many people don’t know what to say or worry they could make the situation worse by approaching the person. However, reaching out to someone you’re worried about is often the catalyst for that person starting on the road.</p><p>The guide explains how having a conversation can help people feel less alone and more supported in getting help for anxiety and depression, and what to do if your attempt to have the conversation is met with a bad reaction.</p>
+				</div>
+			</div>
+			<div class='modal-page'>
+				<ul class='story-list'>
+					<li class='story-link n0 active'>
+						<div class='story-info'>
+							<h1>Skint & Defensive (5 minutes)</h1>
+							<h2>Asking the Right Questions</h2>
+						</div>
+					</li>
+					<li class='story-link n1'>
+						<div class='story-info'>
+							<h1>Rejected & Isolated (5 minutes)</h1>
+							<h2>Better Listening</h2>
+						</div>
+					</li>
+					<li class='story-link n2'>
+						<div class='story-info'>
+							<h1>Failing & Isolated (5 minutes)</h1>
+							<h2>Encouraging Action</h2>
+						</div>
+					</li>
+					<li class='story-link n3'>
+						<div class='story-info'>
+							<h1>Drunk & Grieving (5 minutes)</h1>
+							<h2>The Art of Checking-In</h2>
+						</div>
+					</li>
+					<li class='story-link wrapup'>
+						<div class='story-info'>
+							<h2>When Things Get Serious</h2>
+						</div>
+					</li>
+				</ul>
+			</div>
+			<div class='modal-page'>
+				<ul class='walec master'>
+					<li>
+						<h1><div class='icon watch'></div>WATCH</h1>
+						<div class='walec-content'>
+							<p>Watch out for signs that the men around you are struggling. This includes their:
+								<ul>
+									<li><b>Losing interest</b> in things they care about.</li>
+									<li><b>Tiredness</b> or lethargy.</li>
+									<li>Taking <b>sick days</b> or otherwise being absent without explanation.</li>
+									<li>Seeming <b>irritable</b> or quick to take offence.</li>
+									<li>Any <b>unusual changes</b> in their behaviour of feelings.</li>
+									<li>Hearing them describe themselves as a <b>burden</b>.</li>
+								</ul>
+							</p>
+							<p>It's also wise to watch out for circumstances in a man's life that may be particularly challenging. This includes:</p>
+							<ul>
+								<li>Academic pressure</li>
+								<li>Financial problems</li>
+								<li>Relationship breakdown</li>
+								<li>Loss of a loved one</li>
+							</ul>
+							<p>While many of these signs may indicate men are struggling and need support. They may also allude to more serious mental health concerns. If you are seriously concerned that someone may be a threat to themselves or others, <a href='./help.html' target='_blank'>seek additional help</a>.</p>
+						</div>
+					</li>
+					<li>
+						<h1><div class='icon ask'></div>ASK</h1>
+						<div class='walec-content'>
+							<p>Asking the <b>right questions</b> at the <b>right time</b> is vital to help a man open up.</p>
+							<h2>Consider Appropriateness</h2>
+							<p>It's important to find <b>the right time and place</b> to have sensitive conversations. Consider finding a somewhere private, calm, and sensitive to the needs of the individual man. Dont get hung up on everything being perfect. Consider sitting side-by-side, being delicate, and courageous.</p>
+							<h2>Use Open-ended Conversations</h2>
+							<p><b>Open-ended questions</b> are a great way to stimulate meaningful conversation. This means asking paying close attention, being specific, and inquiring from a place of genuine care.</p>
+							<h2>Model Honest Conversations</h2>
+							<p>Demonstrating your own personal ability to be honest, open, and vulnerable is a great way to help a man open up. Risking exposure of your own struggles helps destigmatize the issues and makes strides toward developing a close relationship.</p>
+						</div>
+					</li>
+					<li>
+						<h1><div class='icon listen'></div>LISTEN</h1>
+						<div class='walec-content'>
+							<h2>Support honesty</h2>
+							<p>Good listenting starts with providing a sounding board that can be trusted. This means avoiding <b>assumptions</b>, avoiding <b>judgement</b>, and avoiding the temptation to <b>provide answers</b>.
+							</p>
+							<h2>Identify clarifying questions</h2>
+							<p>Express genuine interest in understanding the man and the conversation.</p><p>Questions like:<ul><li>What do you mean by...</li><li>Are you saying...</li><li>Do you feel...</li><li>Do you mean...</li></ul></p>
+						</div>
+					</li>
+					<li>
+						<h1><div class='icon encourage'></div>ENCOURAGE ACTION</h1>
+						<div class="walec-content">
+							<h2>Encourage Physical Well-being</h2>
+							<p>Our well-being can be drastically effected by how well we take care of our bodies. Encouraging or helping a man to take better care of himself can be a great step toward improved well-bring. You might encourage:<ul><li>Going for a walk</li><li>Exercise</li><li>Improved sleep</li><li>Eating healthy</li></ul></p>
+							<h2>Encourage Help-seeking</h2>
+							<p>We should not expect ourselves to be the only source of support for a friend. It is important to encourage seeking help through a wider network that may include:<ul><li>Parents</li><li>School counsellers</li><li>Psycologists</li></ul></p>
+						</div>
+					</li>
+					<li>
+						<h1><div class='icon checkin'></div>CHECK-IN</h1>
+						<div class='walec-content'>
+							<h2>Planning a Follow-Up</h2>
+							<p>Ongoing conversation is vital in ensuring the enduring value of our connection. Once we have asked, listened, and encouraged action, always arrange to check-in with a man at a future time.</p>
+							<h2>Developing Trust</h2>
+							<p>Building a relationship and nurturing trust can be a slow process. It's important to be <b>honest</b>, <b>consistent</b>, and always maintain <b>confidentiality</b>.</p>
+						</div>
+					</li>
+					
+				</ul>
+			</div>
+		</div>
+	</div>
+
+</div>
+</body>
+</html>

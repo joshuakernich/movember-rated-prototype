@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<html>
+<head>
+	<title></title>
+	<link href="./fontawesome-free-5.13.1-web/css/all.min.css" rel="stylesheet">
+	<style type="text/css">
+
+		@font-face {
+			font-family: "BodyFont";
+			src: url("./Overpass-Light.ttf");
+		}
+
+		@font-face {
+		  font-family: BodyFont;
+		  src: url("./Overpass-Bold.ttf");
+		  font-weight: bold;
+		}	
+
+		body{
+			background: #F7CB45;
+			font-family: "BodyFont";
+			padding: 0px;
+			margin: 0px;
+		}
+
+
+
+		.convo{
+			width: 400px;
+			margin: auto;
+			text-align: center;
+			padding-top: 50px;
+			position: relative;
+			padding-bottom: 100px;
+		}
+
+		.bit{
+			margin-bottom: 10px;
+			text-align: left;
+			position: relative;
+		}
+
+		.bit.them p{
+			position: relative;
+		}
+
+		.bit.them p:last-of-type:after{
+			position: absolute;
+			content: "";
+			width: 0;
+			height: 0;
+			border-style: solid;
+			left: 10px;
+			bottom: -8px;
+
+			border-width: 10px 10px 0px 0;
+			border-color: black transparent transparent transparent;
+		}
+
+		.header{
+			text-align: center;
+			font-size: 20px;
+			font-weight: bold;
+		}
+
+		.them p, .options p{
+			display: inline-block;
+			padding: 10px;
+			background: black;
+			color: white;
+			margin: 0px;
+			margin-bottom: 2px;
+		}
+
+		.options:after{
+			position: absolute;
+			content: "";
+			width: 0;
+			height: 0;
+			border-style: solid;
+			right: 10px;
+			bottom: -10px;
+			left: auto;
+			border-width: 0 10px 10px 0;
+			border-color: transparent blue transparent transparent;
+		}
+
+		.options.fail:after{
+			border-color: transparent #ff4400 transparent transparent;
+		}
+
+		.options{
+			text-align: right;
+			position: relative;
+		}
+
+		.options p{
+			background: white;
+
+			border: 1px solid blue;
+			display: block;
+			margin-left: 20%;
+			text-align: left;
+			color: blue;
+			border-bottom: none;
+			margin-bottom: 0px;
+			cursor: pointer;
+		}
+
+		.options p:hover{
+			background: blue;
+			color: white;
+		}
+
+		.options p.selected{
+			background: blue;
+			color: white;
+		}
+
+		.options p.selected.fail{
+			background: #ff4400;
+			border-color: #ff4400;
+		}
+
+		.options p:last-of-type{
+			border-bottom: 1px solid blue;
+		}
+
+		.options p.grayed{
+			background: #eee;
+			color: #ccc;
+		}
+
+		.feedback{
+			background: rgba(255,255,255,0.5);
+
+			padding: 1px 15px;
+			text-align: left;
+			margin: 15px 0px;
+			border: 1px solid black;
+
+			padding: 0px;
+			border: none;
+			background: none;
+		}
+
+		.feedback b{
+			background: black;
+			color: #F7CB45;
+			padding: 0px 5px;
+			font-weight: normal;
+		}
+
+
+
+
+		button{
+			width: 100%;
+			font-family: inherit;
+			font-size: inherit;
+			background: white;
+			border: 1px solid blue;
+			color: blue;
+			padding: 5px;
+		}
+
+		.bg{
+			position: fixed;
+			right: 0px;
+			top: 10vh;
+			height: 80vh;
+			width: 35vw;
+			background-size: cover;
+			background-position: left center;
+			background-repeat: no-repeat;
+			background-image: url('https://conversations.movember.com/static/assets/images/image-63e5166d68b6f880f7b8407215f3a6e294c2bd69-1000x1000-png');
+		}
+
+		.bg.left{
+			background-image: url('https://conversations.movember.com/static/assets/images/image-66a9b8a444422868dc2aa8d671ffef05a220dc5d-1000x1000-png');
+			background-position: right center;
+			right: auto;
+			left: 0px;
+		}
+
+		.feedback h1{
+			font-weight: bold;
+			font-size:20px;
+			margin-bottom: 0px;
+			color: blue;
+			text-align: center;
+		}
+
+		.feedback h1.fail{
+			color: #ff4400;
+		}
+
+		
+
+	</style>
+	<script type="text/javascript" src="./jquery-3.4.1.min.js"></script>
+	<script type="text/javascript">
+
+
+
+		$(function(){
+
+			var iBit = -1;
+			var bits = [
+				{is:'them',p:['I have no idea how I’m going to find work at this point.',"It's really getting to me."]},
+				{is:'header',p:['What would you say?']},
+				{is:'question',
+					iCorrect:0,
+					p:[
+					"Yeah. I’m lucky for now. But it doesn’t feel very stable.",
+					"Maybe you should think about all the creative stuff you can get done!",
+					"Have you seen if there are any jobs available? Or maybe volunteer work?",
+				],f:[
+					"Being <b>honest, open, and vulnerable</b> about your own struggles can help open up the conversation.",
+					"Try not to <b>jump to solutions</b>. Consider sharing your own struggles instead.",
+					"Try not to <b>jump to solutions</b>. Consider sharing your own struggles instead."
+				]},
+				{
+					is:'them',
+					p:['Yeah, I don’t really know what I’m supposed to do.','It’s my problem though. I’ll be all right.']
+				},
+				{
+					is:'question',
+					iCorrect:0,
+					p:[
+						'No doubt. But how are you holding up?',
+						'Have you tried meditating?',
+						'We should talk about this sometime.'
+					],
+					f:[
+						"Always ask <b>open-ended questions</b> that can't be answered with a simple yes or no.\
+						<ul>\
+							<li>How are you going?</li>\
+							<li>What’s on your mind?</li>\
+							<li>What’s been happening?</li>\
+						</ul>",
+						"Try not to <b>jump to solutions</b>. Focus on getting your friend to open up.",
+						"Try not to <b>delay or dodge conversation</b>. Perhaps you can help your friend open up right now."
+					]
+				},
+				{
+					is:'them',
+					p:['I’m all right. It all feels a bit pointless these days','But I’m not going to bore you with a sob story.']
+				},
+				{
+					is:'question',
+					iCorrect:1,
+					p:[
+						'Yeah, it’s a rollercoaster for sure.',
+						'What do you mean by pointless?',
+						'Yeah. Best not to dwell on these things too much.',
+					],
+					f:[
+						'Try not to <b>quickly dismiss</b> the conversation. Ask questions to help them open up.',
+						'When listening, <b>ask clarifying questions</b> to make sure you understand what is being said.<ul><li>What do you mean by...?</li><li>Can you tell me a bit more about...?</li><li>Are you saying...?</li></ul>',
+						'Try not to <b>quickly dismiss</b> the conversation. Ask questions to help them open up.'
+					]
+				},
+				{
+					is:'them',
+					p:['I just haven’t got a lot to do, so I’m spending all of my time online.','I feel like I’m not really achieving anything.',"It's really getting to me."]
+				},
+				{
+					is:'question',
+					iCorrect:1,
+					p:[
+						"There's a lot to keep everyone entertained online these days.",
+						"Have you caught up with anyone else about this?",
+						"I think everyone is struggling.",
+					],
+					f:[
+						"Making <b>broad comments</b> steers the conversation away from open discussion.",
+						"Encouraging a friend to <b>reach out to other friends and family</b> will help them develop a wider support network.",
+						"Making <b>broad comments</b> steers the conversation away from open discussion."
+					]
+				},
+				{
+					is:'them',
+					p:['Not really. I don’t really want to bother anyone.','It’s a hard time for everyone.']
+				},
+				{
+					is:'question',
+					iCorrect:1,
+					p:[
+						"Absolutely. Everyone has their own shit to deal with right now.",
+						"You're right. But now is a great time to reach out to people. It's been really helpful for me.",
+						"Yeah, maybe it's a better time to learn to enjoy your own company.",
+					],
+					f:[
+						"Don’t let the <b>broader story</b> get in the way of more personal struggles.",
+						"You're encouraging <b>reaching out</b> while demonstrating some of your own <b>vulnerability</b>.",
+						"Don’t <b>jump to solutions</b>. Look for ways to offer continued support."
+					]
+				},
+				{
+					is:'them',
+					p:['Yeah, I suppose.','Maybe I will.']
+				},
+				{
+					is:'question',
+					iCorrect:1,
+					p:[
+						'Get on with it! Now is the time.',
+						"Let's talk again in a couple of days. What time works?",
+						"Good to hear from you. I hope we can chat again sometime.",
+					],
+					f:[
+
+						'Encourage them without <b>hounding</b> them. Offer ongoing support.',
+						"Always arrange a future check in at a <b>specified time</b>.",
+						"Try to avoid <b>vague promises</b> of further connection."
+					]
+				},
+				{
+					is:'them',
+					p:["I'd like that."]
+				},
+				{
+					is:'header',
+					p:["That went well."]
+				}
+
+			]
+
+			function scroll(){
+				$("html, body").animate({ scrollTop: $(document).height() }, 1000);
+				$('.convo').css({ 'min-height': $('.convo').height() });
+			}
+
+			function nextBit() {
+				iBit++;
+				var bit = bits[iBit];
+
+				var $bit = $('<div class="bit '+bit.is+'">').appendTo($('.convo'));
+
+				var $ps = $bit;
+
+				if(bit.is == 'question'){
+					if(!bit.tried) bit.tried = [];
+					$ps = $('<div class="options">').appendTo($bit);
+					for(var i in bit.p) $('<p class='+bit.tried[i]+'>'+bit.p[i]+'</p>').appendTo($ps);
+				} else {
+					for(var i in bit.p) $('<p>'+bit.p[i]+'</p>').appendTo($ps);
+				}
+
+				
+				scroll();
+
+				if(bit.is == 'question'){
+
+					$bit.css({opacity:0,left:50,top:50}).animate({opacity:1,top:0,left:0});
+
+					$bit.find('p').click(function(){
+						$(this).addClass('selected');
+
+						var index = $bit.find('p').index(this);
+						
+						bit.tried[index] = 'grayed';
+
+						$bit.find('p').hide();
+						$(this).show();
+
+						var feedbackHeader = (index==bit.iCorrect?'<h1><i class="fas fa-thumbs-up"></i> Good choice.</h1>':'<h1 class="fail"><i class="fas fa-exclamation-circle"></i> We can do better</h1>')
+						$('<div class="feedback">'+feedbackHeader+'<p>'+bit.f[index]+'</p></div>').appendTo($bit);
+
+						if(index!=bit.iCorrect){
+							$ps.addClass('fail');
+							$(this).addClass('fail');
+							iBit--;
+						}
+						
+						$('<button>Continue</button>').appendTo($bit).click(function(){
+							$(this).hide();
+							setTimeout( nextBit, 1000 );
+						})
+
+						scroll();
+
+						$bit.find('.feedback').css({opacity:0}).animate({opacity:1});
+						$bit.find('.feedback p, .feedback ul').css({opacity:0}).delay(1000).animate({opacity:1});
+						$bit.find('button').css({opacity:0}).delay(3000).animate({opacity:1});
+					});
+				} else if (bit.is == 'them' ){
+					$bit.find('p').each(function(i){
+						$(this).css({opacity:0,left:-50,top:50}).delay(i*1000).animate({opacity:1,top:0,left:0});
+					})
+					setTimeout( nextBit, i*1000 + 2000 );
+
+				} else {
+					setTimeout( nextBit, 1500 );
+				}
+			}
+
+			nextBit();
+		})
+		
+	</script>
+</head>
+<body>
+	<div class='bg left'></div>
+	<div class='bg right'></div>
+	<div class='convo'>
+	</div>
+</body>
+</html>

@@ -82,15 +82,18 @@
 					
 						type:'learnings',
 						content:"\
-						<div class='learning-node watch'>\
-						<p><b>Financial hardship</b> can be an immense source of worry. Especially where other pressures are compound the difficulties.</p>\
-						<p><b>Irritability</b> and <b>defensiveness</b> can be clear signs that a man is struggling.</p>\
-						</div>\
-						<div class='learning-node ask'>\
-						<div class='alec-mapper'><span class='alec-map'><b>A</b>LEC</span><span class='alec'>ASK</span></div>\
-						<h2>Consider Appropriateness</h2>\
-						<p>It's important to find <b>the right time and place</b> to have sensitive conversations. Consider finding a somewhere private, calm, and sensitive to the needs of the individual man. Dont get hung up on everything being perfect. Consider sitting side-by-side, being delicate, and courageous.</p></div>\
-						</div>\
+						<div class='new-learning-node'>\
+						 <h1><div class='alec-icon'><b>A</b>LEC</div>ASK</h1>\
+						 Ask <b>open-ended questions</b> that can’t be answered with yes or no.\
+							<ul><li>How are you going?</li>\
+							<li>What’s on your mind?</li>\
+							<li>What’s been happening?</li></ul>\
+						</div><div class='new-learning-node'>\
+ 						<h1><div class='alec-icon'>A<b>L</b>EC</div>LISTEN</h1>\
+ 						Ask <b>clarifying questions</b> to make sure you understand.\
+ 						<ul><li>What do you mean by...? </li>\
+ 						<li>Can you tell me a bit more about...? </li>\
+ 						<li>Are you saying...? </li></ul></div>\
 						<button class='learning-capsule capsule'>Let's see that play out</button>",
 						
 
@@ -877,6 +880,8 @@
 		});
 	</script>
 	<style type="text/css">
+
+
 		.rundown-v2{
 			width: 500px;
 			text-align: left;
@@ -890,6 +895,37 @@
 			font-size: 20px;
 			display: inline-block;
 			font-weight: normal;
+		}
+
+		.new-learning-node h1{
+			font-family: HeaderFont;
+			font-weight: normal;
+			display: none;
+		}
+
+		.new-learning-node b{
+			color: rgba(247, 203, 69, 1);
+			background: black;
+			font-weight: normal;
+			padding: 0px 5px;
+		}
+
+		.new-learning-node:before{
+			content: "";
+			
+		}
+
+		.alec-icon{
+			display: inline-block;
+			padding: 2px 10px;
+			background: black;
+			color: rgba(247, 203, 69, 0.5);
+			margin-right: 10px;
+		}
+
+		.alec-icon b{
+			font-weight: normal;
+			color: rgba(247, 203, 69, 1);
 		}
 
 		@font-face {
