@@ -346,7 +346,10 @@
 					$ps = $('<div class="options">').appendTo($bit);
 					for(var i in bit.p) $('<p class='+bit.tried[i]+'>'+bit.p[i]+'</p>').appendTo($ps);
 				} else {
-					for(var i in bit.p) $('<p>'+bit.p[i]+'</p>').appendTo($ps);
+					for(var i in bit.p){
+						$('<p>'+bit.p[i]+'</p>').appendTo($ps);
+						if(i<(bit.p.length-1)) $ps.append('<br>');
+					}
 				}
 
 				
