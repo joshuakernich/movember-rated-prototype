@@ -61,7 +61,7 @@
 		.header{
 			text-align: center;
 			font-size: 20px;
-			font-weight: bold;
+			font-weight: normal;
 		}
 
 		.them p, .options p{
@@ -152,9 +152,6 @@
 			font-weight: normal;
 		}
 
-
-
-
 		button{
 			width: 100%;
 			font-family: inherit;
@@ -184,6 +181,8 @@
 			left: 0px;
 		}
 
+
+
 		.feedback h1{
 			font-weight: bold;
 			font-size:20px;
@@ -196,18 +195,121 @@
 			color: #ff4400;
 		}
 
+
+		.story{
+			display: inline-block;
+			height: 150px;
+			width: 100%;
+			background: rgba(255,255,255,0.1);
+			margin: 0px;
+			margin-bottom: 2px;
+			
+			box-sizing: border-box;
+			border: 1px solid blue;
+			position: relative;
+			color: blue;
+			cursor: pointer;
+		}
+
+		.story.selected{
+			background: blue;
+			color: white;
+		}
+
+		.story:before{
+			content: "";
+		}
+
+		.story .bg{
+			position: absolute;
+			height: 95%;
+			width: 50%;
+			top: 5%;
+			background-size: 220%;
+			background-position: top left;
+		}
+
+		.story .bg.left{
+			background-position: top right;
+		}
+
+		.story h1{
+			position: absolute;
+			top: 5px;
+			left: 80px;
+			
+			
+			right: 0px;
+			font-size: 20px;
+			line-height: 25px;
+			margin-bottom: 0px;
+			padding-left: 10px;
+
+			text-align: left;
+			font-weight: normal;
+			border-left: 2px solid blue;
+		}
+
+		.story:nth-of-type(1) .bg.left{
+			background-position-y: -115px;
+		}
+
+		.story:nth-of-type(2) .bg.left{
+			background-image: url('https://conversations.movember.com/static/assets/images/image-f34dd8fc826c2c2535da51855a488dfe35cc2337-1080x1080-png');
+		}
+
+		.story:nth-of-type(2) .bg{
+			background-image: url('https://conversations.movember.com/static/assets/images/image-cd42a130ffe5cd739029fcfa885e6ab4ce8f8c08-1080x1080-png');
+		}
+
+		.story:nth-of-type(3) .bg.left{
+			background-image: url('https://conversations.movember.com/static/assets/images/image-9723dfdd46c616f37dc130c33b42edfd72673e58-1000x1000-png');
+		}
+
+		.story:nth-of-type(3) .bg{
+			background-image: url('https://conversations.movember.com/static/assets/images/image-49df9364688f3b428ceac6093b52265d131ca125-1000x1000-png');
+		}
+
 		
+
+
+
+
 
 	</style>
 	<script type="text/javascript" src="./jquery-3.4.1.min.js"></script>
 	<script type="text/javascript">
 
-
-
 		$(function(){
 
 			var iBit = -1;
-			var bits = [
+
+			var bitsIntro = [
+				{is:'header',p:["<img width=300 src='logo-black.svg'/>"]},
+				{is:'them',p:["I really don't think things will get better.","What's the point?"]},
+				{is:'header',p:['What would you say?']},
+				{is:'question',
+					iCorrect:-1,
+					p:[
+					"There is no point to life, ultimately.",
+					"2020 is a write-off so far as I'm concerned.",
+					"Let's just all agree that life sucks.",
+				],f:[
+					"You may be right. But this guy is struggling. Let's find some way to <b>open up the conversation</b>.",
+					"You may be right. But this guy is struggling. Let's find some way to <b>open up the conversation</b>.",
+					"You may be right. But this guy is struggling. Let's find some way to <b>open up the conversation</b>.",
+				]},
+				{is:'header',p:['Conversations can be tough.']},
+				{is:'header',p:['We all get stuck sometimes.']},
+				{is:'header',p:["So let's have a conversation."]},
+				{
+					is:'story-list',
+					p:['Finding Work &<br>Uncertainty','Isolation &<br>Boredom','Frustrated &<br>Lonely']
+				}
+			]
+
+
+			var bitsWork = [
 				{is:'them',p:['I have no idea how I’m going to find work at this point.',"It's really getting to me."]},
 				{is:'header',p:['What would you say?']},
 				{is:'question',
@@ -328,6 +430,8 @@
 
 			]
 
+			var bits = bitsIntro;
+
 			function scroll(){
 				$("html, body").animate({ scrollTop: $(document).height() }, 1000);
 				$('.convo').css({ 'min-height': $('.convo').height() });
@@ -345,6 +449,10 @@
 					if(!bit.tried) bit.tried = [];
 					$ps = $('<div class="options">').appendTo($bit);
 					for(var i in bit.p) $('<p class='+bit.tried[i]+'>'+bit.p[i]+'</p>').appendTo($ps);
+				} else if(bit.is == 'story-list'){
+					for(var i in bit.p){
+						$('<di class="story"><div class="bg left"></div><div class="bg"></div><h1>'+bit.p[i]+'</h1></div>').appendTo($ps);
+					}
 				} else {
 					for(var i in bit.p){
 						$('<p>'+bit.p[i]+'</p>').appendTo($ps);
@@ -375,7 +483,7 @@
 						if(index!=bit.iCorrect){
 							$ps.addClass('fail');
 							$(this).addClass('fail');
-							iBit--;
+							if(bit.iCorrect>-1) iBit--;
 						}
 						
 						$('<button>Continue</button>').appendTo($bit).click(function(){
@@ -395,7 +503,19 @@
 					})
 					setTimeout( nextBit, i*1000 + 2000 );
 
+				} else if(bit.is == 'story-list'){
+					$bit.find('.story').click(function(){
+						$(this).addClass('selected');
+						$bit.find('.story').hide();
+						$(this).show();
+
+						iBit = -1;
+						bits = bitsWork;
+						setTimeout( nextBit, 1500 );
+
+					});
 				} else {
+					$bit.css({opacity:0,left:150}).animate({opacity:1,left:-20}).animate({opacity:1,left:0});
 					setTimeout( nextBit, 1500 );
 				}
 			}
