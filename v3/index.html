@@ -250,6 +250,10 @@
 			border-left: 2px solid blue;
 		}
 
+		.story.selected h1{
+			border-left-color: white;
+		}
+
 		.story:nth-of-type(1) .bg.left{
 			background-position-y: -115px;
 		}
@@ -270,9 +274,55 @@
 			background-image: url('https://conversations.movember.com/static/assets/images/image-49df9364688f3b428ceac6093b52265d131ca125-1000x1000-png');
 		}
 
+		.remember:before {
+			content: "";
+			height: 25px;
+			width: 400px;
+			background-image: url('./divider.png');
+			background-size: 100%;
+			margin-bottom: 10px;
+			display: block;
+		}
 		
+		.remember, .intention {
+			margin-bottom: 10px;
+		}
 
+		.intention{
+			padding-top: 15px;
+			border-top: 2px solid black;
+		}
 
+		.remember .alec-list{
+			margin-bottom: 15px;
+		}
+
+		.intention h1, .remember h1{
+			font-size: 20px;
+
+			margin: 0px;
+			padding: 0px;
+			margin-bottom: 5px;
+		}
+
+		.intention b, .remember b{
+			
+			color: #F7CB45;
+			background: black;
+			padding: 0px 5px;
+			font-weight: normal;
+		}
+
+		.intention button{
+			width: 32%;
+			margin-right: 1%;
+		}
+
+		.intention button.selected{
+			background: blue;
+			color: white;
+			outline: none;
+		}
 
 
 
@@ -308,6 +358,16 @@
 				}
 			]
 
+			var bitsSegway = [
+				{
+					is:'header',
+					p:['Great.'],
+				},
+				{
+					is:'story-list',
+					p:['Finding Work &<br>Uncertainty','Isolation &<br>Boredom','Frustrated &<br>Lonely']
+				}
+			]
 
 			var bitsWork = [
 				{is:'them',p:['I have no idea how I’m going to find work at this point.',"It's really getting to me."]},
@@ -426,11 +486,27 @@
 				{
 					is:'header',
 					p:["That went well."]
+				},
+				{
+					is:'remember',
+					p:[
+						'Ask <b>open-ended questions</b>.',
+						'Listen with <b>clarifying questions</b>.',
+						'Encourage seeking support from <b>family and friends</b>.',
+						'Checkin at a <b>specified time</b>.'
+					]
+				},
+				{
+					is:'intention',
+					p:[
+						'Think about friends that may be struggling with <b>finding work</b> or with <b>financial difficulties</b>. Make an effort to check in and have a <b>genuine, supportive conversation</b>.'
+					]
 				}
 
 			]
 
 			var bits = bitsIntro;
+			
 
 			function scroll(){
 				$("html, body").animate({ scrollTop: $(document).height() }, 1000);
@@ -453,6 +529,28 @@
 					for(var i in bit.p){
 						$('<di class="story"><div class="bg left"></div><div class="bg"></div><h1>'+bit.p[i]+'</h1></div>').appendTo($ps);
 					}
+				} else if (bit.is=='remember') {
+					$ps = $('<div class="alec-list">').appendTo($ps);
+					$('<h1>Remember</h1>').appendTo($ps);
+					for(var i in bit.p){
+						$('<li>'+bit.p[i]+'</li>').appendTo($ps);
+					}
+					$('<button>Continue</button>').appendTo($bit)
+
+
+				} else if (bit.is=='intention') {
+
+					$('<h1>In the next few days</h1>').appendTo($ps);
+					for(var i in bit.p){
+						$('<p>'+bit.p[i]+'</p>').appendTo($ps);
+					}
+
+					$('<h1>Are you ready to walk the talk?</h1><p>How confident do you feel in having this conversation?</p>').appendTo($bit);
+
+					$('<button>Not yet</button>').appendTo($bit);
+					$('<button>Getting there</button>').appendTo($bit);
+					$("<button>I'm ready</button>").appendTo($bit);
+
 				} else {
 					for(var i in bit.p){
 						$('<p>'+bit.p[i]+'</p>').appendTo($ps);
@@ -463,6 +561,7 @@
 				
 				scroll();
 
+				// all of the interaction happens here
 				if(bit.is == 'question'){
 
 					$bit.css({opacity:0,left:50,top:50}).animate({opacity:1,top:0,left:0});
@@ -505,15 +604,37 @@
 
 				} else if(bit.is == 'story-list'){
 					$bit.find('.story').click(function(){
-						$(this).addClass('selected');
+						
+						var me = $(this);
+						me = $bit.find('.story').eq(0);
+
+						me.addClass('selected');
 						$bit.find('.story').hide();
-						$(this).show();
+						me.show();
 
 						iBit = -1;
 						bits = bitsWork;
 						setTimeout( nextBit, 1500 );
 
 					});
+				} else if(bit.is == 'remember'){
+					$bit.find('button').click(function() {
+						$(this).hide();
+						setTimeout( nextBit, 1000 );
+					})
+
+					$bit.css({opacity:0,top:50}).animate({opacity:1,top:0});
+
+				} else if(bit.is == 'intention'){
+					$bit.find('button').click(function() {
+						$(this).addClass('selected');
+						bits = bitsSegway;
+						iBit = -1;
+						setTimeout( nextBit, 1000 );
+					})
+
+					$bit.css({opacity:0,top:50}).animate({opacity:1,top:0});
+
 				} else {
 					$bit.css({opacity:0,left:150}).animate({opacity:1,left:-20}).animate({opacity:1,left:0});
 					setTimeout( nextBit, 1500 );
