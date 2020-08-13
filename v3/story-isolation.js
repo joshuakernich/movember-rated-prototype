@@ -39,13 +39,13 @@ var storyIsolation = [
 },
 {
 	is:"them",
-	p:["Man, I’ve been getting so deep into this.", "The stats are streaming in every hour and every country has their own plan. It’s crazy! I think there’s only one way to do it. Full lockdown!","I hope we’ll have a cure soon. This is getting old."]
+	p:["Man, I’ve been getting so deep into this.", "The stats are streaming in every hour. It’s crazy! I've just been watching the graphs for weeks.","I heard Russia is pumping out a cure soon. If I survive that long!"]
 
 },
 {
 	is:"question",
 	iCorrect:2,
-	p:["Maybe you should slow down.","Dude. Take a break from the stats. You’re so wound up in it.","Have you told anyone else how you’re feeling about all this?" ],
+	p:["Maybe you should slow down.","Dude. Take a break from the stats. You’re so wound up in it.","Seems like it's really getting to you. Have you talked to anyone else about all this?" ],
 	f:["Try not to <b>jump to solutions</b>. Stick with offering support.","Don’t be <b>judgemental</b>. Your friend needs support.","This is the first step toward suggesting reaching out to a <b>broader support network</b>." ]
 },
 {
@@ -60,20 +60,37 @@ var storyIsolation = [
 },
 {
 	is:"them",
-	p:["You’re probably right.","I should look into that."]
+	p:["Mate, I'm not seeing a therapist.","It's not that bad."]
+},{
+	is:"question",
+	iCorrect:0,
+	p:["That fair. I find my therapist really helpful but there's plenty of other people you could talk to.","C'mon mate, therapists are great. You would definitely benefit.","That's good to hear. Now go forth and be merry."],
+	f:["Listen with an <b>open mind</b> while encouraging action.","Don't be <b>pushy</b>. This may require a delicate touch.","Don't let him get away with <b>avoiding action</b> so easily."]
+},
+{
+	is:"them",
+	p:["Wait, why are you seeing someone?","You seem fine."]
 },{
 	is:"question",
 	iCorrect:1,
-	p:["Just book it! Now’s the time.","I’ve been seeing someone that I think you’d like. Happy to share."],
+	p:["Yeah, I am. There's just some private stuff I like to get off my chest.","I’ve definitely had my own struggles recently. They've been really helpful."],
+	f:["Maintaining your privacy is perfectly reasonable. But <b>revealing your own struggles</b> may help your friend open up.","<b>Revealing your own struggles</b> may help your friend open up."] 
+},{
+	is:"them",
+	p:["And it's not weird talking to them?","Just seems a bit extreme."]
+},{
+	is:"question",
+	iCorrect:1,
+	p:["Nah man. They're really helpful. Just book it! Now’s the time.","Nah, they're really great. I think you’d like them. Happy to share."],
 	f:["Your friend may need this kind of push. But they also might appreciate some <b>practical guidance</b>.","Offering <b>practical guidance</b> in finding professional help can make a big difference."] 
 },{
 	is:"them",
-	p:["That would be great!"]
+	p:["Alright. Maybe it's worth a try."]
 },
 {
 	is:"question",
 	iCorrect:2,
-	p:["I’ll check to see you’ve done it.","You need it. Trust me.","Let’s have a call tomorrow. It'd be great to see your face."],
+	p:["I’ll check to see you’ve done it.","You need it. Trust me.","Let’s have another call tomorrow. It'd be great to see your face."],
 	f:["Don’t <b>mother him</b>. Be kind and set up a check-in.","You’re not the oracle of knowledge. Be kind, patient and <b>set up a check-in</b>.","Offer <b>ongoing support</b> so he can be reassured that he’s not alone and can rely on your support and encouragement."] 
 
 },{

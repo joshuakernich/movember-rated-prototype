@@ -110,7 +110,41 @@ var storyWork = [
 				},
 				{
 					is:'them',
-					p:["I'd like that."]
+					p:["Yeah, sure. Talk soon."]
+				},{
+					is:'question',
+					iCorrect:0,
+					p:[
+						"Can we book something in for Thursday afternoon?",
+						"Get back to me with a time.",
+						"Sounds good!",
+					],
+					f:[
+
+						"Try and be <b>specific and intentional</b>.",
+						"Try to avoid leaving things with <b>vague plans</b>.",
+						"Try to avoid leaving things with <b>vague plans</b>."
+					]
+				},{
+					is:'them',
+					p:["Uhm. I'm pretty busy.","Let's see how it turns out."]
+				},{
+					is:'question',
+					iCorrect:2,
+					p:[
+						"Works for me.",
+						"Sure. Get back to me.",
+						"Yeah, I'm busy too. I think booking in a time will help.",
+					],
+					f:[
+
+						"Don't let them get away with <b>vague plans</b> so easily",
+						"Don't let them get away with <b>vague plans</b> so easily",
+						"Always try to make <b>definite, specific plans</b>."
+					]
+				},{
+					is:'them',
+					p:["Alright, Thursday afternoon works.","Call me up at lunchtime."]
 				},
 				{
 					is:'header',
@@ -128,7 +162,7 @@ var storyWork = [
 				{
 					is:'intention',
 					p:[
-						'Think about friends that may be struggling with <b>finding work</b> or with <b>financial difficulties</b>. Make an effort to check in and have a <b>genuine, supportive conversation</b>.'
+						'Think about friends that may be struggling with <b>finding work</b> or with <b>financial difficulties</b>. Make an effort to check in and have a genuine, supportive conversation.'
 					]
 				}
 
