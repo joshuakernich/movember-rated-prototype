@@ -58,7 +58,7 @@
 			border-color: black transparent transparent transparent;
 		}
 
-		.header{
+		.header, .share{
 			text-align: center;
 			font-size: 20px;
 			font-weight: normal;
@@ -340,7 +340,7 @@
 			font-weight: normal;
 		}
 
-		.intention button{
+		.share button, .intention button{
 			width: 32%;
 			margin-right: 1%;
 		}
@@ -349,6 +349,10 @@
 			background: blue;
 			color: white;
 			outline: none;
+		}
+
+		.share{
+			color: blue;
 		}
 
 
@@ -392,6 +396,9 @@
 				{
 					is:'header',
 					p:['Great.'],
+				},
+				{
+					is:'share'
 				},
 				{
 					is:'story-list',
@@ -446,6 +453,8 @@
 					$('<button>Getting there</button>').appendTo($bit);
 					$("<button>I'm ready</button>").appendTo($bit);
 
+				} else if(bit.is=='share'){
+					$('<button><i class="far fa-share-square"></i> Share</button>').appendTo($bit);
 				} else {
 					for(var i in bit.p){
 						$('<p>'+bit.p[i]+'</p>').appendTo($ps);
