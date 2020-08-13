@@ -1,5 +1,5 @@
 var storyLonely = [
-	{is:'them',p:["I'll never meet anyone. Honestly, it’s hopeless.I can’t believe I have to spend this whole year of college alone."]},
+	{is:'them',p:["I'll never meet anyone. Honestly, it’s hopeless. I can’t believe I have to spend this whole year of college alone."]},
 	{
 		is:'question',
 		iCorrect:1,
