@@ -81,11 +81,11 @@ var storyIsolation = [
 },{
 	is:"question",
 	iCorrect:1,
-	p:["Nah man. They're really helpful. Just book it! Now’s the time.","Nah, they're really great. I think you’d like them. Happy to share."],
+	p:["Nah man. They're really helpful. Just book it! Now’s the time.","Nah, they're really great. I think you’d like them. I could give you the number if you'd like?"],
 	f:["Your friend may need this kind of push. But they also might appreciate some <b>practical guidance</b>.","Offering <b>practical guidance</b> in finding professional help can make a big difference."] 
 },{
 	is:"them",
-	p:["Alright. Maybe it's worth a try."]
+	p:["Hmm","Alright. Maybe it's worth a try."]
 },
 {
 	is:"question",
