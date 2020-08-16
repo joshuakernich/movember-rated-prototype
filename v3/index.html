@@ -188,7 +188,7 @@
 			background-repeat: no-repeat;
 			background-image: url('https://conversations.movember.com/static/assets/images/image-63e5166d68b6f880f7b8407215f3a6e294c2bd69-1000x1000-png');
 			opacity: 1;
-			transition: all 0.5s;
+			transition: left 0.5s, right 0.5s, opacity 0.5s;
 			transition-timing-function: cubic-bezier(0.5,0.5,0.5,1.5);
 		}
 
@@ -306,10 +306,18 @@
 
 		.bg.left.n3, .story:nth-of-type(3) .bg-story.left{
 			background-image: url('https://conversations.movember.com/static/assets/images/image-9723dfdd46c616f37dc130c33b42edfd72673e58-1000x1000-png');
+
+			background-image: url('https://conversations.movember.com/static/assets/images/image-49df9364688f3b428ceac6093b52265d131ca125-1000x1000-png');
+			background-position: top left;
+			transform: scaleX(-1);
 		}
 
 		.bg.right.n3, .story:nth-of-type(3) .bg-story{
 			background-image: url('https://conversations.movember.com/static/assets/images/image-49df9364688f3b428ceac6093b52265d131ca125-1000x1000-png');
+
+			background-image: url('https://conversations.movember.com/static/assets/images/image-1f42081a0d06afc5da8fd8a99e1b6e6123ec4737-1000x1000-png');
+			background-position: top right;
+			transform: scaleX(-1);
 		}
 
 		.remember:before {
@@ -379,6 +387,11 @@
 
 			var iBit = -1;
 
+			var storyList = {
+					is:'story-list',
+					p:['Isolated &<br>Bored','Frustrated &<br>Lonely','Finding Work &<br>Uncertain']
+				};
+
 			var bitsIntro = [
 				{is:'header',p:["<img width=300 src='logo-black.svg'/>"]},
 				{is:'them',p:["I really don't think things will get better.","What's the point?"]},
@@ -397,10 +410,7 @@
 				{is:'header',p:['Conversations can be tough.']},
 				{is:'header',p:['We all get stuck sometimes.']},
 				{is:'header',p:["So let's have a conversation."]},
-				{
-					is:'story-list',
-					p:['Jobless &<br>Uncertain','Isolated &<br>Bored','Frustrated &<br>Lonely']
-				}
+				storyList
 			]
 
 			var bitsSegway = [
@@ -411,10 +421,7 @@
 				{
 					is:'share'
 				},
-				{
-					is:'story-list',
-					p:['Finding Work &<br>Uncertain','Isolated &<br>Bored','Frustrated &<br>Lonely']
-				}
+				storyList
 			]
 
 			var bits2 = [
@@ -422,6 +429,7 @@
 			]
 
 			var bits = bitsIntro;
+			bits = bitsSegway;
 
 			function scroll(){
 				$("html, body").animate({ scrollTop: $(document).height() }, 1000);
@@ -532,7 +540,7 @@
 						me.show();
 
 						iBit = -1;
-						bits = [storyWork,storyIsolation,storyLonely][index];
+						bits = [storyIsolation,storyLonely,storyWork][index];
 
 						$('.bg').removeClass('hidden n1 n2 n3');
 						$('.bg').addClass('n'+(index+1));

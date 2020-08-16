@@ -16,7 +16,7 @@ var storyLonely = [
 	{
 		is:'question',
 		iCorrect:0,
-		p:[ "You’re not a dickhead, mate. Just sounds like you’re lonely.","It sounds like you’re being dramatic to me."],
+		p:[ "You’re not a dickhead. Just sounds like you’re lonely.","It sounds like you’re being dramatic to me."],
 		f: [ "<b>Reflecting back</b> what a man has said and <b>asking questions</b> can demonstrate that you’re listening and interested.<ul><li>It sounds like...</li><li>I get the impression that...</li></ul>","Try not to <b>quickly judge</b> this guy for suffering."]
 	},
 	{
@@ -44,7 +44,7 @@ var storyLonely = [
 	},{
 		is:'question',
 		iCorrect:0,
-		p:["Sounds like a good idea. What kind of things? Maybe we can do something together.","Yeah man. Don’t bother with all that online shit."],
+		p:["Sounds like a good idea. What kind of things? Maybe we can do something together.","Yeah. Don’t bother with all that online shit."],
 		f:["Asking <b>open questions</b> and offering more of <b>our own time</b> is a great gesture.","Online stuff does kind of suck. But maybe we should <b>avoid adding to the grief</b>."]
 	},{
 		is:"them",
