@@ -34,7 +34,7 @@ var storyIsolation = [
 {
 	is:"question",
 	iCorrect:2,
-	p:["Dude. I don't think this is ever going to be over.","I think we're in this for a long time yet.","What does your day-to-day look like?"],
+	p:["Dude. I don't think this is ever going to be over.","I think we're in this for a long time yet.","Yeah, it's dragging on for sure. What are your days looking like?"],
 	f:["Maybe avoid fuelling your friends <b>dramatic thoughts</b> while they're struggling.","You're a cunning realist. But maybe your friend needs some <b>support</b>.","Asking <b>open questions</b> is a great approach." ]
 },
 {

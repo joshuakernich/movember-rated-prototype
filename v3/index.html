@@ -97,6 +97,10 @@
 			border-color: transparent white transparent transparent;
 		}
 
+		.options p.selected:after{
+			display: none;
+		}
+
 		.options p:hover:after, .options.fail p:after{
 			display: none;
 		}
@@ -429,7 +433,7 @@
 			]
 
 			var bits = bitsIntro;
-			bits = bitsSegway;
+			
 
 			function scroll(){
 				$("html, body").animate({ scrollTop: $(document).height() }, 1000);
