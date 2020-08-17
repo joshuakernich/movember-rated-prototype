@@ -6,7 +6,7 @@ var storyLonely = [
 		p:["Maybe it’s best to just accept it for the time being.","Yeah, it’s tough. How are you coping with it all?","Yeah, it’s tough. But I’m sure you’ll be fine."],
 		f:["Try not to <b>dismiss the conversation</b> so quickly.",
 			"Ask <b>open-ended questions</b> that can’t be answered with simple yes or no replies.<ul><li>How are you doing?</li><li>What’s on your mind?</li><li>What’s been happening?</li></ul>",
-			"Try not to dismiss the conversation so quickly."]
+			"Try not to <b>dismiss the conversation</b> so quickly."]
 
 	},
 	{
