@@ -205,6 +205,10 @@
 		  .bg {
 		    width: 50vw;
 		  }
+
+		  .bg.faded{
+			opacity: 0.2;
+		}
 		}
 
 		.bg.left{
@@ -213,6 +217,8 @@
 			right: auto;
 			left: 0px;
 		}
+
+
 
 		.bg.hidden{
 			transition-timing-function: cubic-bezier(0.5,-0.5,0.5,0.5);
@@ -513,6 +519,7 @@
 
 						$bit.find('p').hide();
 						$(this).show();
+						$('.bg').addClass('faded');
 
 						var feedbackHeader = (index==bit.iCorrect?'<h1><i class="fas fa-thumbs-up"></i> Good choice.</h1>':'<h1 class="fail"><i class="fas fa-exclamation-circle"></i> We can do better</h1>')
 						$('<div class="feedback">'+feedbackHeader+'<p>'+bit.f[index]+'</p></div>').appendTo($bit);
@@ -542,6 +549,7 @@
 
 				} else if(bit.is == 'story-list'){					
 
+					
 					$('.bg').addClass('hidden');
 
 					$bit.find('.story').click(function(){
@@ -558,6 +566,7 @@
 						bits = [storyIsolation,storyLonely,storyWork][index];
 
 						$('.bg').removeClass('hidden n1 n2 n3');
+						$('.bg').removeClass('faded');
 						$('.bg').addClass('n'+(index+1));
 
 						setTimeout( nextBit, 2000 );
