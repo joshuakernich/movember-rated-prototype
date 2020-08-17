@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <meta charset="utf-8">
+<meta name="viewport" content="width=440, user-scalable=no">
 <html>
 <head>
 	<title></title>
@@ -22,6 +23,10 @@
 			font-family: "BodyFont";
 			padding: 0px;
 			margin: 0px;
+			-webkit-text-size-adjust: 100%;
+			-moz-text-size-adjust: 100%;
+			-ms-text-size-adjust: 100%;
+			text-size-adjust: 100%;
 		}
 
 		.convo{
@@ -194,6 +199,12 @@
 			opacity: 1;
 			transition: left 0.5s, right 0.5s, opacity 0.5s;
 			transition-timing-function: cubic-bezier(0.5,0.5,0.5,1.5);
+		}
+
+		@media only screen and (max-width: 500px) {
+		  .bg {
+		    width: 50vw;
+		  }
 		}
 
 		.bg.left{
