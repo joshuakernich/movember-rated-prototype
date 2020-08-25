@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<html>
+<head>
+	<title>Parser</title>
+	<script type="text/javascript" src="./jquery-3.4.1.min.js"></script>
+	<script type="text/javascript" src="./MoCo1.js"></script>
+	<script type="text/javascript">
+
+		var js = [];
+
+		$(function(){
+			for(var m in MoCo1.modules){
+				for(var l in MoCo1.modules[m].lessons){
+					for(var s in MoCo1.modules[m].lessons[l].sections){
+
+						var was = '';
+						for(var cl in MoCo1.modules[m].lessons[l].sections[s].conversationLines){
+
+							var now = MoCo1.modules[m].lessons[l].sections[s].conversationLines[cl].speakerId;
+							if(now != was){
+								var $bit = $("<li class='bit'>").appendTo('.convo');
+							}
+							was = now;
+
+							$('<p>').appendTo($bit).html(MoCo1.modules[m].lessons[l].sections[s].conversationLines[cl].text);
+						}
+
+						if(MoCo1.modules[m].lessons[l].sections[s].conversationOptions){
+							var $bit = $("<li class='bit'>").appendTo('.convo');
+							var $bit = $("<ul>").appendTo($bit);
+						}
+
+						for(var co in MoCo1.modules[m].lessons[l].sections[s].conversationOptions){
+							var $option = $('<li>').appendTo($bit).html(MoCo1.modules[m].lessons[l].sections[s].conversationOptions[co].text);
+							$('<p>').appendTo($option).html(MoCo1.modules[m].lessons[l].sections[s].conversationOptions[co].feedback);
+						}
+					}
+				}
+			}
+		})
+	</script>
+</head>
+<body>
+	<ol class='convo'></ol>
+</body>
+</html>

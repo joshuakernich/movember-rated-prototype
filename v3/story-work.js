@@ -1,4 +1,4 @@
-var storyWork = [
+var storyWork = {name:'Finding Work & Uncertain',thread:[
 				{is:'them',p:['I have no idea how I’m going to find work at this point.',"It's really getting to me."]},
 				{is:'header',p:['What would you say?']},
 				{is:'question',
@@ -166,4 +166,4 @@ var storyWork = [
 					]
 				}
 
-			]
+			]}

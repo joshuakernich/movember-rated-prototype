@@ -311,6 +311,7 @@
 			text-align: left;
 			font-weight: normal;
 			border-left: 2px solid blue;
+			width: 150px;
 		}
 
 		.story.selected h1{
@@ -421,7 +422,10 @@
 
 			var storyList = {
 					is:'story-list',
-					p:['Isolated &<br>Bored','Frustrated &<br>Lonely','Finding Work &<br>Uncertain']
+					p:[
+					storyIsolation,
+					storyLonely,
+					storyWork]
 				};
 
 			var bitsIntro = [
@@ -482,7 +486,7 @@
 					for(var i in bit.p) $('<p class='+bit.tried[i]+'>'+bit.p[i]+'</p>').appendTo($ps);
 				} else if(bit.is == 'story-list'){
 					for(var i in bit.p){
-						$('<di class="story"><div class="bg-story left"></div><div class="bg-story"></div><h1>'+bit.p[i]+'</h1></div>').appendTo($ps);
+						$('<di class="story"><div class="bg-story left"></div><div class="bg-story"></div><h1>'+bit.p[i].name+'</h1></div>').appendTo($ps);
 					}
 				} else if (bit.is=='remember') {
 					$ps = $('<div class="alec-list">').appendTo($ps);
@@ -574,7 +578,7 @@
 						me.show();
 
 						iBit = -1;
-						bits = [storyIsolation,storyLonely,storyWork][index];
+						bits = storyList.p[index].thread;
 
 						$('.bg').removeClass('hidden n1 n2 n3');
 						$('.bg').removeClass('faded');

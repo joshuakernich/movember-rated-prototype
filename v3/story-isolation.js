@@ -1,4 +1,4 @@
-var storyIsolation = [
+var storyIsolation = {name:'Withdrawn & Obsessive',thread:[
 {
 	is:'them',
 	p:["Mate! It’s almost midday. Time to get out of bed and get on the beers!"]
@@ -111,7 +111,7 @@ var storyIsolation = [
 {
 	is:'intention',
 	p:["Watch out for friends that may be <b>misusing drugs or alcohol</b>. Watch for men who may be <b>withdrawing</b> from social contact or displaying escalating, obsessive, angry or irritable behaviour. Listen and connect from a place of friendship and care."] 
-}];
+}]};
 
 
 

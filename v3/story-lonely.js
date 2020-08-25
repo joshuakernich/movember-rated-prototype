@@ -1,4 +1,4 @@
-var storyLonely = [
+var storyLonely = {name:'Lonely & Frustrated',thread:[
 	{is:'them',p:["I'll never meet anyone. Honestly, it’s hopeless. I can’t believe I have to spend this whole year of college alone."]},
 	{
 		is:'question',
@@ -80,4 +80,4 @@ var storyLonely = [
 			'Watch out for friends that may be <b>lonesome</b> or making dramatic statements about how <b>hopeless</b> their situation is. Listen and connect from a place of friendship and care.'
 		]
 	}
-]
+]}

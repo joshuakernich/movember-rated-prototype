@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<html>
+<head>
+	<title>MoCo UNI Stories</title>
+	<script type="text/javascript" src="./jquery-3.4.1.min.js"></script>
+	<script type="text/javascript" src="./story-work.js"></script>
+	<script type="text/javascript" src="./story-isolation.js"></script>
+	<script type="text/javascript" src="./story-lonely.js"></script>
+
+	<style type="text/css">
+		@font-face {
+			font-family: "BodyFont";
+			src: url("./Overpass-Light.ttf");
+		}
+
+		body{
+			font-family: "BodyFont";
+		}
+
+		li p{
+			border-left: 1px solid black;
+			padding-left: 10px;
+		}
+
+
+		li.correct:before{
+			content:"✓";
+			color: white;
+			margin-right: 5px;
+			background: green;
+			width: 20px;
+			height: 20px;
+			line-height: 20px;
+			border-radius: 10px;
+			display: inline-block;
+			text-align: center;
+		}
+
+		li.incorrect:before{
+			content:"!";
+			color: white;
+			margin-right: 5px;
+			background: orange;
+			width: 20px;
+			height: 20px;
+			line-height: 20px;
+			border-radius: 10px;
+			display: inline-block;
+			text-align: center;
+			font-weight: bold.
+		}
+
+	</style>
+	<script type="text/javascript">
+		$(function(){
+
+
+
+			function printStory(story) {
+				
+				$('<h1>').appendTo('.convo').html(story.name);
+				story = story.thread;
+
+				for(var i in story){
+					var bit = story[i];
+					var $bit = $("<li class='bit'>").appendTo('.convo');
+					$('<h2>').appendTo($bit).html(bit.is);
+					var $ul = $('<ul>').appendTo($bit);
+					for( var j in bit.p){
+						var $li = $('<li>').appendTo($ul).html(bit.p[j]);
+						if(bit.f){
+							$('<p>').appendTo($li).html(bit.f[j]);
+							if(bit.iCorrect == j){
+								$li.addClass('correct');
+							} else {
+								$li.addClass('incorrect');
+							}
+						}
+					}
+				}
+			}
+
+			printStory(storyWork);
+			printStory(storyIsolation);
+			printStory(storyLonely);
+
+		})
+	</script>
+</head>
+<body>
+	<ol class='convo'></ol>
+</body>
+</html>
