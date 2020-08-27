@@ -598,6 +598,10 @@
 						iBit = -1;
 						bits = storyList.p[index].thread;
 
+						for(var b in bits){
+							bits[b].tried = [];
+						}
+
 						$('.bg').removeClass('hidden n1 n2 n3');
 						$('.bg').removeClass('faded');
 						$('.bg').addClass('n'+(index+1));
