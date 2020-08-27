@@ -62,16 +62,16 @@ var storyFamily = {
 		},
 		{
 			is:'question',
-			iCorrect:2,
+			iCorrect:1,
 			p:[
 			'What do you mean?',
+			'This must be a tough time for kids. What’s worrying you about them?',
 			'Kids are tough. They’ll survive. Let’s talk about you.',
-			'This must be a tough time for kids. What’s worrying you about them?'
 			],
 			f:[
 			'Try and be a little more <b>specific</b>.',
+			'<b>Reflect their concerns</b> back to them and ask a <b>specific, open question</b>.',
 			'Don’t be <b>dismissive</b>. Pay attention and mirror what they’re saying back to them.',
-			'<b>Reflect their concerns</b> back to them and ask a <b>specific, open question</b>.'
 			]
 		},
 		{
@@ -80,16 +80,17 @@ var storyFamily = {
 		},
 		{
 			is:'question',
-			iCorrect:2,
+			iCorrect:0,
 			p:[
+
+				'Do you think they’re struggling with everything going on?',
 				'Have some kindness for yourself.',
 				'I’m sure they’re fine. They can entertain themselves.',
-				'Do you think they’re struggling with everything going on?'
 			],
 			f:[
+				"Demonstrating that you're listening by <b>asking deeper questions</b> will help develop the conversation.",
 				"This is actually kinda nice. But let's ask some <b>deeper questions</b>.",
 				'Don’t be <b>dismissive</b>. Ask questions.',
-				"Demonstrating that you're listening by <b>asking deeper questions</b> will help develop the conversation."
 			]	
 		},
 		{
@@ -98,16 +99,17 @@ var storyFamily = {
 		},
 		{
 			is:'question',
-			iCorrect:2,
+			iCorrect:1,
 			p:[
 				'Maybe make a daily schedule.',
+				'Sounds tough. Are there any changes you could make?',
 				'You need to slow down and take a breather!',
-				'Sounds tough. Are there any changes you could make?'
+				
 			],
 			f:[
 				"Don’t be <b>prescriptive</b>. Encourage them to find their own solution.",
+				"<b>Encourage him to think creatively</b> about how to improve the situation.",
 				"Don’t <b>give them orders</b>. Encourage them to find their own solution.",
-				"<b>Encourage him to think creatively</b> about how to improve the situation."
 			]
 		},
 		{
@@ -116,6 +118,7 @@ var storyFamily = {
 		},
 		{
 			is:'question',
+			iCorrect:1,
 			p:[
 				"Talk to your boss about cutting back. Make some more time for your family.",
 				"Like seeing if your work can offer you more support. Maybe there's room for some flexibility?"
@@ -131,16 +134,18 @@ var storyFamily = {
 		},
 		{
 			is:'question',
-			iCorrect:2,
+			iCorrect:0,
 			p:[
+				"It wouldn’t hurt. This is new territory for all of us. I’m still trying to figure out things too.",
 				"Less talk, more action. Modern problems require modern solutions!",
 				"Get on it! There's plenty of opportunities to change things up.",
-				"It wouldn’t hurt. This is new territory for all of us. I’m still trying to figure out things too."
+				
 			],
 			f:[
+
+				"It’s helpful to <b>reflect on your own experiences</b> to encourage vulnerability.",
 				"Don’t get <b>pushy</b>. Your ramblings aren't helpful here.",
 				"Things were going well. Don’t get <b>pushy</b> and overwhelm this guy.",
-				"It’s helpful to <b>reflect on your own experiences</b> to encourage vulnerability."
 			]
 		},
 		{
@@ -183,6 +188,25 @@ var storyFamily = {
 			is:'them',
 			p:["It's a date!"]
 		},
+		{
+			is:'header',
+			p:["That went well."]
+		},
+		{
+			is:'remember',
+			p:[
+				'Ask questions at an <b>appropriate time</b>.',
+				'Listen and <b>reflect his thoughts</b> back to him.',
+				'Encourage a <b>problem-solving</b> attitude.',
+				'Check in on a <b>regular basis</b>.'
+			]
+		},
+		{
+			is:'intention',
+			p:[
+				'Look out for men who are <b>struggling to adapt</b> or having difficulty <b>juggling family and work-life</b>. Commit to offering a supportive, listening ear.'
+			]
+		}
 
 
 	]
