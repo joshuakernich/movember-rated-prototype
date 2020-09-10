@@ -1,12 +1,12 @@
 var storyIsolation = {name:'Withdrawn & Obsessive',thread:[
 {
 	is:'them',
-	p:["Mate! It’s almost midday. Time to get out of bed and get on the beers!"]
+	p:["It’s almost midday. Time to get out of bed and get on the beers!"]
 },
 {
 	is:"question",
 	iCorrect:1,
-	p:["Uhm... maybe start with some water.","Ah man. I know that feeling. Sounds like the lockdown blues.","A bit early for that, don’t you think?"],
+	p:["Umm... maybe start with some water.","Ah man. I know that feeling. Sounds like the lockdown blues.","A bit early for that, don’t you think?"],
 	f:["Avoid being <b>judgemental</b>. Try to open up the conversation.","Demonstrating that you’re listening and <b>sharing your own struggles</b> can help create an open conversation.","Avoid being <b>judgemental</b>. Try to open up the conversation"]
 },
 {
@@ -34,7 +34,7 @@ var storyIsolation = {name:'Withdrawn & Obsessive',thread:[
 {
 	is:"question",
 	iCorrect:2,
-	p:["Dude. I don't think this is ever going to be over.","I think we're in this for a long time yet.","Yeah, it's dragging on for sure. What are your days looking like?"],
+	p:["Dude. I don't think this is ever going to be over.","I think it'll be like this for a long time.","Yeah, it's dragging on for sure. What are your days looking like?"],
 	f:["Maybe avoid fuelling your friends <b>dramatic thoughts</b> while they're struggling.","You're a cunning realist. But maybe your friend needs some <b>support</b>.","Asking <b>open questions</b> is a great approach." ]
 },
 {
@@ -60,17 +60,17 @@ var storyIsolation = {name:'Withdrawn & Obsessive',thread:[
 },
 {
 	is:"them",
-	p:["Mate, I'm not seeing a therapist.","It's not that bad."]
+	p:["Dude, I'm not seeing a therapist.","It's not that bad."]
 },{
 	is:"question",
 	iCorrect:0,
-	p:["That fair. I find my therapist really helpful but there's plenty of other people you could talk to.","C'mon mate, therapists are great. You would definitely benefit.","That's good to hear. Now go forth and be merry."],
+	p:["No pressure. I find my therapist actually really helpful but there's plenty of other people you could talk to.","C'mon. Therapists are great. It'd totally work for you.","That's good to hear. Now go forth and be merry."],
 	f:["Listen with an <b>open mind</b> while encouraging action.","Don't be <b>pushy</b>. This may require a delicate touch.","Don't let him get away with <b>avoiding action</b> so easily."]
 },
 {
 	is:"them",
 	p:["Wait, why are you seeing someone?","You seem fine."]
-},{
+},{x
 	is:"question",
 	iCorrect:1,
 	p:["Yeah, I am. There's just some private stuff I like to get off my chest.","I’ve definitely had my own struggles recently. They've been really helpful."],
@@ -90,7 +90,7 @@ var storyIsolation = {name:'Withdrawn & Obsessive',thread:[
 {
 	is:"question",
 	iCorrect:2,
-	p:["I’ll check to see you’ve done it.","You need it. Trust me.","Let’s have another call tomorrow. It'd be great to see your face."],
+	p:["I’ll check to see you’ve done it.","You need it. Trust me.","Let’s have another call tomorrow. It'd be great to see you."],
 	f:["Don’t <b>mother him</b>. Be kind and set up a check-in.","You’re not the oracle of knowledge. Be kind, patient and <b>set up a check-in</b>.","Offer <b>ongoing support</b> so he can be reassured that he’s not alone and can rely on your support and encouragement."] 
 
 },{

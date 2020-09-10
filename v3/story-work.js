@@ -1,12 +1,12 @@
 var storyWork = {name:'Finding Work & Uncertain',thread:[
-				{is:'them',p:['I have no idea how I’m going to find work at this point.',"It's really getting to me."]},
+				{is:'them',p:['I have no idea how I’m going to find a job at this point.',"It's really getting to me."]},
 				{is:'header',p:['What would you say?']},
 				{is:'question',
 					iCorrect:0,
 					p:[
-					"Yeah. I’m lucky for now. But it doesn’t feel very stable.",
+					"That sounds really tough. The uncertainty is getting to me as-well.",
 					"Maybe you should think about all the creative stuff you can get done!",
-					"Have you seen if there are any jobs available? Or maybe volunteer work?",
+					"Have you seen if there are any jobs available? Maybe a side hustle?",
 				],f:[
 					"Being <b>honest, open, and vulnerable</b> about your own struggles can help open up the conversation.",
 					"Try not to <b>jump to solutions</b>. Consider sharing your own struggles instead.",
@@ -37,7 +37,7 @@ var storyWork = {name:'Finding Work & Uncertain',thread:[
 				},
 				{
 					is:'them',
-					p:['I’m all right. It all feels a bit pointless these days','But I’m not going to bore you with a sob story.']
+					p:['I’m all right. It all feels kinda pointless these days','But I’m not going to bore you with a sob story.']
 				},
 				{
 					is:'question',
@@ -97,7 +97,7 @@ var storyWork = {name:'Finding Work & Uncertain',thread:[
 					is:'question',
 					iCorrect:1,
 					p:[
-						'Get on with it! Now is the time.',
+						"Do it! Now's the time.",
 						"Let's talk again in a couple of days. What time works?",
 						"Good to hear from you. I hope we can chat again sometime.",
 					],
@@ -127,14 +127,14 @@ var storyWork = {name:'Finding Work & Uncertain',thread:[
 					]
 				},{
 					is:'them',
-					p:["Uhm. I'm pretty busy.","Let's see how it turns out."]
+					p:["Umm. I'm pretty busy.","Let's see how it turns out."]
 				},{
 					is:'question',
 					iCorrect:2,
 					p:[
 						"Works for me.",
 						"Sure. Get back to me.",
-						"Yeah, I'm busy too. I think booking in a time will help.",
+						"Yeah, I'm busy too. I think setting a time will help.",
 					],
 					f:[
 
@@ -156,7 +156,7 @@ var storyWork = {name:'Finding Work & Uncertain',thread:[
 						'Ask <b>open-ended questions</b>.',
 						'Listen with <b>clarifying questions</b>.',
 						'Encourage seeking support from <b>family and friends</b>.',
-						'Checkin at a <b>specified time</b>.'
+						'Check in at a <b>specified time</b>.'
 					]
 				},
 				{

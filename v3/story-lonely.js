@@ -11,7 +11,7 @@ var storyLonely = {name:'Lonely & Frustrated',thread:[
 	},
 	{
 		is:"them",
-		p:["Hmm. Not great, I suppose.","I guess I was excited about this year.","Now it’s all gone to shit and I’m just the dickhead that has to go it alone."]
+		p:["Hmm. Not great, I suppose.","I guess I was excited about this year.","Now it’s all gone to hell and I’m just the dickhead that has to go it alone."]
 	},
 	{
 		is:'question',
@@ -29,7 +29,7 @@ var storyLonely = {name:'Lonely & Frustrated',thread:[
 		p:[
 			"You need to surrender to the new unknown.",
 			"Have you thought of any ways you could deal with this?",
-			"I have some mindful practices that might help."
+			"I have some mindfulness exercises that might help."
 			
 		],
 		f:[
