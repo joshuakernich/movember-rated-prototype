@@ -70,7 +70,7 @@ var storyIsolation = {name:'Withdrawn & Obsessive',thread:[
 {
 	is:"them",
 	p:["Wait, why are you seeing someone?","You seem fine."]
-},{x
+},{
 	is:"question",
 	iCorrect:1,
 	p:["Yeah, I am. There's just some private stuff I like to get off my chest.","I’ve definitely had my own struggles recently. They've been really helpful."],
