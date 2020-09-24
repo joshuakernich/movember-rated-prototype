@@ -1,5 +1,9 @@
-var storyFamily = {
+var storyCovidFamily = {
 	name:"Juggling Work & Family",
+	bg:{
+		left:{img:'https://conversations.movember.com/static/assets/images/image-9723dfdd46c616f37dc130c33b42edfd72673e58-1000x1000-png'},
+		right:{img:'https://conversations.movember.com/static/assets/images/image-49df9364688f3b428ceac6093b52265d131ca125-1000x1000-png'}
+	},
 	thread:[
 		{
 			is:'them',p:['I really should check on the kids.','I’m so busy with work. But I need to get them away from screens for a while.']
@@ -13,13 +17,13 @@ var storyFamily = {
 			iCorrect:1,
 			p:[
 				'Good plan. Your family is more important than work.',
-				'Yeah. My youngest is glued to my phone. He doesn’t understand why he can’t play with his friends.',
+				'Yeah. My youngest is glued to my phone. He doesn’t understand why he can’t play with his friends as much.',
 				'Just concentrate on your work. The kids can take care of themselves.'
 			],
 			f:[
 				'Try not to judge or <b>impose your own values</b>. Help your friend open up.',
 				'<b>Sharing your own struggles</b> is a great way to open up conversation.',
-				'Try not to judge or <b>impose your own values</b>. Help your friend open up.',
+				'Try not to <b>impose your own ideas</b>. Help your friend open up.',
 			]
 		},
 		{
@@ -35,7 +39,7 @@ var storyFamily = {
 				'All good. Let’s catch up tomorrow. What time is good?'
 			],
 			f:[
-				"Don't <b>walk away</b> so easily. Maybe you can make another plan?",
+				"Don't <b>walk away</b> so easily. Tune in to what your friend is saying and make another plan.",
 				'Try to avoid <b>vague promises</b> of future connection.',
 				'Making sure you set an <b>appropriate, specific time</b> is a great place to start.'
 			]
@@ -90,7 +94,7 @@ var storyFamily = {
 			f:[
 				"Demonstrating that you're listening by <b>asking deeper questions</b> will help develop the conversation.",
 				"This is actually kinda nice. But let's ask some <b>deeper questions</b>.",
-				'Don’t be <b>dismissive</b>. Ask questions.',
+				'Don’t <b>shut them down</b>. Ask questions.',
 			]	
 		},
 		{
@@ -120,7 +124,7 @@ var storyFamily = {
 			is:'question',
 			iCorrect:1,
 			p:[
-				"Talk to your boss about cutting back. Make some more time for your family.",
+				"You should tell your boss you need to cut back to spend more time with your family.",
 				"Like seeing if your work can offer you more support. Maybe there's room for some flexibility?"
 			],
 			f:[
@@ -144,7 +148,7 @@ var storyFamily = {
 			f:[
 
 				"It’s helpful to <b>reflect on your own experiences</b> to encourage vulnerability.",
-				"Don’t get <b>pushy</b>. Your ramblings aren't helpful here.",
+				"Don’t get <b>pushy</b>. A witty catch phrase could easily feel dismissive.",
 				"Things were going well. Don’t get <b>pushy</b> and overwhelm this guy.",
 			]
 		},

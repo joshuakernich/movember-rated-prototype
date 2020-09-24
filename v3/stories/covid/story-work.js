@@ -1,4 +1,9 @@
-var storyWork = {name:'Finding Work & Uncertain',thread:[
+var storyCovidWork = {name:'Unemployed & Uncertain',
+				bg:{
+					left:{img:'https://conversations.movember.com/static/assets/images/image-f34dd8fc826c2c2535da51855a488dfe35cc2337-1080x1080-png'},
+					right:{img:'https://conversations.movember.com/static/assets/images/image-cd42a130ffe5cd739029fcfa885e6ab4ce8f8c08-1080x1080-png'}
+				},
+				thread:[
 				{is:'them',p:['I have no idea how I’m going to find a job at this point.',"It's really getting to me."]},
 				{is:'header',p:['What would you say?']},
 				{is:'question',
@@ -8,7 +13,7 @@ var storyWork = {name:'Finding Work & Uncertain',thread:[
 					"Maybe you should think about all the creative stuff you can get done!",
 					"Have you seen if there are any jobs available? Maybe a side hustle?",
 				],f:[
-					"Being <b>honest, open, and vulnerable</b> about your own struggles can help open up the conversation.",
+					"Acknowledging what they've shared and being <b>honest and vulnerable</b> about your own struggles can help open up the conversation.",
 					"Try not to <b>jump to solutions</b>. Consider sharing your own struggles instead.",
 					"Try not to <b>jump to solutions</b>. Consider sharing your own struggles instead."
 				]},
@@ -32,23 +37,23 @@ var storyWork = {name:'Finding Work & Uncertain',thread:[
 							<li>What’s been happening?</li>\
 						</ul>",
 						"Try not to <b>jump to solutions</b>. Focus on getting your friend to open up.",
-						"Try not to <b>delay or dodge conversation</b>. Perhaps you can help your friend open up right now."
+						"Try not to <b>delay or dodge</b> the conversation. Perhaps you can help your friend open up right now."
 					]
 				},
 				{
 					is:'them',
-					p:['I’m all right. It all feels kinda pointless these days','But I’m not going to bore you with a sob story.']
+					p:['I’m all right. It all feels kinda pointless these days.','But I’m not going to bore you with a sob story.']
 				},
 				{
 					is:'question',
 					iCorrect:1,
 					p:[
-						'Yeah, it’s a rollercoaster for sure.',
+						'Yeah. Welcome to the Corona-coaster.',
 						'What do you mean by pointless?',
 						'Yeah. Best not to dwell on these things too much.',
 					],
 					f:[
-						'Try not to <b>quickly dismiss</b> the conversation. Ask questions to help them open up.',
+						'Nice pun! But try not to <b>quickly dismiss</b> the conversation. Ask questions to help them open up.',
 						'When listening, <b>ask clarifying questions</b> to make sure you understand what is being said.<ul><li>What do you mean by...?</li><li>Can you tell me a bit more about...?</li><li>Are you saying...?</li></ul>',
 						'Try not to <b>quickly dismiss</b> the conversation. Ask questions to help them open up.'
 					]
@@ -62,13 +67,13 @@ var storyWork = {name:'Finding Work & Uncertain',thread:[
 					iCorrect:1,
 					p:[
 						"There's a lot to keep everyone entertained online these days.",
-						"Have you caught up with anyone else about this?",
+						"Have you spoken to anyone else about how you're feeling?",
 						"I think everyone is struggling.",
 					],
 					f:[
-						"Making <b>broad comments</b> steers the conversation away from open discussion.",
+						"Making <b>broad comments</b> steers the conversation away from their personal struggles.",
 						"Encouraging a friend to <b>reach out to other friends and family</b> will help them develop a wider support network.",
-						"Making <b>broad comments</b> steers the conversation away from open discussion."
+						"Making <b>broad comments</b> steers the conversation away from their personal struggles."
 					]
 				},
 				{
@@ -86,12 +91,12 @@ var storyWork = {name:'Finding Work & Uncertain',thread:[
 					f:[
 						"Don’t let the <b>broader story</b> get in the way of more personal struggles.",
 						"You're encouraging <b>reaching out</b> while demonstrating some of your own <b>vulnerability</b>.",
-						"Don’t <b>jump to solutions</b>. Look for ways to offer continued support."
+						"Don’t be <b>dismissive</b> or <b>jump to solutions</b>. Look for ways to offer continued support."
 					]
 				},
 				{
 					is:'them',
-					p:['Yeah, I suppose.','Maybe I will.']
+					p:['Yeah, maybe.',"I'll think about it."]
 				},
 				{
 					is:'question',
@@ -127,19 +132,19 @@ var storyWork = {name:'Finding Work & Uncertain',thread:[
 					]
 				},{
 					is:'them',
-					p:["Umm. I'm pretty busy.","Let's see how it turns out."]
+					p:["Umm... not sure what I'm doing that day.","Let's see how it turns out."]
 				},{
 					is:'question',
 					iCorrect:2,
 					p:[
 						"Works for me.",
 						"Sure. Get back to me.",
-						"Yeah, I'm busy too. I think setting a time will help.",
+						"Yeah, I've got some things going on too. I think setting a time will help.",
 					],
 					f:[
 
-						"Don't let them get away with <b>vague plans</b> so easily",
-						"Don't let them get away with <b>vague plans</b> so easily",
+						"Don't let them get away with <b>vague plans</b> so easily.",
+						"Don't let them get away with <b>vague plans</b> so easily.",
 						"Always try to make <b>definite, specific plans</b>."
 					]
 				},{
@@ -154,7 +159,7 @@ var storyWork = {name:'Finding Work & Uncertain',thread:[
 					is:'remember',
 					p:[
 						'Ask <b>open-ended questions</b>.',
-						'Listen with <b>clarifying questions</b>.',
+						'Listen and use <b>clarifying questions</b>.',
 						'Encourage seeking support from <b>family and friends</b>.',
 						'Check in at a <b>specified time</b>.'
 					]
@@ -162,7 +167,7 @@ var storyWork = {name:'Finding Work & Uncertain',thread:[
 				{
 					is:'intention',
 					p:[
-						'Think about friends that may be struggling with <b>finding work</b> or with <b>financial difficulties</b>. Make an effort to check in and have a genuine, supportive conversation.'
+						'Think about friends that may be struggling to <b>find work</b> or experiencing <b>financial difficulties</b>. Make an effort to check in and have a genuine, supportive and open conversation.'
 					]
 				}
 

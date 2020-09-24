@@ -1,4 +1,9 @@
-var storyLonely = {name:'Lonely & Frustrated',thread:[
+var storyUniLonely = {name:'Lonely & Frustrated',
+	bg:{
+		left:{img:'./character-01.png'},
+		right:{img:'./character-02.png'}
+	},
+	thread:[
 	{is:'them',p:["I'll never meet anyone. Honestly, it’s hopeless. I can’t believe I have to spend this whole year of college alone."]},
 	{
 		is:'question',
@@ -40,12 +45,12 @@ var storyLonely = {name:'Lonely & Frustrated',thread:[
 	},
 	{
 		is:"them",
-		p:["I have actually!","There’s some cool social stuff going on online that I’ve been checking out","But I might just concentrate on other things for a while."]
+		p:["I have actually!","There’s some cool social stuff going on online that I’ve been checking out.","But I might just concentrate on other things for a while."]
 	},{
 		is:'question',
 		iCorrect:0,
 		p:["Sounds like a good idea. What kind of things? Maybe we can do something together.","Yeah. Don’t bother with all that online shit."],
-		f:["Asking <b>open questions</b> and offering more of <b>our own time</b> is a great gesture.","Online stuff does kind of suck. But maybe we should <b>avoid adding to the grief</b>."]
+		f:["Asking <b>open questions</b> and offering more of <b>our own time</b> could improve feelings of isolation.","Online stuff does kind of suck. But maybe <b>avoid dismissing their ideas</b>."]
 	},{
 		is:"them",
 		p:["Ah. That would be great.","I guess I’m mostly concentrating on studies for now. I actually should get back to that right now."]
@@ -77,7 +82,7 @@ var storyLonely = {name:'Lonely & Frustrated',thread:[
 	{
 		is:'intention',
 		p:[
-			'Watch out for friends that may be <b>lonesome</b> or making dramatic statements about how <b>hopeless</b> their situation is. Listen and connect from a place of friendship and care.'
+			'Watch out for friends that are feeling <b>lonely</b> or making dramatic statements about how <b>hopeless</b> their situation is. Listen and connect from a place of friendship and care.'
 		]
 	}
 ]}
