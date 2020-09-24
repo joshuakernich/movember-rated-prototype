@@ -1,6 +1,6 @@
 var storyUniLonely = {name:'Lonely & Frustrated',
 	bg:{
-		left:{img:'./character-01.png'},
+		left:{img:'./character-01.png',thumb:{y:20}},
 		right:{img:'./character-02.png'}
 	},
 	thread:[
