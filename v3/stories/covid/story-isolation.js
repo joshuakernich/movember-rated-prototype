@@ -12,7 +12,7 @@ thread:[
 	is:"question",
 	iCorrect:1,
 	p:["Umm... maybe start with some water.","Ah man. I know that feeling. Sounds like the COVID blues.","A bit early for that, don’t you think?"],
-	f:["Avoid being <b>judgemental</b>. Try to open up the conversation.","Demonstrating that you’re listening and <b>sharing your own struggles</b> can help create an open conversation.","Avoid being <b>judgemental</b>. Try to open up the conversation"]
+	f:["Avoid being <b>judgemental</b>. Try to open up the conversation.","Demonstrating that you’re listening and <b>sharing your own struggles</b> can help create an open conversation.","Avoid being <b>judgemental</b>. Try to open up the conversation."]
 },
 {
 	is:'them',
@@ -44,7 +44,7 @@ thread:[
 },
 {
 	is:"them",
-	p:["Man, I've been thinking about this a lot.","My studies don't seem to make a lot of sense any more. Who knows what's coming next!?","Nothing really makes sense any more."]
+	p:["Man, I've been thinking about this a lot.","My studies don't seem to make a lot of sense anymore. Who knows what's coming next!?","Nothing really makes sense anymore."]
 	//p:["Man, I’ve been getting so deep into this.", "The stats are streaming in every hour. It’s crazy! I've just been watching the graphs for weeks.","I heard Russia is pumping out a cure soon. If I survive that long!"]
 
 },
