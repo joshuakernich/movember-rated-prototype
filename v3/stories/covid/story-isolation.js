@@ -23,7 +23,7 @@ thread:[
 	is:"question",
 	iCorrect:0,
 	p:[
-	"Seems like you’re spending a lot of time on your own. What’s going on?",
+	"Seems like you're not getting out much. What’s going on?",
 	"I hear you. But maybe you should try and find a routine.",
 	"Totally! The world has gone to shit!" ],
 	f:[
@@ -40,7 +40,7 @@ thread:[
 	is:"question",
 	iCorrect:2,
 	p:["Dude. I don't think this is ever going to be over.","I think it'll be like this for a long time.","Yeah, it's dragging on for sure. What are your days looking like?"],
-	f:["Maybe avoid fuelling your friend's <b>dramatic thoughts</b> while they're struggling.","You're a cunning realist. But maybe your friend needs some <b>support</b>.","Asking <b>open questions</b> is a great approach." ]
+	f:["Maybe avoid fueling your friend's <b>dramatic thoughts</b> while they're struggling.","You're a cunning realist. But maybe your friend needs some <b>support</b>.","Asking <b>open questions</b> is a great approach." ]
 },
 {
 	is:"them",

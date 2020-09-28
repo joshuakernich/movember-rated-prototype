@@ -8,7 +8,7 @@ var storyUniLonely = {name:'Lonely & Frustrated',
 	{
 		is:'question',
 		iCorrect:1,
-		p:["Maybe it’s best to just accept it for the time being.","Yeah, it’s tough. How are you coping with it all?","Yeah, it’s tough. But I’m sure you’ll be fine."],
+		p:["Maybe it’s best to just accept it for the time being.","Yeah, it’s tough. How are you doing with it all?","Yeah, it’s tough. But I’m sure you’ll be fine."],
 		f:["Try not to <b>dismiss the conversation</b> so quickly.",
 			"Ask <b>open-ended questions</b> that can’t be answered with simple yes or no replies.<ul><li>How are you doing?</li><li>What’s on your mind?</li><li>What’s been happening?</li></ul>",
 			"Try not to <b>dismiss the conversation</b> so quickly."]
@@ -16,7 +16,7 @@ var storyUniLonely = {name:'Lonely & Frustrated',
 	},
 	{
 		is:"them",
-		p:["Hmm. Not great, I suppose.","I guess I was excited about this year.","Now it’s all gone to hell and I’m just the dickhead that has to go it alone."]
+		p:["Hmm. Not great, I guess.","I was excited about this year.","Now it’s all gone to hell and I’m just the dickhead that has to go it alone."]
 	},
 	{
 		is:'question',
@@ -26,7 +26,7 @@ var storyUniLonely = {name:'Lonely & Frustrated',
 	},
 	{
 		is:"them",
-		p:["Yeah. I suppose that’s what it comes down to.","But I don’t mind being alone so much. It’s the hopelessness of it that gets to me."]
+		p:["Yeah. I suppose that’s what it comes down to.","But I don’t mind being alone so much. It just that it's so hopeless right now."]
 	},
 	{
 		is:'question',

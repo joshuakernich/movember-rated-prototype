@@ -9,7 +9,7 @@ var storyCovidWork = {name:'Unemployed & Uncertain',
 				{is:'question',
 					iCorrect:0,
 					p:[
-					"That sounds really tough. The uncertainty is getting to me as-well.",
+					"That sounds really tough. The uncertainty is getting to me as well.",
 					"Maybe you should think about all the creative stuff you can get done!",
 					"Have you seen if there are any jobs available? Maybe a side hustle?",
 				],f:[
@@ -32,7 +32,7 @@ var storyCovidWork = {name:'Unemployed & Uncertain',
 					f:[
 						"Always ask <b>open-ended questions</b> that can't be answered with a simple yes or no.\
 						<ul>\
-							<li>How are you going?</li>\
+							<li>How are you doing?</li>\
 							<li>What’s on your mind?</li>\
 							<li>What’s been happening?</li>\
 						</ul>",
