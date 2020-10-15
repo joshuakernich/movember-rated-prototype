@@ -1,4 +1,4 @@
-var storyCovidIsolation = {name:'Withdrawn & Obsessive',
+var storyCovidIsolation = {name:'Withdrawn & Obsessing',
 bg:{
 		left:{img:'https://conversations.movember.com/static/assets/images/image-66a9b8a444422868dc2aa8d671ffef05a220dc5d-1000x1000-png',thumb:{y:-110}},
 		right:{img:'https://conversations.movember.com/static/assets/images/image-63e5166d68b6f880f7b8407215f3a6e294c2bd69-1000x1000-png'}

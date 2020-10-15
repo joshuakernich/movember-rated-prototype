@@ -1,6 +1,6 @@
-var storyUniLonely = {name:'Lonely & Frustrated',
+var storyUniLonely = {name:'Lonely &<br>Frustrated',
 	bg:{
-		left:{img:'./character-01.png',thumb:{y:20}},
+		left:{img:'./character-01.png'},
 		right:{img:'./character-02.png'}
 	},
 	thread:[

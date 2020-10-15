@@ -274,7 +274,7 @@
 			display: inline-block;
 			height: 150px;
 			width: 100%;
-			background: rgba(255,255,255,0.2);
+			background: rgba(255,255,255,0.3);
 			margin: 0px;
 			margin-bottom: 2px;
 			
@@ -313,8 +313,8 @@
 
 		.story h1{
 			position: absolute;
-			top: 5px;
-			left: 80px;
+			top: 0px;
+			left: 140px;
 			
 			
 			right: 0px;
@@ -326,11 +326,18 @@
 			text-align: left;
 			font-weight: normal;
 			border-left: 2px solid blue;
-			width: 150px;
+			width: 200px;
 		}
 
 		.story.selected h1, .story:hover h1{
 			border-left-color: white;
+		}
+
+		.story h1:before{
+			content: "Support a man who is";
+			display: block;
+			font-size: 0.7em;
+			
 		}
 
 		.remember:before {
@@ -417,6 +424,19 @@
 			color: #F7CB45;
 		}
 
+		.story .bg-story.left{
+			background-size: 450%;
+			width: 50%;
+			top: 0px;
+			height: 100%;
+			background-position-x: -500px;
+			background-position-y: -20px;
+		}
+
+		.story .bg-story.right{
+			display: none;
+		}
+
 
 	</style>
 	<script type="text/javascript" src="./jquery-3.4.1.min.js"></script>
@@ -432,7 +452,6 @@
 	<script type="text/javascript">
 
 		$(function(){
-7
 			var iBit = -1;
 			var pw = 'questions';
 			
