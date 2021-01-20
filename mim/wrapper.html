@@ -3,9 +3,12 @@
 <head>
 	<title></title>
 	<style type="text/css">
+		@import url('https://fonts.googleapis.com/css2?family=Overpass&display=swap');
+
 		body{
 			margin: 0px;
 			padding: 0px;
+			font-family: 'Overpass', sans-serif;
 		}
 
 		iframe{
@@ -19,18 +22,27 @@
 		button{
 			margin: 20px auto;
 			display: block;
-			width: 500px;
-			padding: 20px;
+			width: 760px;
+			line-height: 55px;
+			padding: 0px;
 			background: black;
 			color: white;
 			border: none;
+			font: inherit;
+			border-radius: 2px;
+			text-transform: uppercase;
+			font-size: 17px;
+			height: 55px;
+			letter-spacing: 1.5px;
 
 
 		}
+
+		a{
+			text-decoration: none;
+		}
 	</style>
 	<script type="text/javascript">
-		
-
 		setTimeout(function(){
 			document.getElementById('quiz').style.height = 'calc(100vh - 100px)';
 		},5000);
