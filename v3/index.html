@@ -78,7 +78,7 @@
 			font-weight: normal;
 		}
 
-		.them p, .options p{
+		.me p, .them p, .options p{
 			display: inline-block;
 			padding: 10px;
 			background: black;
@@ -87,7 +87,18 @@
 			margin-bottom: 2px;
 		}
 
-		.options p.selected:before, .options p:last-of-type:before{
+		.me{
+			text-align: right;
+		}
+
+		.me p{
+			background: blue;
+			margin-bottom: 0px;
+		}
+
+		
+
+		.me:after, .options p.selected:before, .options p:last-of-type:before{
 			position: absolute;
 			content: "";
 			width: 0;
@@ -318,7 +329,7 @@
 			
 			
 			right: 0px;
-			font-size: 20px;
+			font-size: 25px;
 			line-height: 25px;
 			margin-bottom: 0px;
 			padding-left: 10px;
@@ -327,6 +338,9 @@
 			font-weight: normal;
 			border-left: 2px solid blue;
 			width: 200px;
+
+			border: none;
+			padding-left: 0px;
 		}
 
 		.story.selected h1, .story:hover h1{
@@ -334,10 +348,20 @@
 		}
 
 		.story h1:before{
-			content: "Support a man who is";
-			display: block;
-			font-size: 0.7em;
+			content: "Chat to ";
+			display: inline;
+			/*font-size: 0.7em;*/
 			
+		}
+
+		.story-preview{
+			
+			position: absolute;
+			left: 140px;
+			top: 80px;
+			width: 340px;
+			transform: scale(0.7);
+			transform-origin: top left;
 		}
 
 		.remember:before {
@@ -371,13 +395,19 @@
 			margin-bottom: 5px;
 		}
 
-		.feedback b, .intention b, .remember b{
+		.message{
+			text-align: center;
+		}
+
+		.message b, .feedback b, .intention b, .remember b{
 			
 			color: #a8eadf; /*slightly lighter than background*/
 			background: black;
 			padding: 0px 5px;
 			font-weight: normal;
 		}
+
+
 
 		.intention button{
 			width: 32%;
@@ -420,7 +450,7 @@
 			border-color: transparent #ff4400 transparent transparent;
 		}
 
-		body.covid .feedback b, body.covid .intention b, body.covid .remember b{
+		body.covid .message b, body.covid .feedback b, body.covid .intention b, body.covid .remember b{
 			color: #F7CB45;
 		}
 
@@ -437,6 +467,74 @@
 			display: none;
 		}
 
+		.note{
+			padding: 15px 0px;
+			text-align: center;
+			background: black;
+			position: fixed;
+			color: white;
+			display: block;
+			left: 0px
+			right: 0px;
+			bottom: 0px;
+			margin: auto;
+			z-index: 1;
+			width: 100vw;
+
+			display: none;
+		}
+
+		.note:after{
+			content: 'OK';
+			
+			border: 1px solid white;
+			color: white;
+			padding: 5px 10px;
+			display: block;
+			width: 200px;
+			margin: auto;
+			margin-top: 10px;
+		}
+
+		.story{
+			overflow: hidden;
+		}
+
+
+		.story:after{
+			content: "";
+			
+			position: absolute;
+			display: block;
+			top: 0px;
+			left: 140px;
+			right: 0px;
+			bottom: 0px;
+			background: linear-gradient(to bottom, transparent, transparent, #FBDB83);
+			opacity: 0.8;
+		}
+
+		.story.selected:after, .story:hover:after{
+			
+			background: linear-gradient(to bottom, transparent, transparent, blue);
+		}
+
+		.logo{
+			position: relative;
+			display: inline-block;
+		}
+
+		.byline{
+			font-style: italic;
+		    transform: rotate(-9deg);
+		    font-size: 13px;
+		    position: absolute;
+		    left: 95px;
+		    top: 95px;
+		    white-space: nowrap;
+		    transform-origin: 0px 0px;
+		    font-weight: bold;
+		}
 
 	</style>
 	<script type="text/javascript" src="./jquery-3.4.1.min.js"></script>
@@ -493,6 +591,16 @@
 				storyList
 			]
 
+			var bitsIntro = [
+				
+				{is:'them',p:["I really don't think things will get better.","What's the point?"]},
+				{is:'me',p:['Ummmmm...']},
+				{is:'message',p:["<br>Sometimes, it's hard to know what to say.<br>But <b>a little practice</b> can help."]},
+				{is:'header',p:["<div class='logo'><img width=300 src='logo-black.svg'/><p class='byline'>The tricky conversation simulator</p></div>"]},
+				{is:'continue',p:["Get Started >"]},
+				storyList
+			]
+
 			var bitsSegway = [
 				{
 					is:'header',
@@ -533,6 +641,12 @@
 						var $story = $('<div class="story">').appendTo($ps);
 						var $left = $('<div class="bg-story left">').appendTo($story).css({backgroundImage:'url('+bit.p[i].bg.left.img+')'});
 						var $right = $('<div class="bg-story right">').appendTo($story).css({backgroundImage:'url('+bit.p[i].bg.right.img+')'});
+
+						var $preview = $('<div class="story-preview">').appendTo($story);
+						var $thread = $('<div class="bit them">').appendTo($preview);
+						$('<p>'+bit.p[i].thread[0].p[0]+'</p>').appendTo($thread);
+						if(bit.p[i].thread[0].p[1]) $('<p>'+bit.p[i].thread[0].p[1]+'</p>').appendTo($thread);
+
 						$('<h1>').appendTo($story).html(bit.p[i].name);
 
 						if(bit.p[i].bg.left.thumb && bit.p[i].bg.left.thumb.y) $left.css({'background-position-y':bit.p[i].bg.left.thumb.y})
@@ -568,6 +682,12 @@
 							$btn.html('<i class="fas fa-clone"></i>&nbsp;&nbsp;Copy sharing URL');
 						},1500);
 					})
+				} else if (bit.is == 'continue' ){
+					$('<button>'+bit.p[0]+'</button>').appendTo($ps).click(function(){
+						$(this).hide();
+						setTimeout(nextBit,500);
+					});
+
 				} else {
 					for(var i in bit.p){
 						$('<p>'+bit.p[i]+'</p>').appendTo($ps);
@@ -669,6 +789,8 @@
 
 					$bit.css({opacity:0,top:50}).animate({opacity:1,top:0});
 
+				} else if( bit.is == 'continue' ){
+
 				} else {
 					$bit.css({opacity:0,left:150}).animate({opacity:1,left:-20}).animate({opacity:1,left:0});
 					setTimeout( nextBit, 1500 );
@@ -685,6 +807,9 @@
 					$('input').val('').animate({left:-10},100).animate({left:10},100).animate({left:0},100);
 				}
 			})
+
+			$('.convo').empty();
+			nextBit();
 		})
 		
 	</script>
@@ -692,6 +817,7 @@
 <body>
 	<div class='bg left'></div>
 	<div class='bg right'></div>
+	<div class='note'><i class="fas fa-exclamation-circle"></i> <b>Scheduled Maintenance</b><br>- 28th January 3pm-6pm AEDT</div>
 	<div class='convo'>
 		<h2>Enter Password</h2>
 		<input type='password' autocomplete="one-time-code"></input>

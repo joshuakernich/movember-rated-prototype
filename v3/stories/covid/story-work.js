@@ -1,4 +1,4 @@
-var storyCovidWork = {name:'Unemployed & Uncertain',
+var storyCovidWork = {name:'Dave',
 				bg:{
 					left:{img:'https://conversations.movember.com/static/assets/images/image-f34dd8fc826c2c2535da51855a488dfe35cc2337-1080x1080-png'},
 					right:{img:'https://conversations.movember.com/static/assets/images/image-cd42a130ffe5cd739029fcfa885e6ab4ce8f8c08-1080x1080-png'}

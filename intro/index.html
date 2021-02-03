@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<script type="text/javascript" src='jquery-3.4.1.min.js'></script>
+	<title>MoCo Intro</title>
+	<style type="text/css">
+		@font-face {
+			font-family: "BodyFont";
+			src: url("../v1/Overpass-Light.ttf");
+		}
+
+		@font-face {
+		  font-family: BodyFont;
+		  src: url("../v1/Overpass-Bold.ttf");
+		  font-weight: bold;
+		}	
+
+		body{
+			font-family: "BodyFont";
+			padding: 0px;
+			margin: 0px;
+		}
+
+		.says{
+			background: black;
+			color: white;
+			padding: 5px 10px;
+			display: inline-block;
+			margin-bottom: 2px;
+			position: relative;
+		}
+
+		.screen{
+			width: 400px;
+			height: 400px;
+			border: 2px solid black;
+			box-sizing: border-box;
+			padding: 20px;
+			margin: auto;
+			position: absolute;
+			top: 0px;
+			left: 0px;
+			right: 0px;
+			bottom: 0px;
+			background: #F7CB45;
+			overflow: hidden;
+			text-align: center;
+
+		}
+
+		.convo{
+			text-align: left;
+		}
+
+		.convo.me{
+			text-align: right;
+		}
+
+		.convo.me .says{
+			background: blue;
+		}
+
+		b{
+			background: black;
+			color: #F7CB45;
+			display: inline-block;
+		}
+
+		h1{
+			font-size: 17px;
+			font-weight: normal;
+			text-align: center;
+		}
+
+		img{
+			margin: auto;
+		}
+
+	</style>
+	<script type="text/javascript">
+		$(function(){
+			/*$('h1').hide();
+
+			$('.says').eq(0).css({left:-300}).delay(100).animate({left:10,opacity:1}).animate({left:0});
+			$('.says').eq(1).css({left:-300}).delay(300).animate({left:10,opacity:1}).animate({left:0});
+			$('.says').eq(2).css({left:300}).delay(2000).animate({left:-10,opacity:1}).animate({left:0});
+			
+			setTimeout(function(){
+				$('h1').eq(0).show();
+			},4000);
+
+			setTimeout(function(){
+
+				$('h1').eq(1).show();
+			},7000);
+
+			setTimeout(function(){
+
+				$('h1').eq(2).show();
+			},10000);*/
+		})
+	</script>
+</head>
+<body>
+	<div class='screen'>
+		<div class='char left'></div>
+		<div class='char right'></div>
+		<div class='convo'>
+			<div class='says'>Man, I'm really struggling.</div>
+			<div class='says'>I don't know what to do.</div>
+		</div>
+		<div class='convo me'>
+			<div class='says me'>Ummmmm...</div>
+		</div>
+		<h1>Sometimes, it's hard to know what to say.</h1>
+		<h1>But there is a place to practice.</h1>
+		<img src='../v3/logo-black.svg'>
+		<h1>The tricky conversation simulator.</h1>
+		<button>Get Started</button>
+	</div>
+</body>
+</html>
