@@ -1,4 +1,4 @@
-var storyUniLonely = {name:'Lonely &<br>Frustrated',
+var storyUniLonely = {name:'John',
 	bg:{
 		left:{img:'./character-01.png'},
 		right:{img:'./character-02.png'}

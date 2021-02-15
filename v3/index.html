@@ -7,6 +7,8 @@
 	<link href="./fontawesome-free-5.13.1-web/css/all.min.css" rel="stylesheet">
 	<style type="text/css">
 
+		@import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
+
 		@font-face {
 			font-family: "BodyFont";
 			src: url("./Overpass-Light.ttf");
@@ -17,6 +19,27 @@
 		  src: url("./Overpass-Bold.ttf");
 		  font-weight: bold;
 		}	
+
+		.headline{
+			text-align: left;
+		}
+
+
+		.headline h1{
+			font-family: 'Anton', sans-serif;
+			font-weight: normal;
+			line-height: 1.1em;
+			text-align: center;
+			padding: 0px;
+		}
+
+		.headline h1 b{
+			background: black;
+			color: #7CD6C4;
+			font-weight: normal;
+			display: inline-block;
+			padding: 5px;
+		}
 
 		body{
 			background: #7CD6C4;
@@ -373,6 +396,16 @@
 			margin-bottom: 10px;
 			display: block;
 		}
+
+		.divider {
+			
+			height: 25px;
+			width: 400px;
+			background-image: url('./divider.png');
+			background-size: 100%;
+			margin-bottom: 10px;
+			display: block;
+		}
 		
 		.remember, .intention {
 			margin-bottom: 10px;
@@ -510,8 +543,12 @@
 			left: 140px;
 			right: 0px;
 			bottom: 0px;
-			background: linear-gradient(to bottom, transparent, transparent, #FBDB83);
+			background: linear-gradient(to bottom, transparent, transparent, #A5E3D5);
 			opacity: 0.8;
+		}
+
+		.covid.story:after{
+			background: linear-gradient(to bottom, transparent, transparent, #FBDB83);
 		}
 
 		.story.selected:after, .story:hover:after{
@@ -536,6 +573,73 @@
 		    font-weight: bold;
 		}
 
+		.demo{
+			display: inline-block;
+			
+			position: relative;
+			vertical-align: middle;
+			
+			margin-left: 10px;
+			top: 20px;
+		}
+
+		.demo video{
+			width: 140px;
+			height: 300px;
+			border: 10px solid black;
+			transform: rotate(-2deg);
+			border-radius: 5px;
+		}
+
+		.pushed{
+			white-space: nowrap;
+		}
+
+		.pushed-content{
+			position: relative;
+			width: 200px;
+			display: inline-block;
+			vertical-align: top;
+			margin: 0px;
+			padding: 0px;
+			margin-left: 30px;
+			white-space: normal;
+		}
+
+		.pushed h1{
+			text-align: left;
+
+		}
+
+		.cta{
+			display: inline-block;
+			width: auto;
+			padding: 5px 10px;
+			background: blue;
+			color: white;
+		}
+
+		.alec h1{
+			display: inline-block;
+			vertical-align: middle;
+			margin: 0px;
+
+			background: black;
+			padding: 5px;
+			color: #7CD6C4;
+			width: 30px;
+		}
+
+		.alec p{
+			display: inline-block;
+			vertical-align: middle;
+			width: 300px;
+			margin-left: 20px;
+		}
+
+
+
+
 	</style>
 	<script type="text/javascript" src="./jquery-3.4.1.min.js"></script>
 
@@ -552,6 +656,7 @@
 		$(function(){
 			var iBit = -1;
 			var pw = 'questions';
+			var isStarted = false;
 			
 
 			var storyList = {
@@ -598,6 +703,16 @@
 				{is:'message',p:["<br>Sometimes, it's hard to know what to say.<br>But <b>a little practice</b> can help."]},
 				{is:'header',p:["<div class='logo'><img width=300 src='logo-black.svg'/><p class='byline'>The tricky conversation simulator</p></div>"]},
 				{is:'continue',p:["Get Started >"]},
+				storyList
+			]
+
+			var bitsIntro = [
+				{is:'header',p:["<img width=300 src='logo-black.svg'/>"]},
+				{is:'header',p:['The Tricky Conversation Simulator']},
+				storyList
+			]
+
+			var bitsIntro = [
 				storyList
 			]
 
@@ -695,7 +810,7 @@
 					}
 				}
 
-				scroll();
+				if(isStarted) scroll();
 
 				// all of the interaction happens here
 				if(bit.is == 'question'){
@@ -742,7 +857,7 @@
 				} else if(bit.is == 'story-list'){					
 
 					
-					$('.bg').addClass('hidden');
+					//$('.bg').addClass('hidden');
 
 					$bit.find('.story').click(function(){
 						
@@ -768,6 +883,8 @@
 						$('.bg').removeClass('faded');
 						$('.bg').addClass('n'+(index+1));
 
+						isStarted = true;
+
 						setTimeout( nextBit, 2000 );
 
 					});
@@ -791,7 +908,9 @@
 
 				} else if( bit.is == 'continue' ){
 
-				} else {
+				} else if(bit.is == 'headline' ){
+					nextBit();
+				}else {
 					$bit.css({opacity:0,left:150}).animate({opacity:1,left:-20}).animate({opacity:1,left:0});
 					setTimeout( nextBit, 1500 );
 				}
@@ -808,7 +927,7 @@
 				}
 			})
 
-			$('.convo').empty();
+			//$('.convo').empty();
 			nextBit();
 		})
 		
@@ -819,9 +938,40 @@
 	<div class='bg right'></div>
 	<div class='note'><i class="fas fa-exclamation-circle"></i> <b>Scheduled Maintenance</b><br>- 28th January 3pm-6pm AEDT</div>
 	<div class='convo'>
-		<h2>Enter Password</h2>
+		<!--<h2>Enter Password</h2>
 		<input type='password' autocomplete="one-time-code"></input>
-		<button class='go-button'>Go!</button>
+		<button class='go-button'>Go!</button>-->
+		<div class='headline'>
+			<img style='margin:auto;display:block;' width=400 src='logo-black.svg'/>
+			<br>
+			<div class='pushed'>
+				<div class='demo'>
+					<video muted autoplay loop>
+						<source src='video.mov'>
+					</video>
+				</div>
+				<div class='pushed-content'>
+					<h1>NO MORE<br><b>DEAD-END</b><br>CONVERSATIONS</h1>
+					<p>Introducing Movember Conversations. Proven strategies to support the men in your life that are struggling, through better conversations.</p>
+					<button class='cta'>Get Started</button>
+				</div>
+			</div>
+			<br><br>
+			<div class='divider'></div>
+			<h1>POWERED BY <b>ALEC</b></h1>
+			<p>Demonstrating easy tools to connect and create open conversation through the ALEC model.</p>
+			<div class='alec'>
+				<h1>A</h1><p>Asking the right questions at the right time is help someone open up.</p>
+				<h1>L</h1><p>Listening with focus to help them feel like they’re being heard and understood.</p>
+				<h1>E</h1><p>Encouraging action in taking care of their physical health as well as mental health.</p>
+				<h1>C</h1><p>Checking in to give someone a sense of their powerful support network.</p>
+			</div>
+			<br>
+			<div class='divider'></div>
+			<h1><b>JUMP IN</b> TO A CONVERSATION</h1>
+			<p>Dive in to a simulated conversation to explore and practise how you might navigate a difficult conversation with someone you care about.</p>
+		</div>
 	</div>
+	
 </body>
 </html>
