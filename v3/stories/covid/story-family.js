@@ -1,5 +1,5 @@
 var storyCovidFamily = {
-	name:"Bob",
+	name:"Juggling Work & Family",
 	bg:{
 		left:{img:'https://conversations.movember.com/static/assets/images/image-9723dfdd46c616f37dc130c33b42edfd72673e58-1000x1000-png'},
 		right:{img:'https://conversations.movember.com/static/assets/images/image-49df9364688f3b428ceac6093b52265d131ca125-1000x1000-png'}
