@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 24.2.3, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 110 61" style="enable-background:new 0 0 110 61;" xml:space="preserve">
+<style type="text/css">
+	.st0{filter:url(#Adobe_OpacityMaskFilter);}
+	.st1{fill-rule:evenodd;clip-rule:evenodd;fill:#FFFFFF;}
+	.st2{mask:url(#prefix__b_1_);fill-rule:evenodd;clip-rule:evenodd;fill:#010202;}
+	.st3{filter:url(#Adobe_OpacityMaskFilter_1_);}
+	.st4{mask:url(#prefix__b_2_);fill-rule:evenodd;clip-rule:evenodd;fill:#010202;}
+	.st5{fill-rule:evenodd;clip-rule:evenodd;fill:#010202;}
+</style>
+<defs>
+	<filter id="Adobe_OpacityMaskFilter" filterUnits="userSpaceOnUse" x="55.1" y="0" width="54.9" height="61">
+		<feColorMatrix  type="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 1 0"/>
+	</filter>
+</defs>
+<mask maskUnits="userSpaceOnUse" x="55.1" y="0" width="54.9" height="61" id="prefix__b_1_">
+	<g class="st0">
+		<path id="prefix__a_1_" class="st1" d="M44.1-18H220v79H44.1V-18z"/>
+	</g>
+</mask>
+<path class="st2" d="M57.4,39.3l17-2.8v12l14.2-14.5l11.8-2.9V2.7l-43.1,8.2L57.4,39.3L57.4,39.3z M110,11l0,0.1v30.6l-12.4,3
+	L81.8,61l-9.4-7.1L72.2,54v-4.8l-7.5,1.2L55.1,42l0,0V9L102.7,0v0L110,11L110,11z"/>
+<defs>
+	<filter id="Adobe_OpacityMaskFilter_1_" filterUnits="userSpaceOnUse" x="0" y="0" width="54.9" height="61">
+		<feColorMatrix  type="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 1 0"/>
+	</filter>
+</defs>
+<mask maskUnits="userSpaceOnUse" x="0" y="0" width="54.9" height="61" id="prefix__b_2_">
+	<g class="st3">
+		<path id="prefix__a_2_" class="st1" d="M-11-18h175.9v79H-11V-18z"/>
+	</g>
+</mask>
+<path class="st4" d="M2.3,39.3l17-2.8v12l14.2-14.5l11.8-2.9V2.7L2.3,10.8L2.3,39.3L2.3,39.3z M54.9,11l0,0.1v30.6l-12.4,3L26.6,61
+	l-9.4-7.1L17.1,54v-4.8l-7.5,1.2L0,42l0,0V9L47.6,0v0L54.9,11L54.9,11z"/>
+<path class="st5" d="M36.6,14.7l-28,5v-2.1l28-5V14.7z"/>
+<path class="st5" d="M36.6,19.3l-28,5v-2.1l28-5V19.3z"/>
+<path class="st5" d="M36.6,24.3l-28,5v-2.1l28-5V24.3z"/>
+<g>
+	<path d="M78.9,24.4l-6.8,8l-3.7-3.1l6.8-7.9l-6.7-5.6l3.6-4.3l6.8,5.6l6.8-8l3.8,3.1l-6.8,8l6.8,5.6L85.7,30L78.9,24.4z"/>
+</g>
+</svg>

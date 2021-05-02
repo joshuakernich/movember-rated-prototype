@@ -503,33 +503,84 @@
 			display: none;
 		}
 
-		.note{
-			padding: 15px 0px;
+		.cookie-modal{
+			/*background: rgba(0,0,0,0.3);*/
+			background: rgba(247, 203, 69,0.6);
+			background: rgba(123, 214, 196,0.9);
 			text-align: center;
-			background: black;
+			width: 100vw;
+			height: 100vh;
 			position: fixed;
-			color: white;
-			display: block;
-			left: 0px
+			z-index: 1;
+			padding: 150px 0px;
+		}
+
+		.cookie-modal:after{
+			content: "";
+			position: absolute;
+			top: 0px;
+			left: 0px;
 			right: 0px;
 			bottom: 0px;
+			background: rgba(0, 0, 0,0.2);
+		}
+
+		.note{
+			padding: 0px;
+			text-align: center;
+			background: white;
+
+			color: black;
+			display: block;
+			
+			
 			margin: auto;
 			z-index: 1;
-			width: 100vw;
+			
 
-			display: none;
+			display: inline-block;
+			
+
+			position: relative;
+			padding-top: 40px;
+			box-shadow: 0px 1px 2px black;
 		}
 
 		.note:after{
-			content: 'OK';
+			content: "";
+			width: 100px;
+			height: 100px;
+			position: absolute;
+			left: 150px;
+			top: -50px;
+			background-image: url('./little-mo-bubble.png');
+			background-size: contain;
+
+		}
+
+		.note-inner{
+			width: 400px;
+			padding: 40px;
+			margin: auto;
+			text-align: left;
+			box-sizing: border-box;
+		}
+
+		.note-inner button{
+			
 			
 			border: 1px solid white;
 			color: white;
-			padding: 5px 10px;
+			padding: 10px;
 			display: block;
-			width: 200px;
+			width: 100%;
 			margin: auto;
-			margin-top: 10px;
+			margin-top: 30px;
+			box-sizing: border-box;
+			background: blue;
+			text-align: center;
+
+
 		}
 
 		.story{
@@ -647,7 +698,111 @@
 			margin-left: 20px;
 		}
 
+		.menu{
+			position: fixed;
+			width: 100vw;
+			height: 100vh;
+			overflow: auto;
+			left:-105vw;
+			top: 0px;
+			transition: 0.5s all;
+			box-shadow: 5px 0px black;
+			background: #7BD6C3;
+			text-align: center;
+		}
 
+		.menu.active{
+			left: 0px;
+		}
+
+		.menu-toggle{
+			position: fixed;
+			top: 0px;
+			left: 0px;
+			width: 50px;
+			height: 55px;
+			background: none;
+			background-image: url('./moco-menu.svg');
+			background-size: 100px;
+			background-position: left;
+			background-repeat: no-repeat;
+			margin: 10px;
+			border:none;
+			transition: transform 0.5s;
+		}
+
+		.menu-toggle:hover{
+			
+			background:none;
+			background-image: url('./moco-menu.svg');
+			background-size: 200%;
+			background-position: left;
+			background-repeat: no-repeat;
+			transform: scale(1.1);
+		}
+
+		.menu-toggle.active{
+			transform: rotate(-179.9deg) scale(1.2);
+			background-position: -50px 0px;
+		}
+
+
+		.submenu{
+			list-style-type: none;
+			padding: 0px;
+			margin: 0px;
+
+			margin-top: 15px;
+			text-align: center;
+			color: blue;
+		}
+
+		@media only screen and (max-width: 600px){
+			.submenu{
+				width: 300px;
+				margin: auto;
+				margin-top: 15px;
+			}
+		}
+
+		.submenu li{
+			display: inline-block;
+			
+			margin: 0px;
+			padding: 5px 10px;
+
+			font-family: 'Anton', sans-serif;
+			font-weight: normal;
+			text-transform: uppercase;
+			font-size: 2em;
+			line-height: 1.1em;
+			cursor: pointer;
+		}
+
+		.submenu li.selected{
+			background: blue;
+			color: #7BD6C2;
+		}
+
+
+		.menu-content{
+			margin: 40px auto;
+			width: 400px;
+			text-align: left;
+		}
+
+		.alec-acc{
+			position: relative;
+		}
+
+		.alec-acc:after{
+			content: "more +";
+			display: inline-block;
+			color: blue;
+			position: absolute;
+			right: 0px;
+			bottom: 0px;
+		}
 
 
 	</style>
@@ -733,8 +888,13 @@
 				{
 					is:'share'
 				},
+				{
+					p:['<div class="divider"></div><h1>START A <b>CONVERSATION</b></h1><p>Dive in and explore how you might talk to a man during specific episodes in their life.</p>']
+				},
 				storyList
 			]
+
+			var share = {is:'share'};
 
 			var bits2 = [
 
@@ -748,12 +908,15 @@
 				$('.convo').css({ 'min-height': $('.convo').height() });
 			}
 
-			function nextBit() {
+			function nextBit(){
 				iBit++;
 				var bit = bits[iBit];
+				drawBit(bit,$('.convo'));
+			}
 
-				var $bit = $('<div class="bit '+bit.is+'">').appendTo($('.convo'));
-
+			function drawBit(bit,$container) {
+				
+				var $bit = $('<div class="bit '+bit.is+'">').appendTo($container);
 				var $ps = $bit;
 
 				if(bit.is == 'question'){
@@ -938,6 +1101,26 @@
 
 			//$('.convo').empty();
 			nextBit();
+
+			$('.menu-toggle').click(function(){
+				$('.menu').toggleClass('active');
+				$('.menu-toggle').toggleClass('active');
+			})
+
+			drawBit(storyList,$('.menu-stories'))
+			drawBit({is:'share'},$('.menu-share'));
+
+			$('.menu-content').hide().eq(0).show();
+
+			$('.submenu li').click(function(){
+				var i = $('.submenu li').index(this);
+				$('.submenu li').removeClass('selected').eq(i).addClass('selected');
+				$('.menu-content').hide().eq(i).show();
+			})
+
+			$('.note button').click(function(){
+				$('.cookie-modal').hide();
+			})
 		})
 		
 	</script>
@@ -945,7 +1128,14 @@
 <body>
 	<div class='bg left'></div>
 	<div class='bg right'></div>
-	<div class='note'><i class="fas fa-exclamation-circle"></i> <b>Scheduled Maintenance</b><br>- 28th January 3pm-6pm AEDT</div>
+	<!--div class='note'><i class="fas fa-exclamation-circle"></i> <b>Scheduled Maintenance</b><br>- 28th January 3pm-6pm AEDT</div-->
+	<div class="cookie-modal">
+		<div class='note'>
+			
+			<div class="note-inner"><i class="fas fa-exclamation-circle"></i>  Our website uses cookies to bring you an easy and personalised browsing experience. By continuing, you consent to our cookie policy on this device. For more info, please see our <a href='https://movember.com/privacy'>Privacy Statement</a>.
+			<button>Jump In</button>
+			</div></div>
+	</div>
 	<div class='convo'>
 		<!--<h2>Enter Password</h2>
 		<input type='password' autocomplete="one-time-code"></input>
@@ -981,6 +1171,35 @@
 			<p>Dive in and explore how you might talk to a man during specific episodes in their life.</p>
 		</div>
 	</div>
+	<div class='menu'>
+		<ul class='submenu'>
+			
+			<li class="selected">Conversations</li>
+			<li>ALEC</li>
+			<li>Articles</li>
+			<li>Share</li>
+		</ul>
+		<div class="menu-content menu-stories">
+			<div class='divider'></div>
+			Dive in and explore how you might talk to a man during specific episodes in their life.<br><br></div>
+		<div class="menu-content">
+			<div class="divider"></div>
+			Use the ALEC model to navigate a conversation with a man who might be struggling.<br><br>
+			<div class='alec'>
+				
+
+				<div class="alec-acc"><h1>A</h1><p>Start by <b>asking</b> how they are feeling.</p></div>
+				<div class="alec-acc"><h1>L</h1><p>Let them known you're <b>listening</b> and give them your full attention.</p></div>
+				<div class="alec-acc"><h1>E</h1><p><b>Encourage</b> them to focus on simple things that could improve how they feel.</p></div>
+				<div class="alec-acc"><h1>C</h1><p><b>Check-in</b> with them after your chat.</p></div>
+			</div>
+		</div>
+		<div class="menu-content"></div>
+		<div class="menu-content menu-share">
+			<div class="divider"></div></div>
+	</div>
+	<button class='menu-toggle'>
+	</button>
 	
 </body>
 </html>
