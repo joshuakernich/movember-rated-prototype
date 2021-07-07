@@ -24,25 +24,34 @@
 			text-align: left;
 		}
 
-
-		.headline h1{
+		.screen-column h1, .headline h1{
 			font-family: 'Anton', sans-serif;
 			font-weight: normal;
 			line-height: 1.1em;
 			text-align: center;
 			padding: 0px;
+			margin-top: 0px;
+			padding-top: 20px;
 		}
 
-		.headline h1 b{
+		.screen-column h1 b, .headline h1 b{
 			background: black;
-			color: #7CD6C4;
+			color: #F7CB45;
 			font-weight: normal;
 			display: inline-block;
 			padding: 5px;
 		}
 
+		.screen-column h1{
+			text-align: left;
+		}
+
+		.screen:not(.yellow) .screen-column h1 b{
+			color: white;
+		}
+
 		body{
-			background: #7CD6C4;
+			background: #F7CB45;
 
 			font-family: "BodyFont";
 			padding: 0px;
@@ -52,6 +61,33 @@
 			-ms-text-size-adjust: 100%;
 			text-size-adjust: 100%;
 		}
+
+		/*body.covid{
+			background: #F7CB45;
+		}
+
+		.covid .alec h1, body.covid h1 b{
+			color: #F7CB45;
+		}
+
+		body.covid .feedback h1.fail{
+			color: #ff4400;
+		}
+
+		body.covid .options p.selected.fail{
+			background: #ff4400;
+			border-color: #ff4400;
+
+
+		}
+
+		body.covid .options.fail p:before{
+			border-color: transparent #ff4400 transparent transparent;
+		}
+
+		body.covid .message b, body.covid .feedback b, body.covid .intention b, body.covid .remember b{
+			color: #F7CB45;
+		}*/
 
 		input{
 			font: inherit;
@@ -117,6 +153,7 @@
 		.me p{
 			background: blue;
 			margin-bottom: 0px;
+			max-width: 80%;
 		}
 
 		
@@ -261,11 +298,12 @@
 		@media only screen and (max-width: 500px) {
 		  .bg {
 		    width: 50vw;
+		    opacity: 0.1;
 		  }
 
 		  .bg.faded{
 			opacity: 0.1;
-		}
+			}
 		}
 
 		.bg.left{
@@ -304,10 +342,12 @@
 			color: #616161; /* gray */
 		}
 
+
+
 		.story{
 			display: inline-block;
 			height: 150px;
-			width: 100%;
+			width: 400px;
 			background: rgba(255,255,255,0.3);
 			margin: 0px;
 			margin-bottom: 2px;
@@ -315,8 +355,9 @@
 			box-sizing: border-box;
 			border: 1px solid blue;
 			position: relative;
-			color: blue;
+			color: black;
 			cursor: pointer;
+
 		}
 
 		.story:hover, .story.selected{
@@ -359,11 +400,15 @@
 
 			text-align: left;
 			font-weight: normal;
-			border-left: 2px solid blue;
+			
 			width: 200px;
 
+			font-family: "Anton";
+			text-transform: uppercase;
 
-
+			font-size: 2rem;
+			line-height: 2rem;
+			font-weight: normal;
 		}
 
 		.story.selected h1, .story:hover h1{
@@ -373,8 +418,9 @@
 		.story h1:before{
 			content: "Support a man who is";
 			display: block;
-			font-size: 0.7em;
-			
+			font-size: 1rem;
+			font-family: "BodyFont";
+			text-transform: none;
 		}
 
 		.story-preview{
@@ -437,7 +483,7 @@
 
 		.message b, .feedback b, .intention b, .remember b{
 			
-			color: #a8eadf; /*slightly lighter than background*/
+			color: #F7CB45; 
 			background: black;
 			padding: 0px 5px;
 			font-weight: normal;
@@ -467,28 +513,9 @@
 			color: white;
 		}
 
-		body.covid{
-			background: #F7CB45;
-		}
-
-		body.covid .feedback h1.fail{
-			color: #ff4400;
-		}
-
-		body.covid .options p.selected.fail{
-			background: #ff4400;
-			border-color: #ff4400;
 
 
-		}
-
-		body.covid .options.fail p:before{
-			border-color: transparent #ff4400 transparent transparent;
-		}
-
-		body.covid .message b, body.covid .feedback b, body.covid .intention b, body.covid .remember b{
-			color: #F7CB45;
-		}
+		
 
 		.story .bg-story.left{
 			background-size: 450%;
@@ -597,18 +624,18 @@
 			left: 140px;
 			right: 0px;
 			bottom: 0px;
-			background: linear-gradient(to bottom, transparent, transparent, #A5E3D5);
+			/*background: linear-gradient(to bottom, transparent, transparent, #A5E3D5);*/
 			opacity: 0.8;
 		}
 
-		.covid.story:after{
+		/*.covid.story:after{
 			background: linear-gradient(to bottom, transparent, transparent, #FBDB83);
 		}
 
 		.story.selected:after, .story:hover:after{
 			
 			background: linear-gradient(to bottom, transparent, transparent, blue);
-		}
+		}*/
 
 		.logo{
 			position: relative;
@@ -669,7 +696,6 @@
 
 		.pushed h1{
 			text-align: left;
-
 		}
 
 		.cta{
@@ -680,34 +706,39 @@
 			color: white;
 		}
 
+		.alec .alec-li{
+			position: relative;
+		}
+
 		.alec h1{
 			display: inline-block;
 			vertical-align: middle;
-			margin: 0px;
-
+			margin: 10px 0px;
 			background: black;
 			padding: 5px;
-			color: #7CD6C4;
+			color: #F7CB45;
 			width: 30px;
+			text-align: center;
+
 		}
 
 		.alec p{
 			display: inline-block;
 			vertical-align: middle;
-			width: 300px;
-			margin-left: 20px;
+			width: calc(100% - 60px);
+			margin: 0px 0px 0px 20px;
 		}
 
 		.menu{
 			position: fixed;
-			width: 100vw;
+			width: 250px;
 			height: 100vh;
 			overflow: auto;
-			left:-105vw;
+			left:-255px;
 			top: 0px;
 			transition: 0.5s all;
-			box-shadow: 5px 0px black;
-			background: #7BD6C3;
+			border-right: 5px solid black;
+			background: #eee;
 			text-align: center;
 		}
 
@@ -728,7 +759,7 @@
 			background-repeat: no-repeat;
 			margin: 10px;
 			border:none;
-			transition: transform 0.5s;
+			transition: transform 0.5s, left 0.5s, top 0.5s;
 		}
 
 		.menu-toggle:hover{
@@ -741,9 +772,16 @@
 			transform: scale(1.1);
 		}
 
+		.menu-toggle.active:hover{
+			transform: scale(1.2);
+		}
+
 		.menu-toggle.active{
-			transform: rotate(-179.9deg) scale(1.2);
 			background-position: -50px 0px;
+			transition-delay: 0.02s;
+			left: 227px;
+			top: 20px;
+			transform: scale(1.2);
 		}
 
 
@@ -752,58 +790,324 @@
 			padding: 0px;
 			margin: 0px;
 
-			margin-top: 15px;
-			text-align: center;
+			margin: 20px 0px 0px 20px;
+			text-align: left;
 			color: blue;
 		}
 
-		@media only screen and (max-width: 600px){
-			.submenu{
-				width: 300px;
-				margin: auto;
-				margin-top: 15px;
-			}
-		}
-
 		.submenu li{
-			display: inline-block;
+			display: block;
 			
 			margin: 0px;
-			padding: 5px 10px;
+			
+			padding: 10px 0px;
 
-			font-family: 'Anton', sans-serif;
+			
 			font-weight: normal;
 			text-transform: uppercase;
-			font-size: 2em;
+			font-size: 1em;
 			line-height: 1.1em;
 			cursor: pointer;
+			color: black;
+			position: relative;
+			width: 210px;
+		}
+
+		.menu-footer{
+			position: absolute;
+			bottom: 0px;
+			width: 100%;
+		}
+
+		.language-selector{
+			font-weight: normal;
+			text-transform: uppercase;
+			font-size: 1em;
+	
+			
+			background: #ccc;
+			
+			display: block;
+			padding: 10px;
+			
+			box-sizing: border-box;
+		}
+
+
+
+		.submenu li:after{
+			content: "";
+			
+			display: inline-block;
+			width: 8px;
+			height: 8px;
+			border-top: 2px solid black;
+			border-right: 2px solid black;
+			transform: rotate(45deg);
+			position: absolute;
+			right: 0px;
+		}
+
+		.language-selector:before
+		{
+			content: "";
+			display: inline-block;
+			width: 18px;
+			height: 18px;
+			background: blue;
+			background: url('./language.svg');
+			background-size: contain;
+			background-position: center;
+			background-repeat: no-repeat;
+			vertical-align: middle;
+		}
+
+		.language-selector select{
+			
+			vertical-align: middle;
+			
+			font: inherit;
+			padding: 0px;
+			 margin-left: 5px;
+			 border: none;
+			 background: none;
 		}
 
 		.submenu li.selected{
-			background: blue;
-			color: #7BD6C2;
+			color: blue;
 		}
 
+		.submenu li.selected:after{
+			content: "";
+			position: absolute;
+			width: calc( 100% - 40px );
+			left: 20px;
+			height: 5px;
+			bottom: 0px;
+			background: blue;
+		}
+
+		.submenu li.selector:after{
+			display:none;
+		}
 
 		.menu-content{
 			margin: 40px auto;
-			width: 400px;
+			max-width: 820px;
 			text-align: left;
+			padding: 0px 30px;
+		}
+
+		.menu-content .story{
+			margin: 0px 10px 0px 0px;
+		}
+
+		.menu-content > h1{
+			font-family: 'Anton', sans-serif;
+			font-weight: normal;
+			line-height: 1.1em;
+		}
+
+		.menu-content > h2{
+			font-size: 1.1rem;
+			font-weight: normal;
+		}
+
+		.menu-content > h3{
+			font-size: 1rem;
+			font-weight: normal;
+			opacity: 0.8;
 		}
 
 		.alec-acc{
 			position: relative;
+			margin-bottom: 5px;
 		}
 
-		.alec-acc:after{
-			content: "more +";
+		.alec-acc-header{
+			background: #f5f5f5;
+			padding-left: 10px;
+			border: 1px solid blue;
+			cursor: pointer;
+		}
+
+		.alec-acc-header:hover{
+			background: blue;
+			color: white;
+		}
+
+		.alec-acc-header:after{
+			content: "f078";
 			display: inline-block;
 			color: blue;
 			position: absolute;
-			right: 0px;
-			bottom: 0px;
+			right: 15px;
+			top: 0px;
+			
+			line-height: 67px;
+
+			font-family: "Font Awesome 5 Free";
+			font-weight: 900;
+			content: "\f078";
+
+			transition: transform 0.2s;
 		}
 
+		/*.alec-acc-header:after{
+			
+			color: blue;
+			position: absolute;
+			right: 10px;
+			bottom: 10px;
+			
+			width: 15px;
+			height: 15px;
+
+			
+
+		}*/
+
+		.alec-acc-header:hover:after{
+			color: white;
+		}
+
+		.alec-inner{
+			display: none;
+			margin: 20px 0px;
+		}
+
+		.alec-inner h2{
+			font-size: 20px;
+		}
+
+		.alec-inner-block{
+			column-count: 2;
+		}
+
+		.alec-inner p{
+			width: auto;
+			margin: 0px 0px 20px 0px;
+		}
+
+		.alec-acc.open .alec-acc-header{
+			background: blue;
+			color: white;
+		}
+
+		.alec-acc.open .alec-acc-header:after{
+			color: white;
+			transform: rotate(-180deg);
+		}
+
+		.alec-acc.open .alec-inner{
+			display: block;
+		}
+
+		.modal{
+			position: absolute;
+			top: 0px;
+			left: 0px;
+			right: 0px;
+			bottom: 0px;
+			background: white;
+		}
+
+		.home-link{
+			cursor: pointer;
+		}
+
+		.screen{
+			background: white;
+			min-height: 100vh;
+		}
+
+		.screen.yellow{
+			background: #F7CB45;
+		}
+
+		.screen .screen-column{
+			max-width: 820px;
+			margin: auto;
+			padding: 55px 20px;
+		}
+
+		.screen-column .story{
+			margin: 0px 10px 3px 0px;
+		}
+
+		.screen-column .alec h1{
+			color: white;
+		}
+
+		.back-to-convo{
+			background: #F7CB45;
+			margin: -10px;
+			color: blue;
+		}
+
+		.article-preview{
+			width: 400px;
+			display: inline-block;
+			margin: 0px 8px 10px 0px;
+			box-sizing: border-box;
+			cursor: pointer;
+		}
+
+
+		.article-thumb{
+			width: 400px;
+			height: 200px;
+			background-size: 100%;
+			background-position: center;
+			border: 1px solid blue;
+			position: relative;
+			box-sizing: border-box;
+			transition: background-size 0.5s
+		}
+
+		.article-thumb:after{
+			content: "READ MORE →";
+			padding: 8px 15px;
+			border: 1px solid blue;
+			color: blue;
+			position: absolute;
+			left: 0px;
+			bottom: 0px;
+			margin: 10px;
+			background: white;
+			font-size: 0.8rem;
+		}
+
+		.article-preview:hover .article-thumb{
+			background-size: 105%;
+		}
+
+		.article-preview:hover .article-thumb:after{
+			background: blue;
+			color: white;
+		}
+
+		.article-header h1{
+			text-align: center;
+			font-size: 3rem;
+			text-transform: uppercase;
+		}
+
+		.mini-convo{
+			width: 400px;
+			margin: auto;
+		}
+
+		@import url('https://fonts.googleapis.com/css2?family=Lora&display=swap');
+
+		blockquote{
+			font-size: 1.5rem;
+			font-family: 'Lora', serif;
+			line-height: 1.5;
+			width: 400px;
+			padding: 0px;
+			margin: 30px auto;
+		}
 
 	</style>
 	<script type="text/javascript" src="./jquery-3.4.1.min.js"></script>
@@ -831,10 +1135,27 @@
 					storyUniWork]
 				};
 
-			if(window.location.href.indexOf('covid')>-1){
-				storyList.p = [storyCovidIsolation,storyCovidWork,storyCovidFamily];
-				$('body').addClass('covid');
-			} 
+			storyList.p = [
+				storyCovidIsolation,
+				storyCovidWork,
+				storyCovidFamily,
+				{
+					name:"RECENTLY HEARTBROKEN",
+					bg:{left:{img:'https://conversations.movember.com/static/assets/images/image-9723dfdd46c616f37dc130c33b42edfd72673e58-1000x1000-png'},right:{img:''}},
+					thread:[{is:'them',p:["She dumped me, bro."]}]
+				},{
+					name:"GRIEVING & LONELY",
+					bg:{left:{img:'https://conversations.movember.com/static/assets/images/image-9723dfdd46c616f37dc130c33b42edfd72673e58-1000x1000-png'},right:{img:''}},
+					thread:[{is:'them',p:["I'm really short."]}]
+				},{
+					name:"A CARER OF OLDER MEN",
+					bg:{left:{img:'https://conversations.movember.com/static/assets/images/image-9723dfdd46c616f37dc130c33b42edfd72673e58-1000x1000-png'},right:{img:''}},
+					thread:[{is:'them',p:["I'm really short."]}]
+				}
+			]
+
+			$('body').addClass('covid');
+			
 
 			$('.bg.left').css({'background-image':'url('+storyList.p[0].bg.left.img+')'})
 			$('.bg.right').css({'background-image':'url('+storyList.p[0].bg.right.img+')'})
@@ -911,10 +1232,13 @@
 			function nextBit(){
 				iBit++;
 				var bit = bits[iBit];
+				console.log('nextBit',bits,bit);
 				drawBit(bit,$('.convo'));
 			}
 
 			function drawBit(bit,$container) {
+
+				console.log(bit);
 				
 				var $bit = $('<div class="bit '+bit.is+'">').appendTo($container);
 				var $ps = $bit;
@@ -960,7 +1284,7 @@
 
 				} else if(bit.is=='share'){
 					$('<input value="conversations.movember.com" readonly>').appendTo($bit);
-					$('<button><i class="fas fa-clone"></i>&nbsp;&nbsp;Copy sharing URL</button>').appendTo($bit).click(function(){
+					$('<button><i class="fas fa-clone"></i>&nbsp;&nbsp;Copy Sharing URL</button>').appendTo($bit).click(function(){
 						var $btn = $(this);
 						$btn.addClass('selected');
 						$btn.html('<i class="fas fa-clone"></i>&nbsp;&nbsp;Sharing URL copied!');
@@ -1037,8 +1361,17 @@
 
 						var index = $bit.find('.story').index(me);
 
-						me.addClass('selected');
-						$bit.find('.story').hide();
+						//me.addClass('selected');
+
+						// go to a convo
+
+						$('.screen').hide().eq(0).show();
+						$('.convo').empty().append(me.clone().addClass('selected'));
+
+
+
+
+						//$bit.find('.story').hide();
 						me.show();
 
 						iBit = -1;
@@ -1100,90 +1433,268 @@
 			})
 
 			//$('.convo').empty();
-			nextBit();
+			//nextBit();
 
 			$('.menu-toggle').click(function(){
 				$('.menu').toggleClass('active');
 				$('.menu-toggle').toggleClass('active');
 			})
 
-			drawBit(storyList,$('.menu-stories'))
+			drawBit(storyList,$('.story-list'))
 			drawBit({is:'share'},$('.menu-share'));
 
 			$('.menu-content').hide().eq(0).show();
 
 			$('.submenu li').click(function(){
 				var i = $('.submenu li').index(this);
-				$('.submenu li').removeClass('selected').eq(i).addClass('selected');
-				$('.menu-content').hide().eq(i).show();
+				$('.menu').removeClass('active');
+				$('.menu-toggle').removeClass('active');
+				//$('.submenu li').removeClass('selected').eq(i).addClass('selected');
+				$('.screen').hide().eq(i+1).show();
 			})
 
 			$('.note button').click(function(){
 				$('.cookie-modal').hide();
+			})
+
+			$('.cookie-modal').hide();
+			$('.screen').hide().last().show();
+
+			$('.home-link').click(function(){
+				$('.screen').hide().eq(0).show();
+			});
+
+			$('.alec-acc-header').click(function(){
+				$(this).closest('.alec-acc').toggleClass('open');
+			})
+
+			$('.article-preview').click(function(){
+				$('.screen').hide().eq(5).show();
 			})
 		})
 		
 	</script>
 </head>
 <body>
-	<div class='bg left'></div>
-	<div class='bg right'></div>
-	<!--div class='note'><i class="fas fa-exclamation-circle"></i> <b>Scheduled Maintenance</b><br>- 28th January 3pm-6pm AEDT</div-->
 	<div class="cookie-modal">
 		<div class='note'>
-			
 			<div class="note-inner">Our website uses cookies to bring you an easy and personalised browsing experience. By continuing, you consent to our cookie policy on this device. For more info, please see our <a href='https://movember.com/privacy'>Privacy Statement</a>.
-			<button>Jump In</button>
-			</div></div>
+				<button>Jump In</button>
+			</div>
+		</div>
 	</div>
-	<div class='convo'>
-		<!--<h2>Enter Password</h2>
-		<input type='password' autocomplete="one-time-code"></input>
-		<button class='go-button'>Go!</button>-->
-		<div class='headline'>
-			<img style='margin:auto;display:block;' width=400 src='logo-black.svg'/>
-			<br>
-			<div class='pushed'>
-				<div class='demo'>
-					<video muted autoplay loop>
-						<source src='video.mov'>
-					</video>
-				</div>
-				<div class='pushed-content'>
-					<h1>NO MORE<br><b>DEAD-END</b><br>CONVERSATIONS</h1>
-					<p>Better conversations can help you support the men in your life. Whether it's a friend in need, a colleague who's not coping or a family member who isn't himself. Learn what to say and how to help.</p>
-					<button class='cta'>Get Started</button>
+	<div class="screens">
+		<div class="screen yellow">
+			<div class='bg left'></div>
+			<div class='bg right'></div>
+			<!--div class='note'><i class="fas fa-exclamation-circle"></i> <b>Scheduled Maintenance</b><br>- 28th January 3pm-6pm AEDT</div-->
+			
+
+			<div class='convo'>
+				<!--<h2>Enter Password</h2>
+				<input type='password' autocomplete="one-time-code"></input>
+				<button class='go-button'>Go!</button>-->
+				<div class='headline'>
+					<img style='margin:auto;display:block;' width=400 src='logo-black.svg'/>
+					<br>
+					<div class='pushed'>
+						<div class='demo'>
+							<!--video muted autoplay loop>
+								<source src='video.mov'>
+							</video-->
+							<div style="margin: 10px;width:140px;height:305px;background-image: url('https://conversations.movember.com/static/media/previewVideoCorona.9dd5f4e3.gif')"></div>
+						</div>
+						<div class='pushed-content'>
+							<h1>NO MORE<br><b>DEAD-END</b><br>CONVERSATIONS</h1>
+							<p>Better conversations can help you support the men in your life. Whether it's a friend in need, a colleague who's not coping or a family member who isn't himself. Learn what to say and how to help.</p>
+							<button class='cta'>Get Started</button>
+						</div>
+					</div>
+					<br><br>
+					<div class='divider'></div>
+					<h1>REACH OUT WITH <b>ALEC</b></h1>
+					<p>Use the ALEC model to navigate a conversation with a man who might be struggling.</p>
+					<div class='alec'>
+						<div class="alec-li"><h1>A</h1><p>Start by <b>asking</b> how they are feeling.</p></div>
+						<div class="alec-li"><h1>L</h1><p>Let them known you're <b>listening</b> and give them your full attention.</p></div>
+						<div class="alec-li"><h1>E</h1><p><b>Encourage</b> them to focus on simple things that could improve how they feel.</p></div>
+						<div class="alec-li"><h1>C</h1><p><b>Check-in</b> with them after your chat.</p></div>
+					</div>
+					<br>
+					<div class='divider'></div>
+					<h1>START A <b>CONVERSATION</b></h1>
+					<p>Dive in and explore how you might talk to a man during specific episodes in their life.</p>
 				</div>
 			</div>
-			<br><br>
-			<div class='divider'></div>
-			<h1>REACH OUT WITH <b>ALEC</b></h1>
-			<p>Use the ALEC model to navigate a conversation with a man who might be struggling.</p>
-			<div class='alec'>
-				<h1>A</h1><p>Start by <b>asking</b> how they are feeling.</p>
-				<h1>L</h1><p>Let them known you're <b>listening</b> and give them your full attention.</p>
-				<h1>E</h1><p><b>Encourage</b> them to focus on simple things that could improve how they feel.</p>
-				<h1>C</h1><p><b>Check-in</b> with them after your chat.</p>
+		</div>
+	
+		<div class="screen yellow">
+			<div class="screen-column">
+				<h1>START A <b>CONVERSATION</b></h1>
+				Better conversations can help you support the men in your life. Dive in and explore how you might talk to a man during specific episodes in their life.<br><br>
+				<div class="story-list"></div>
+			</div>
+		</div>
+		<div class="screen">
+			<div class="screen-column">
+				<h1>REACH OUT WITH <b>ALEC</b></h1>
+				Use the ALEC model to navigate a conversation with a man who might be struggling.<br><br>
+				<div class='alec'>
+					
+
+					<div class="alec-acc">
+						<div class='alec-acc-header'><h1>A</h1><p>Start by <b>asking</b> how they are feeling.</p></div>
+
+						<div class="alec-inner">
+							
+							<p><em>“How are things at home?”</em></p><p><em>“You haven’t seemed yourself lately… are you feeling OK?”</em></p><p><em>‘I’ve noticed you’ve been pretty flat lately...you OK?’</em></p><p>Asking the&nbsp;<strong>right questions</strong>&nbsp;at the&nbsp;<strong>right time</strong>&nbsp;is key to helping someone open up.</p><p>If you think a man is struggling, stressed, unhappy or angry, ASK a few questions to show that you care.</p><p>Want to help a guy talk about how he’s feeling?</p><p>Try: “This week’s been brutal for me, how’ve you been holding up?”</p><p>Or, try talking about things he cares about to get a sense of how he’s going:</p><p><em>“How’s work these days?”“How are things with your partner/son/daughter going?”</em></p>
+				
+							<h2>Consider if it’s appropriate</h2>
+					
+							<p>It's important to find&nbsp;<strong>the right time and place</strong>&nbsp;to have sensitive conversations. It could be hard to focus if it’s dinner time or there’s a lot of noise in the background, for example.</p><p>Try and find somewhere private, calm, and appropriate to help him feel at ease and open to sharing. Don’t get hung up on everything being perfect.</p><p>Even if you can’t be face to face, you can talk to him as if you’re sitting side-by-side and putting yourself out there with what and how you share.</p>
+
+							<h2>Use open-ended questions</h2>
+			
+							<p><strong>Open-ended questions</strong>&nbsp;are a great way to stimulate meaningful conversations, to keep it flowing and to show that you genuinely care. Open-ended questions also give the other person a chance to share more information.</p><p>Open questions sound like: ‘How are you feeling today?’ or “What’s been on your mind lately?”</p><p>Closed questions like “<em>Do you feel angry?”</em> tend to lead to one-word answers, like ‘yes’ or ‘no’.</p><p>Asking open-ended questions requires you to pay close attention, to be specific and enquire from a place of genuine care.</p>
+							<h2>Model honest conversations</h2>
+				
+							<p>Real conversations go beyond subjects like work, sport or what you’re watching on Netflix. Demonstrating your own ability to be honest, open and vulnerable is a great way to help someone open up. Sharing your own struggles helps to destigmatise issues while making strides towards developing a closer, more meaningful relationship.</p><p>If you think someone is struggling with their mental health don’t be afraid to ask them if there’s anything you can do to better support them – this will not make things worse.</p>
+
+						</div>
+
+					</div>
+					<div class="alec-acc">
+						<div class="alec-acc-header"><h1>L</h1><p>Let them known you're <b>listening</b> and give them your full attention.</p></div>
+						<div class="alec-inner"></div>
+					</div>
+					<div class="alec-acc">
+						<div class="alec-acc-header"><h1>E</h1><p><b>Encourage</b> them to focus on simple things that could improve how they feel.</p></div>
+					</div>
+					<div class="alec-acc">
+						<div class="alec-acc-header"><h1>C</h1><p><b>Check-in</b> with them after your chat.</p></div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="screen">
+			<div class="screen-column">
+				<h1>DIG A LITTLE <b>DEEPER</b></h1>
+				<div class="article-preview">
+					<div class="article-thumb" style="background-image:url(./image/pair.jpeg)"></div>
+					<p><b>Getting Over Conversation Blockers</b></p>
+					<p>In 2020, we watched the world change dramatically. But one thing remained the same: our mission to stop men dying too young.</p>
+				</div>
+				<div class="article-preview">
+					<div class="article-thumb" style="background-image:url(./image/pair.jpeg)"></div>
+					<p><b>Spot the Signs 101</b></p>
+					<p>In 2020, we watched the world change dramatically. But one thing remained the same: our mission to stop men dying too young.</p>
+				</div>
+				<div class="article-preview">
+					<div class="article-thumb" style="background-image:url(./image/pair.jpeg)"></div>
+					<p><b>The Unwilling Helpgiver</b></p>
+					<p>In 2020, we watched the world change dramatically. But one thing remained the same: our mission to stop men dying too young.</p>
+				</div>
+				<div class="article-preview">
+					<div class="article-thumb" style="background-image:url(./image/pair.jpeg)"></div>
+					<p><b>Movember Conversations in Focus</b></p>
+					<p>In 2020, we watched the world change dramatically. But one thing remained the same: our mission to stop men dying too young.</p>
+				</div>
+				
+			</div>
+		</div>
+		<div class="screen">
+			<div class="screen-column">
+				<h1><b>SHARE</b> THE LOVE</h1>
+				<div class="menu-share"></div>
+			</div>
+		</div>
+		<div class="screen">
+			<div class="screen-column">
+				<div class='acticle'>
+					
+					<div style='width:380px;height:380px;vertical-align:middle;display:inline-block;background-size:cover;background-image:url(https://au.movember.com/uploads/images/2020/Spot%20The%20Signs.png);background-position: center;';></div>
+					<div class='article-header' style='width:380px;vertical-align:middle;display:inline-block;text-align: center;padding:0px 20px;'>
+						<p>10th February, 2021</p><h1>SPOT A BRO WHO’S FEELING LOW IN LOCKDOWN</h1><p>2 MIN READ</p></div>
+					
+					
+					<p>COVID-19 has affected most of us around the world, so it’s normal to be finding things difficult at the moment. But some may be struggling more than others.<br>
+			&nbsp;<br>
+			While physical distancing is essential right now, this situation has stripped us of the main opportunities men use to connect – which makes it even harder to keep an eye out for each other.<br>
+			&nbsp;<br>
+
+			<div class="mini-convo">
+				<div class="story"><div class="bg-story left" style="background-image: url(&quot;https://conversations.movember.com/static/assets/images/image-66a9b8a444422868dc2aa8d671ffef05a220dc5d-1000x1000-png&quot;); background-position-y: -250px;"></div><div class="bg-story right" style="background-image: url(&quot;https://conversations.movember.com/static/assets/images/image-63e5166d68b6f880f7b8407215f3a6e294c2bd69-1000x1000-png&quot;);"></div><div class="story-preview"><div class="bit them"><p>It’s almost midday. Time to get out of bed and get on the beers!</p></div></div><h1>Withdrawn &amp; Obsessing</h1></div>
+				<button>Explore this conversation →</button>
 			</div>
 			<br>
-			<div class='divider'></div>
-			<h1>START A <b>CONVERSATION</b></h1>
-			<p>Dive in and explore how you might talk to a man during specific episodes in their life.</p>
+			Movember wants you to be able to <a href="https://www.youtube.com/watch?v=z85nNubbt4o">pick up on the signs</a> a mate might be doing it tough in isolation and have those potentially life-saving conversations.<br>
+			&nbsp;<br>
+
+			<div class="mini-convo">
+				<div class="bit them"><p>It’s almost midday. Time to get out of bed and get on the beers!</p></div>
+				<div class="bit me"><p>Ah man. I know that feeling.<br>Sounds like the COVID blues.</p></div>
+				<br>
+				<button>Continue this conversation →</button>
+				<br><br>
+			</div>
+			We know it’s not uncommon for guys to keep quiet when they’re struggling, and with men facing challenges at a level not seen in most of our lifetimes, something has got to change.<br>
+			&nbsp;<br>
+			In the current situation, it’s vital for blokes to talk about what’s going on for them now more than ever. That’s why Movember is encouraging everyone to take on the <a href="https://uk.movember.com/story/view/id/12109/five-minutes-to-touch-base-with-a-mate-could-make-a-massive-difference">Five-A-Day challenge</a> and spend five minutes each day checking in with a mate.
+			<blockquote>“Just like you need your five-a-day to stay physically healthy, we want you to take five minutes a day to look out for both yours and your mates’ mental health.”</blockquote>
+			And while social interaction is vital to support positive mental health and wellbeing, it’s also crucial you take the opportunity to look out for potential signs someone isn’t in a great head space.<br>
+			&nbsp;<br>
+			Chances are, one of the men close to you is struggling right now. We’re not just talking about someone who looks or sounds down – often it’s the things which are easier to miss that suggest something is awry.<br>
+			&nbsp;<br>
+			So how can you pick up on these signs when you’re not able to sit in the same room or stand side by side? While you might not be living with your mates, there’s still cues you can pick up on over the phone or via social media.</p>
+				<div class='alec'>
+						<h1>A</h1><p>Start by <b>asking</b> how they are feeling.</p>
+						<h1>L</h1><p>Let them known you're <b>listening</b> and give them your full attention.</p>
+						<h1>E</h1><p><b>Encourage</b> them to focus on simple things that could improve how they feel.</p>
+						<h1>C</h1><p><b>Check-in</b> with them after your chat.</p>
+					</div>
+				</div>
+			</div>
 		</div>
 	</div>
 	<div class='menu'>
 		<ul class='submenu'>
-			
-			<li class="selected">Conversations</li>
-			<li>ALEC</li>
-			<li>Articles</li>
+			<img class='home-link' src="logo-black.svg" width="200">
+			<br><br>
+			<!--li class='back-to-convo'>Back to convo</li-->
+			<li>Conversations</li>
+			<li>ALEC unpacked</li>
+			<li>Resources</li>
+			<!--li>- About</li>
+			<li>- ALEC</li>
+			<li>- Get Support</li-->
 			<li>Share</li>
+			
+			
+			
+			
 		</ul>
+		
+
+		<div class="menu-footer">
+		<div style="text-align: center;">
+				<p>Powered by</p>
+				<img src='https://cdn.movember.com/assets/images/global/movember_logo_primary.svg' width=200>
+				<p style='font-size: 12px;'>Terms and conditions | Privacy policy</p>
+			</div>
+			
+		<div class="language-selector"><select name="langauge" id="langauge">
+		  <option value="EN">English - AU</option>
+		  <option value="EN">English - UK</option>
+		  <option value="EN">English - US</option>
+		  <option value="EN">French - CAN</option>
+		  <option value="FR">FR</option>
+		</select></div>
+		</div>
+		<!--
 		<div class="menu-content menu-stories">
-			<div class='divider'></div>
-			Dive in and explore how you might talk to a man during specific episodes in their life.<br><br></div>
+			Better conversations can help you support the men in your life. Dive in and explore how you might talk to a man during specific episodes in their life.<br><br></div>
 		<div class="menu-content">
-			<div class="divider"></div>
+
 			Use the ALEC model to navigate a conversation with a man who might be struggling.<br><br>
 			<div class='alec'>
 				
@@ -1194,9 +1705,16 @@
 				<div class="alec-acc"><h1>C</h1><p><b>Check-in</b> with them after your chat.</p></div>
 			</div>
 		</div>
-		<div class="menu-content"></div>
-		<div class="menu-content menu-share">
-			<div class="divider"></div></div>
+		<div class="menu-content">
+			<img width=100%; src="./image/pair.jpeg">
+			<h2>10TH FEBRUARY 2021</h2>
+			<h1>10 GLOBAL MEN’S HEALTH PROJECTS YOUR DONATIONS HAVE FUNDED</h1>
+			<h3>5 minutes read time</h3>
+			<p>In 2020, we watched the world change dramatically. But one thing remained the same: our mission to stop men dying too young.</p>
+			<p>With the funds raised by our Mo Bros and Mo Sisters, we accelerated our work to help men live happier, healthier and longer lives.</p><p>From uniting the world’s brightest minds and funding ground-breaking research, to launching our own programs designed with men in mind, here’s a look at our top project highlights of 2020.</p>
+		</div>
+		<div class="menu-content menu-share narrow">
+			<div class="divider"></div></div>-->
 	</div>
 	<button class='menu-toggle'>
 	</button>
