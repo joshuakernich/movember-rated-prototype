@@ -1,6 +1,6 @@
 var storyCovidWork = {name:'Unemployed & Uncertain',
 				bg:{
-					left:{img:'https://conversations.movember.com/static/assets/images/image-f34dd8fc826c2c2535da51855a488dfe35cc2337-1080x1080-png'},
+					left:{img:'https://conversations.movember.com/static/assets/images/image-e25fe009dd8b330356b3766abde95c8f2ca13c8f-1000x1000-png'},
 					right:{img:'https://conversations.movember.com/static/assets/images/image-cd42a130ffe5cd739029fcfa885e6ab4ce8f8c08-1080x1080-png'}
 				},
 				thread:[
