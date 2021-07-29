@@ -1031,6 +1031,10 @@
 			padding: 55px 20px;
 		}
 
+		.screen .article-column{
+			max-width: 600px;
+		}
+
 		.screen-column .story{
 			margin: 0px 10px 3px 0px;
 		}
@@ -1098,6 +1102,8 @@
 			margin: auto;
 		}
 
+
+
 		@import url('https://fonts.googleapis.com/css2?family=Lora&display=swap');
 
 		blockquote{
@@ -1107,6 +1113,110 @@
 			width: 400px;
 			padding: 0px;
 			margin: 30px auto;
+		}
+
+		.article-column{
+			line-height: 1.7;
+		}
+
+		.article-column h1{
+
+		}
+
+		.key-points{
+			padding: 0px 30px;
+			border-left: 10px solid #F7CB45;
+		}
+
+		.key-points h1{
+			color: #F7CB45;
+			margin-top: 0px;
+			padding-top: 0px;
+		}
+
+		.key-points ul{
+			list-style-type:none;
+			padding: 0px;
+			margin: 0px;
+		}
+
+		.key-points li{
+			position: relative;
+			padding-left: 35px;
+			margin-bottom: 15px;
+
+		}
+
+		.key-points li:before{
+			content: "▶";
+			width: 25px;
+			height: 25px;
+			border-radius: 10px;
+			display: inline-block;
+			background: #F7CB45;
+			position: absolute;
+			left: 0px;
+			top: 2px;
+			color: white;
+			text-align: center;
+			line-height: 25px;
+			font-size: 10px;
+		}
+
+		.meta{
+			color: #999;
+			font-size: 0.8rem;
+		}
+
+		.meta-divider{
+			width: 1px;
+			height: 15px;
+			background: #999;
+			display: inline-block;
+			margin: 0px 5px;
+			vertical-align: middle;
+		}
+
+		.article-column h1{
+			text-transform: uppercase;
+		}
+
+		.article-column ol{
+			list-style-type:none;
+			padding: 0px;
+			margin: 0px;
+			counter-reset: item;
+		}
+
+		.article-column ol li{
+			position: relative;
+			padding-left: 35px;
+			margin-bottom: 15px;
+			counter-increment: item;
+
+		}
+
+		.article-column ol li:before{
+			content: counter(item);
+			width: 25px;
+			height: 25px;
+			border-radius: 10px;
+			display: inline-block;
+			background: #F7CB45;
+			position: absolute;
+			left: 0px;
+			top: 5px;
+			color: white;
+			text-align: center;
+			line-height: 25px;
+
+			font-size: 15px;
+			font-weight: bold;
+		}
+
+		.article-alec{
+			width: 400px;
+			margin: auto;
 		}
 
 	</style>
@@ -1458,7 +1568,7 @@
 			})
 
 			$('.cookie-modal').hide();
-			$('.screen').hide().first().show();
+			$('.screen').hide().last().show();
 
 			$('.home-link').click(function(){
 				$('.screen').hide().eq(0).show();
@@ -1609,27 +1719,67 @@
 			</div>
 		</div>
 		<div class="screen">
-			<div class="screen-column">
-				<div class='acticle'>
+			<div class="screen-column article-column">
+				
 					
-					<div style='width:380px;height:380px;vertical-align:middle;display:inline-block;background-size:cover;background-image:url(https://au.movember.com/uploads/images/2020/Spot%20The%20Signs.png);background-position: center;';></div>
-					<div class='article-header' style='width:380px;vertical-align:middle;display:inline-block;text-align: center;padding:0px 20px;'>
-						<p>10th February, 2021</p><h1>SPOT A BRO WHO’S FEELING LOW IN LOCKDOWN</h1><p>2 MIN READ</p></div>
+					<!--div style='width:380px;height:380px;vertical-align:middle;display:inline-block;background-size:cover;background-image:url(https://au.movember.com/uploads/images/2020/Spot%20The%20Signs.png);background-position: center;';></div-->
+					<h1>Supporting Someone Through Unemployment</h1>
+					<p class="meta">10th February, 2021 <span class="meta-divider"></span> 2 minute read</p>
+					<div style="height: 200px;background-image: url(https://cdn.movember.com/uploads/images/2019/HealthPromotion/1-1-4-copy%403x.jpg)"></div>
 					
 					
-					<p>COVID-19 has affected most of us around the world, so it’s normal to be finding things difficult at the moment. But some may be struggling more than others.<br>
-			&nbsp;<br>
-			While physical distancing is essential right now, this situation has stripped us of the main opportunities men use to connect – which makes it even harder to keep an eye out for each other.<br>
-			&nbsp;<br>
+					<br><br>
+					<div class="key-points">
+						<h1>THE LOW DOWN</h1>
+						<ul>
+							<li>It’s important to understand the feeling related to unemployment. When someone loses work they can find themselves feeling angry, lost, hopeless, worthless, sad, stressed, frustrated and more.</li>
+							<li>Be ready with a series of questions to ask to help people open up and feel comfortable.</li>
+								<li>When helping a partner through unemployment acknowledge the financialstress, communicate and make a plan for how to talk to your kids (if you have any).</li>
+						</ul>
+					</div>
+					<br>
+					<div class="mini-convo">
+						<div class="story">
+							<div class="bg-story left" style="background-image: url(&quot;https://conversations.movember.com/static/assets/images/image-66a9b8a444422868dc2aa8d671ffef05a220dc5d-1000x1000-png&quot;); background-position-y: -250px;"></div>
+							<h1>Unemployed &amp; Uncertain</h1>
+						</div>
+						<button>Explore this conversation →</button>
+					</div>
+					
+					<h2>Supporting someone through unemployment</h2>
+					<p>Know someone who’s lost their job or not getting enough work at the moment? You might feel worried about how they’re coping – and rightly so. A lot of people find purpose in their work and attach their identity to what they ‘do’. Not having a place to go or things to achieve can feel disheartening and frustrating – particularly when they have a family to support too.</p>
+					<p>Even if they seem to be handling unemployment okay, it’s a great idea to reach out and have an honest chat.</p><p>Not sure what to say? This article should point you in the right direction.</p>
 
-			<div class="mini-convo">
-				<div class="story"><div class="bg-story left" style="background-image: url(&quot;https://conversations.movember.com/static/assets/images/image-66a9b8a444422868dc2aa8d671ffef05a220dc5d-1000x1000-png&quot;); background-position-y: -250px;"></div><div class="bg-story right" style="background-image: url(&quot;https://conversations.movember.com/static/assets/images/image-63e5166d68b6f880f7b8407215f3a6e294c2bd69-1000x1000-png&quot;);"></div><div class="story-preview"><div class="bit them"><p>It’s almost midday. Time to get out of bed and get on the beers!</p></div></div><h1>Withdrawn &amp; Obsessing</h1></div>
-				<button>Explore this conversation →</button>
-			</div>
-			<br>
-			Movember wants you to be able to <a href="https://www.youtube.com/watch?v=z85nNubbt4o">pick up on the signs</a> a mate might be doing it tough in isolation and have those potentially life-saving conversations.<br>
-			&nbsp;<br>
 
+					<h2>Understanding feelings related to unemployment</h2>
+					<p>If you’ve never been unemployed before, it can be hard to imagine what it feels like. (And if the last time you didn’t have a job was when you were 14, that doesn’t count. Chances are your biggest concerns back then were having spare cash to blow on junk food and videogames.)</p>
+					<p>As much as work can feel like a drag sometimes, our careers perform many functions. Obviously they bring money in the door but they also bring routine, consistency and meaning to our lives. Without work, people might experience feelings like:</p>
+
+					<ul>
+						<li>Anger</li>
+						<li>Frustration</li>
+						<li>Helplessness</li>
+						<li>Loss of identity</li>
+						<li>Low self esteem</li>
+						<li>Loss of control</li>
+						<li>Sadness</li>
+						<li>Stress</li>
+						<li>Uncertainty</li>
+					</ul>
+
+					<p>A lot of these feelings are internal and may not be obvious to you. But that doesn’t mean they’re not there under the surface, negatively impacting your friend’s mental health.</p>
+					<p>The first step in supporting someone through unemployment is to understand and acknowledge whatever it is they’re feeling. Ask open-ended questions like, “How are you holding up?” And be sure to verbally acknowledge what they’ve shared with you. For example, “That sounds tough. No wonder you’re feeling down.”</p>
+
+
+
+
+					<div style="height: 200px;background-image: url(https://cdn.movember.com/uploads/images/2019/HealthPromotion/1-1-4-copy%403x.jpg)"></div>
+
+
+			
+			<h2>Knowing what to say</h2>
+			<p>Okay, so your friend has opened up to you. (*cue awkward silence*) Er… What do you say next?</p>
+			<p>It might be tempting to keep things light by steering clear of tough topics. You may feel like ending the conversation there, making a joke to lighten the mood, encouraging them to ‘cheer up’, or talking about yourself instead. There probably isn’t a ‘right’ thing to say — but these are all tactics that are probably best avoided. More important than knowing what to say is knowing how to listen.</p>
 			<div class="mini-convo">
 				<div class="bit them"><p>It’s almost midday. Time to get out of bed and get on the beers!</p></div>
 				<div class="bit me"><p>Ah man. I know that feeling.<br>Sounds like the COVID blues.</p></div>
@@ -1637,24 +1787,101 @@
 				<button>Continue this conversation →</button>
 				<br><br>
 			</div>
-			We know it’s not uncommon for guys to keep quiet when they’re struggling, and with men facing challenges at a level not seen in most of our lifetimes, something has got to change.<br>
-			&nbsp;<br>
-			In the current situation, it’s vital for blokes to talk about what’s going on for them now more than ever. That’s why Movember is encouraging everyone to take on the <a href="https://uk.movember.com/story/view/id/12109/five-minutes-to-touch-base-with-a-mate-could-make-a-massive-difference">Five-A-Day challenge</a> and spend five minutes each day checking in with a mate.
-			<blockquote>“Just like you need your five-a-day to stay physically healthy, we want you to take five minutes a day to look out for both yours and your mates’ mental health.”</blockquote>
-			And while social interaction is vital to support positive mental health and wellbeing, it’s also crucial you take the opportunity to look out for potential signs someone isn’t in a great head space.<br>
-			&nbsp;<br>
-			Chances are, one of the men close to you is struggling right now. We’re not just talking about someone who looks or sounds down – often it’s the things which are easier to miss that suggest something is awry.<br>
-			&nbsp;<br>
-			So how can you pick up on these signs when you’re not able to sit in the same room or stand side by side? While you might not be living with your mates, there’s still cues you can pick up on over the phone or via social media.</p>
-				<div class='alec'>
-						<h1>A</h1><p>Start by <b>asking</b> how they are feeling.</p>
-						<h1>L</h1><p>Let them known you're <b>listening</b> and give them your full attention.</p>
-						<h1>E</h1><p><b>Encourage</b> them to focus on simple things that could improve how they feel.</p>
-						<h1>C</h1><p><b>Check-in</b> with them after your chat.</p>
+			<p>Show that you care and are genuinely interested by asking questions and prompting them to talk. Here are some suggestions of what to say to someone who’s lost their job.</
+
+			<h2>What to say to someone who’s stressed</h2>
+			<p>If your friend is talking about feeling stressed or overwhelmed, ask things like:</p>
+			<ul>
+				<li>“What does that look like for you?”</li>
+				<li>“Can you tell me a bit more about what’s stressing you out?”</li>
+				<li>“How is that impacting you?”</li>
+				<li>“Are there any changes you could make?”</li>
+				<li>“What’s worrying you about X?”</li>
+			</ul>
+
+<h2>What to say to someone with depression or anxiety</h2>
+
+<p>If you suspect your friend might be dealing with depression or anxiety, or if you know they’re struggling with mental health, try some of these questions:</p>
+
+<ul>
+<li>“Have you spoken to anyone else about how you're feeling?”</li>
+<li>“I’ve noticed you’ve been pretty down lately. What’s going on?”</li>
+<li>“You don't seem like yourself. Are you OK?”</li>
+</ul>
+
+<h2>Tips for supporting your unemployed partner</h2>
+
+<p>If your partner is unemployed it might have a significant impact on you personally, as well as your relationship. For starters, you may be picking up extra work to make up for the loss of income. You may be living with your partner or seeing them often, meaning that you’re dealing with their low mood or anxiousness on a daily basis – which can be tough on you too. (Here’s a friendly reminder to take care of your own mental health while supporting someone through unemployment!)</p>
+<blockquote>saying something like ‘we’ve gotten through hard times together before, and we will this time too’ can help with maintaining hopefulness.</blockquote>
+<p>If you’re supporting your partner with unemployment, and dealing with the uncertainty that goes with it, here are a few tips and tricks that might help.</p>
+
+<p>It’s important to help your partner maintain hope for the future. When we are struggling it’s easy to feel pessimistic and hopeless. While you don’t want to create fake optimism, saying something like ‘we’ve gotten through hard times together before, and we will this time too’ can help with maintaining hopefulness.</p>
+
+<h2>Address financial worries</h2>
+
+<p>Losing family income is stressful and can directly impact everyone’s mental health. Address any financial worries early on and create a plan for how you’ll tackle it together. Of course, there’s no knowing when they might get a new job opportunity but perhaps you can brainstorm other ways to alleviate financial stress. For example:</p>
+<ul>
+<li>Ways to cut back on living expenses, like making coffees at home rather than buying them out.</li>
+<li>Getting support from family or friends, perhaps regular childcare or meals.</li>
+<li>Talking to the bank about your financial difficulties and seeing if they can support you with reduced mortgage repayments or similar.</li>
+<li>Creating a budget.</li>
+</ul>
+
+<p>It may help to get in touch with a financial adviser or someone who can help you create a family budget or suggest a general plan of attack.</p>
+
+<h2>Communicate</h2>
+
+<p>Check in with your partner regularly. Even if they seem to be coping okay, asking deeper questions may reveal that they’re not actually doing too great. Remember, a lot of people tie their worth to their work. Your partner could be experiencing low self esteem or feelings of helplessness. Try to understand what they’re feeling so you can communicate better and get on the same page.</p>
+<div class="article-alec">
+					<div class='alec'>
+							<h1>A</h1><p>Start by <b>asking</b> how they are feeling.</p>
+							<h1>L</h1><p>Let them known you're <b>listening</b> and give them your full attention.</p>
+							<h1>E</h1><p><b>Encourage</b> them to focus on simple things that could improve how they feel.</p>
+							<h1>C</h1><p><b>Check-in</b> with them after your chat.</p>
+						</div>
+						<button>Unpack ALEC →</button>
 					</div>
-				</div>
+
+<p>Loss of work is stressful enough before you throw kids into the mix. Children may not understand why you can’t afford swimming classes at the moment, or why daddy is always home now. Without stressing your kids out, it can help to try and explain to them what’s going on while reassuring them that everything is going to be okay.</p>
+
+<p>Chat to your partner about how you’ll tackle this conversation as a team.</p>
+
+
+<h2>Look out for signs of depression or anxiety</h2>
+
+<p>It’s normal to feel down while out of work. But if your partner starts to show signs like not enjoying activities they used to love, avoiding other people, drinking more alcohol than usual, increased or decreased appetite, or feeling down for weeks at a time, there may be something else going on. It might help to suggest getting professional support and offer to go with them to a psychologist or doctor.</p>
+
+<h2>Tips for supporting an unemployed friend</h2>
+
+<p>If you know a man who’s lost their job and is experiencing uncertainty, here are some steps you can take to be there for them.</p>
+
+<ol>
+<li><h2>Arrange a catch up</h2><p>A simple text message is fine, but it can really help to talk in person too. Try to make definite, specific plans rather than setting vague intentions to chat. For example, “Can I call you on Tuesday at 6pm” will make the catch up more likely to happen than “Let’s talk again soon”.</p></li>
+
+<li><h2>Be a sounding board</h2><p>Remember this: You don’t need to solve this person’s problems or make them feel better. Don’t put pressure on yourself to fix it all. Being a sounding board is probably the best way to look at it. Ask questions, listen, and share some of your own vulnerability to show that it’s okay to open up and be real. They may just need to vent about financial stresses or how losing work has impacted their self esteem.</p></li>
+
+<li><h2>Ask questions</h2><p>Encouraging someone to open up is all about asking questions. Open-ended questions (i.e., questions that need more than a one word, yes/no, response) are great for getting them to chat about what’s on their mind. If they don’t seem to know where to start, you can always offer observational questions too, for example, “It seems like you’re having a tough time at the moment. What’s been going on for you?”.</p></li>
+
+
+<li><h2>Avoid solutions</h2><p>When someone’s out of work, you may just want to help them find a new job. But again, that’s not your purpose. You’re there to be a good friend and empower them to make decisions for themselves. Telling someone what they should do, or trying to come up with a quick-fix can come across as pushy, dismissive or mothering. </p></li>
+
+<li><h2>Encourage them to get help</h2><p>This doesn’t need to be as explicit as “Go see a therapist”. Try not to prescribe treatment. Simply asking if they’ve chatted to anyone else is a great place to start. This can encourage people to look to their broader network for support. You could even gently share that chatting to a professional is beneficial. If it’s helped you through a tough time you could be vulnerable and share your personal story.</p></li>
+</ol>
+<p>Just know that YOU are not the therapist. You’re just an awesome friend or partner checking in and helping out. </p>
+
+
+				
+					<br>
+					<div class="key-points">
+						<h1>READ NEXT:</h1>
+						<ul>
+							<li><a href=''>Another Article</a></li>
+							<li><a href=''>Another Article</a></li>
+							<li><a href=''>Another Article</a></li>
+						</ul>
+					</div>
 			</div>
-		</div>
+		
 	</div>
 	<div class='menu'>
 		<ul class='submenu'>
