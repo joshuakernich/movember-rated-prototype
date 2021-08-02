@@ -8,6 +8,7 @@ thread:[
 	is:'them',
 	p:["It’s almost midday. Time to get out of bed and get on the beers!"]
 },
+{is:'header',p:['What would you say?']},
 {
 	is:"question",
 	iCorrect:1,

@@ -1249,7 +1249,7 @@
 				storyCovidIsolation,
 				storyCovidWork,
 				storyCovidFamily,
-				{
+				/*{
 					name:"RECENTLY HEARTBROKEN",
 					bg:{left:{img:'https://conversations.movember.com/static/assets/images/image-9723dfdd46c616f37dc130c33b42edfd72673e58-1000x1000-png'},right:{img:''}},
 					thread:[{is:'them',p:["She dumped me, bro."]}]
@@ -1261,7 +1261,7 @@
 					name:"A CARER OF OLDER MEN",
 					bg:{left:{img:'https://conversations.movember.com/static/assets/images/image-9723dfdd46c616f37dc130c33b42edfd72673e58-1000x1000-png'},right:{img:''}},
 					thread:[{is:'them',p:["I'm really short."]}]
-				}
+				}*/
 			]
 
 			$('body').addClass('covid');
@@ -1560,7 +1560,7 @@
 				$('.menu').removeClass('active');
 				$('.menu-toggle').removeClass('active');
 				//$('.submenu li').removeClass('selected').eq(i).addClass('selected');
-				$('.screen').hide().eq(i+1).show();
+				$('.screen').hide().eq(i).show();
 			})
 
 			$('.note button').click(function(){
@@ -1693,27 +1693,31 @@
 					<div class="article-thumb" style="background-image:url(./image/pair.jpeg)"></div>
 					<p><b>Getting Over Conversation Blockers</b></p>
 					<p>In 2020, we watched the world change dramatically. But one thing remained the same: our mission to stop men dying too young.</p>
+					<p class="meta">10th February, 2021 <span class="meta-divider"></span> 2 minute read</p>
 				</div>
 				<div class="article-preview">
 					<div class="article-thumb" style="background-image:url(./image/pair.jpeg)"></div>
 					<p><b>Spot the Signs 101</b></p>
 					<p>In 2020, we watched the world change dramatically. But one thing remained the same: our mission to stop men dying too young.</p>
+					<p class="meta">10th February, 2021 <span class="meta-divider"></span> 2 minute read</p>
 				</div>
 				<div class="article-preview">
 					<div class="article-thumb" style="background-image:url(./image/pair.jpeg)"></div>
 					<p><b>The Unwilling Helpgiver</b></p>
 					<p>In 2020, we watched the world change dramatically. But one thing remained the same: our mission to stop men dying too young.</p>
+					<p class="meta">10th February, 2021 <span class="meta-divider"></span> 2 minute read</p>
 				</div>
 				<div class="article-preview">
 					<div class="article-thumb" style="background-image:url(./image/pair.jpeg)"></div>
 					<p><b>Movember Conversations in Focus</b></p>
 					<p>In 2020, we watched the world change dramatically. But one thing remained the same: our mission to stop men dying too young.</p>
+					<p class="meta">10th February, 2021 <span class="meta-divider"></span> 2 minute read</p>
 				</div>
 				
 			</div>
 		</div>
 		<div class="screen">
-			<div class="screen-column">
+			<div class="screen-column article-column">
 				<h1><b>SHARE</b> THE LOVE</h1>
 				<div class="menu-share"></div>
 			</div>
@@ -1888,8 +1892,9 @@
 			<img class='home-link' src="logo-black.svg" width="200">
 			<br><br>
 			<!--li class='back-to-convo'>Back to convo</li-->
+			<li>Get Started</li>
 			<li>Conversations</li>
-			<li>ALEC unpacked</li>
+			<li>ALEC Unpacked</li>
 			<li>Resources</li>
 			<!--li>- About</li>
 			<li>- ALEC</li>

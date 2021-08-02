@@ -8,6 +8,7 @@ var storyCovidFamily = {
 		{
 			is:'them',p:['I really should check on the kids.','I’m so busy with work. But I need to get them away from screens for a while.']
 		},
+		{is:'header',p:['What would you say?']},
 		{
 			is:'header',
 			p:['What would you say?']
