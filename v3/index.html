@@ -540,6 +540,7 @@
 			position: fixed;
 			z-index: 1;
 			padding: 150px 0px;
+			display: none;
 		}
 
 		.cookie-modal:after{
@@ -1222,6 +1223,10 @@
 	</style>
 	<script type="text/javascript" src="./jquery-3.4.1.min.js"></script>
 
+	<script type="text/javascript" src="./stories/international/story-disabled.js"></script>
+	<script type="text/javascript" src="./stories/international/story-heartbroken.js"></script>
+	<script type="text/javascript" src="./stories/international/story-grieving.js"></script>
+
 	<script type="text/javascript" src="./stories/covid/story-isolation.js"></script>
 	<script type="text/javascript" src="./stories/covid/story-work.js"></script>
 	<script type="text/javascript" src="./stories/covid/story-family.js"></script>
@@ -1240,29 +1245,15 @@
 			var storyList = {
 					is:'story-list',
 					p:[
-					storyUniIsolation,
-					storyUniLonely,
-					storyUniWork]
+					storyCovidIsolation,
+					storyCovidFamily,
+					storyCovidWork,
+					storyDisabled,
+					storyHeartbroken,
+					storyGrieving ]
 				};
 
-			storyList.p = [
-				storyCovidIsolation,
-				storyCovidWork,
-				storyCovidFamily,
-				/*{
-					name:"RECENTLY HEARTBROKEN",
-					bg:{left:{img:'https://conversations.movember.com/static/assets/images/image-9723dfdd46c616f37dc130c33b42edfd72673e58-1000x1000-png'},right:{img:''}},
-					thread:[{is:'them',p:["She dumped me, bro."]}]
-				},{
-					name:"GRIEVING & LONELY",
-					bg:{left:{img:'https://conversations.movember.com/static/assets/images/image-9723dfdd46c616f37dc130c33b42edfd72673e58-1000x1000-png'},right:{img:''}},
-					thread:[{is:'them',p:["I'm really short."]}]
-				},{
-					name:"A CARER OF OLDER MEN",
-					bg:{left:{img:'https://conversations.movember.com/static/assets/images/image-9723dfdd46c616f37dc130c33b42edfd72673e58-1000x1000-png'},right:{img:''}},
-					thread:[{is:'them',p:["I'm really short."]}]
-				}*/
-			]
+			
 
 			$('body').addClass('covid');
 			
@@ -1568,7 +1559,7 @@
 			})
 
 			$('.cookie-modal').hide();
-			$('.screen').hide().last().show();
+			
 
 			$('.home-link').click(function(){
 				$('.screen').hide().eq(0).show();
@@ -1581,6 +1572,8 @@
 			$('.article-preview').click(function(){
 				$('.screen').hide().eq(5).show();
 			})
+
+			$('.screen').hide().eq(1).show();
 		})
 		
 	</script>
