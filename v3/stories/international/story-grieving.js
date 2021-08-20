@@ -59,7 +59,7 @@ bg:{
 },
 {
 	is:'question',
-
+	iCorrect:1,
 	p:['Nah mate, you can’t be thinking like that.','Yeah. I think it’s pretty normal to feel that way.','Chin up, man. Life is too short for regrets.'],
 	f:['Rejecting his feelings may make him close down. Try <b>accepting</b> how he feels.','Accepting his feelings, and <b>reassuring him that it’s normal</b> will allow him to relax and express himself freely.','<b>Jumping to solutions</b> while ignoring his feelings will likely make him close down.']
 },
@@ -69,8 +69,9 @@ bg:{
 },
 {
 	is:'question',
+	iQuestion:0,
 	p:['Do you think you’re getting the support you need?','You’re not alone. You’re never alone.','Yeah, I can imagine.'],
-	f:['This is a great step toward getting a man to think more productively about how he can broaden his support network.','Poetic refrains won’t help your friend make sense of their struggles.',"Try not to lead the conversation into a <b>dead end</b>. Keep asking questions."]
+	f:['This is a great step toward getting a man to think more productively about how he can broaden his <b>support network</b>.','<b>Poetic refrains</b> won’t help your friend make sense of their struggles.',"Try not to lead the conversation into a <b>dead end</b>. Keep asking questions."]
 },
 {
 	is:'them',
@@ -78,8 +79,9 @@ bg:{
 },
 {
 	is:'question',
+	iQuestion:0,
 	p:['I can’t pretend to know how you feel. But I can be here for you now.','Well, a lot of us have been through our own grief.','You underestimate your friends.'],
-	f:["It's important to validate a man's feeling, and other authentic empathy and care.","Try not to get defensive. Your friend is feeling alone right now. It's a good opportunity to offer your empathy.","Try not to get defensive. Your friend is feeling alone right now. It's a good opportunity to offer your empathy."]
+	f:["It's important to <b>validate</b> a man's feeling, and other authentic empathy and care.","Try not to get <b>defensive</b>. Your friend is feeling alone right now. It's a good opportunity to offer your empathy.","Try not to get <b>defensive</b>. Your friend is feeling alone right now. It's a good opportunity to offer your empathy."]
 },
 {
 	is:'them',
@@ -87,8 +89,9 @@ bg:{
 },
 {
 	is:'question',
+	iQuestion:0,
 	p:['Is there anything I can do that might help?','Yeah I know. It sucks.','I really mean it though. I am here for you, bro.'],
-	f:['','','These are well meaning words. But they don’t add up to any immediate action. Perhaps we can keep asking questions.']
+	f:["offer your help while allowing them to <b>come up with their own solutions</b>.","Broad statements may come across as <b>dismissive</b> or lead the conversation down a dead-end.",'These are well meaning words. But they don’t add up to any immediate action. Perhaps we can keep <b>asking questions</b>.']
 
 },
 {
@@ -97,11 +100,12 @@ bg:{
 },
 {
 	is:'question',
+	iCorrect:1,
 	p:['That, I can do. Let me know when you’re free.','That, I can do. When can we line that up?','I’ll keep that in mind.'],
 	f:[
 	'Try not to put the onus on a struggling man to reach out. Think about making more <b>specific plans</b? to check-in.',
 	"It's important to make <b>specific plans</b> for the next check-in.",
-	"Try to avoid vague promises of future connection. Plan a specific check-in."]
+	"Try to avoid <b>vague promises</b> of future connection. Plan a specific check-in."]
 },
 {
 	is:'them',
@@ -109,6 +113,7 @@ bg:{
 },
 {
 	is:'question',
+	iCorrect:1,
 	p:['Great. Lock it in.','Great. Pencil it in.',"I’m busy, then. But I'm sure we’ll figure something out."],
 	f:["Always make specific plans at a <b>specific time</b> for the next check-in.","Don't leave the plans in a shaky, uncertain place. Plan something <b>specific</b>.","Don't leave the plans in a shaky, uncertain place. Plan something <b>specific</b>."],
 },
