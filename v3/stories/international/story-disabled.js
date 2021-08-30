@@ -1,5 +1,5 @@
 var storyDisabled = {
-name:"Ageing & Disabled",
+name:"LIVING WITH A DISABILITY",
 bg:{
 	left:{img:'https://conversations.movember.com/static/assets/images/image-9723dfdd46c616f37dc130c33b42edfd72673e58-1000x1000-png'},
 	right:{img:'https://conversations.movember.com/static/assets/images/image-49df9364688f3b428ceac6093b52265d131ca125-1000x1000-png'}
@@ -31,7 +31,7 @@ thread:[
 		f:["Offering <b>practical support</b> may be essential in helping a man take meaningful action.","He may need some <b>practical support</b> in taking action.","It's not your role to <b>dictate on his actions</b> for him."],},
 	{is:'them',	p:['I’d like that.','Be good to make yourself useful, for once.']},
 	{is:'question',	iCorrect:0,
-		p:['That’s enough out of you, old man.','Uhm... okay.','Or you could be thankful for my help.'],
+		p:['That’s enough out of you!','Uhm... okay.','Or you could be thankful for my help.'],
 		f:["Keeping things light, making a joke, and <b>having a laugh</b> is a great way to connect.","He's having some <b>fun</b>. He doesn't have to take this all seriously. Don't be quick to take offence.","He probably could. But your support shouldn't be <b>loaded with expectations</b>."],},
 	{is:'them',	p:['I’m kidding, of course.','You’re a good bloke.']},
 	{is:'question',	iCorrect:0,
