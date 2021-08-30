@@ -69,7 +69,7 @@ bg:{
 },
 {
 	is:'question',
-	iQuestion:0,
+	iCorrect:0,
 	p:['Do you think you’re getting the support you need?','You’re not alone. You’re never alone.','Yeah, I can imagine.'],
 	f:['This is a great step toward getting a man to think more productively about how he can broaden his <b>support network</b>.','<b>Poetic refrains</b> won’t help your friend make sense of their struggles.',"Try not to lead the conversation into a <b>dead end</b>. Keep asking questions."]
 },
@@ -79,9 +79,9 @@ bg:{
 },
 {
 	is:'question',
-	iQuestion:0,
+	iCorrect:0,
 	p:['I can’t pretend to know how you feel. But I can be here for you now.','Well, a lot of us have been through our own grief.','You underestimate your friends.'],
-	f:["It's important to <b>validate</b> a man's feeling, and other authentic empathy and care.","Try not to get <b>defensive</b>. Your friend is feeling alone right now. It's a good opportunity to offer your empathy.","Try not to get <b>defensive</b>. Your friend is feeling alone right now. It's a good opportunity to offer your empathy."]
+	f:["It's important to <b>validate</b> a man's feelings with authentic empathy.","Try not to get <b>defensive</b>. Your friend is feeling alone right now. It's a good opportunity to offer your empathy.","Try not to get <b>defensive</b>. Your friend is feeling alone right now. It's a good opportunity to offer your empathy."]
 },
 {
 	is:'them',
@@ -89,14 +89,14 @@ bg:{
 },
 {
 	is:'question',
-	iQuestion:0,
+	iCorrect:0,
 	p:['Is there anything I can do that might help?','Yeah I know. It sucks.','I really mean it though. I am here for you, bro.'],
-	f:["offer your help while allowing them to <b>come up with their own solutions</b>.","Broad statements may come across as <b>dismissive</b> or lead the conversation down a dead-end.",'These are well meaning words. But they don’t add up to any immediate action. Perhaps we can keep <b>asking questions</b>.']
+	f:["Offer help while allowing them to <b>come up with their own solutions</b>.","Broad statements may come across as <b>dismissive</b> or lead the conversation down a dead-end.",'These are well meaning words. But they don’t add up to any immediate action. Perhaps we can keep <b>asking questions</b>.']
 
 },
 {
 	is:'them',
-	p:['Well...','I suppose some company would be welcome']
+	p:['Well...','I suppose some company would be welcome.']
 },
 {
 	is:'question',
@@ -113,7 +113,7 @@ bg:{
 },
 {
 	is:'question',
-	iCorrect:1,
+	iCorrect:0,
 	p:['Great. Lock it in.','Great. Pencil it in.',"I’m busy, then. But I'm sure we’ll figure something out."],
 	f:["Always make specific plans at a <b>specific time</b> for the next check-in.","Don't leave the plans in a shaky, uncertain place. Plan something <b>specific</b>.","Don't leave the plans in a shaky, uncertain place. Plan something <b>specific</b>."],
 },
